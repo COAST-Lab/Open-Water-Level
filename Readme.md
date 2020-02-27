@@ -1,5 +1,6 @@
 # Seaport Tide and Sea Level Rise Monitor
 *todo*:
+- add photos
 - add folder with laser enclosure drawings (solidworks and PDF line drawings)
 - add firmware from alternative sensors and microcontrollers tested
 - create a spreadsheet to be used for linear calibration/validation
