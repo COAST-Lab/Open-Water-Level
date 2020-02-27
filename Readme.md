@@ -1,4 +1,9 @@
 # Seaport Tide and Sea Level Rise Monitor
+*todo*:
+- add folder with laser enclosure drawings (solidworks and PDF line drawings)
+- add firmware from alternative sensors and microcontrollers tested
+- create a spreadsheet to be used for linear calibration/validation
+
 ## The Basics
 ### Getting Started
 This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Bluefruit Feather nRF52832 or similar microcontroller with BLE, a Maxbotix LV-EZ4 ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, a rechargeable lithium ion battery, and a custom laser cut enclosure.
