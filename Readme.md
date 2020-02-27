@@ -38,6 +38,14 @@ By using analog for data transmission, we were able to connect just three things
 
 Generally speaking, it is better to calibrate a sensor once it is fully assembled than prior to assembling it because many sensors can be interfered with by other parts of an assembly. For instance, what if this rangefinder was somehow picking up a part of the assembled housing and giving a reading that reflected its detection of the housing instead of its detection of the water surface? Or what if you calibrated a temperature sensor before assembling it with the rest of the parts and then found out that some other part of the package was actually producing heat and thereby altering the temperature reading? Hopefully you will be able to assemble your instruments in ways that circumvent any such problems but it is wise to keep these potential issues in mind and calibrate or recalibrate your instrument once it is in its final form factor. Please see the following section for details on calibration if you are going to (re)calibrate your monitor.
 
+**Step 5:** Apply the new calibration coefficients in the firmware and recompile and flash the code.
+
+See the Firmware folder and firmware_getting_started.md files therein for more information if you intend to alter or learn more about the sensor's firmware. 
+
+**Step 6:** Deploy the sensor!
+
+Please see the section toward the top for more information on deployment.
+
 ### Calibration
 It is never wise to trust that any sensor will work perfectly out of the box* and a good scientist or engineer (professional or otherwise) would be well served by checking the sensor's accuracy (and improving it, if possible). It is sometimes the case that a sensor manufacturer has very sophisticated calibration equipment and, especially if they provide the calibration data for your instrument, their technique may be hard to replicate for yourself. But, alternatively, sometimes manufacturers do not calibrate every individual instrument and/or their techniques and equipment aren't sufficient for your needs, so you must do it yourself.
 
