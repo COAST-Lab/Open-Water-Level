@@ -1,114 +1,71 @@
-#include <SPI.h>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
- 
-Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
- 
-// OLED FeatherWing buttons map to different pins depending on board:
-#if defined(ESP8266)
-  #define BUTTON_A  0
-  #define BUTTON_B 16
-  #define BUTTON_C  2
-#elif defined(ESP32)
-  #define BUTTON_A 15
-  #define BUTTON_B 32
-  #define BUTTON_C 14
-#elif defined(ARDUINO_STM32_FEATHER)
-  #define BUTTON_A PA15
-  #define BUTTON_B PC7
-  #define BUTTON_C PC5
-#elif defined(TEENSYDUINO)
-  #define BUTTON_A  4
-  #define BUTTON_B  3
-  #define BUTTON_C  8
-#elif defined(ARDUINO_FEATHER52832)
-  #define BUTTON_A 31
-  #define BUTTON_B 30
-  #define BUTTON_C 27
-#else // 32u4, M0, M4, nrf52840 and 328p
-  #define BUTTON_A  9
-  #define BUTTON_B  6
-  #define BUTTON_C  5
-#endif
+// Code from https://forum.arduino.cc/index.php?topic=114808.0, original solution by 'Goldthing'
+// Modified by PJB, 2-Mar-2020
 
-// Use these analog voltage variable, representing ultrasonic sensor output and conversions, later
-//const int anPin = A0;
-//long V_ultraS, mm, inches;
+#include <SoftwareSerial.h>
+#define txPin 4                                         //define pins used for software serial for sonar (Not Connected)
+#define rxPin 3                                         //Connect to TX of the sensor
+SoftwareSerial sonarSerial(rxPin, txPin, true);         //define serial port for recieving data, output from maxSonar is inverted requiring true to be set.
 
-//int V_ultraS = A0;
+boolean stringComplete = false;
 
-int adcin    = A0;
-float adcvalue = 0;
-float mv_per_lsb = 3600.0F/8192.0F; // 14-bit ADC split in half with 3.6 V input range
-float in_per_mv = 254.0F/3600.0F; // 254 in range sensor over 3.6 V input range
-float mv, in;
+void setup()
+{
+  Serial.begin(9600);                                      //start serial port for display
+  sonarSerial.begin(9600);                                 //start serial port for maxSonar
+  delay(500);                                              //wait for everything to initialize
 
-void setup() {
-
-  analogReadResolution(14); // Can be 8, 10, 12 or 14
-  
-  Serial.begin(9600);
- 
-  Serial.println("OLED FeatherWing test");
-  // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Address 0x3C for 128x32
- 
-  Serial.println("OLED begun");
- 
-  // Show image buffer on the display hardware.
-  // Since the buffer is intialized with an Adafruit splashscreen
-  // internally, this will display the splashscreen.
-  display.display();
-  delay(1000);
- 
-  // Clear the buffer.
-  display.clearDisplay();
-  display.display();
- 
-  Serial.println("IO test");
- 
-  pinMode(BUTTON_A, INPUT_PULLUP);
-  pinMode(BUTTON_B, INPUT_PULLUP);
-  pinMode(BUTTON_C, INPUT_PULLUP);
- 
-  // text display tests
-  display.setTextSize(2);
-  display.setTextColor(SSD1306_WHITE);
-  display.setCursor(0,0);
-  display.println("It's alive");
-  display.setCursor(0,0);
-  display.display(); // actually display all of the above
-  
-  delay(2500);
 }
- 
-void loop() {
-//  V_ultraS = analogRead(anPin);  // Read analog pin
-//
-//  mm = V_ultraS*5; // Takes bit count and converts it to mm
-//  inches = mm/25.4; // Takes mm and converts it to inches
 
-  // Get a fresh ADC value
-  long adcvalue_sum = 0;
-  int N = 100; // how many samples in average; more makes the value smoother but take longer to collect
-  for(int i=0; i<N; i++) {
-    adcvalue_sum += analogRead(adcin);
-    Serial.println(adcvalue_sum);
-    Serial.println(i);
+void loop()
+{
+  int range = EZread();
+  if(stringComplete)
+  {
+    stringComplete = false;                                //reset sringComplete ready for next reading
+
+    Serial.print("Range ");
+    Serial.println(range);
+    delay(500);                                          //delay for debugging
+  }
+}
+
+
+int EZread()
+{
+  int result;
+  char inData[4];                                          //char array to read data into
+  int index = 0;
+
+  sonarSerial.flush();                                     // Clear cache ready for next reading
+
+  while (stringComplete == false) {
+    //Serial.print("reading ");    //debug line
+
+      if (sonarSerial.available())
+    {
+      char rByte = sonarSerial.read();                     //read serial input for "R" to mark start of data
+      if(rByte == 'R')
+      {
+        //Serial.println("rByte set");
+        while (index < 3)                                  //read next three character for range from sensor
+        {
+          if (sonarSerial.available())
+          {
+            inData[index] = sonarSerial.read();
+            
+            index++;                                       // Increment where to write next
+          } 
+        }
+        inData[index] = 0x00;                              //add a padding byte at end for atoi() function
+      }
+
+      rByte = 0;                                           //reset the rByte ready for next reading
+
+      index = 0;                                           // Reset index ready for next reading
+      stringComplete = true;                               // Set completion of read to true
+      result = atoi(inData);                               // Changes string data into an integer for use
+    }
   }
 
-  adcvalue = adcvalue_sum/N;
-  mv = (float)adcvalue * mv_per_lsb;
-  in = mv*in_per_mv;
-  
-  display.clearDisplay();
-  display.setTextSize(2);
-  display.setTextColor(SSD1306_WHITE);
-  display.setCursor(0,0);
-  display.println("Dist (in):");
-  display.println(in); //Counts * (V range/count range) * (Inch range/V range)
-  display.display();
-
-  delay(1000);
+  return result;
 }
