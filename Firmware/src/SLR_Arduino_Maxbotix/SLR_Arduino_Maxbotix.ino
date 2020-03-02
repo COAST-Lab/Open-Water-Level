@@ -39,7 +39,7 @@ Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
 //int V_ultraS = A0;
 
 int adcin    = A0;
-int adcvalue = 0;
+float adcvalue = 0;
 float mv_per_lsb = 3600.0F/8192.0F; // 14-bit ADC split in half with 3.6 V input range
 float in_per_mv = 254.0F/3600.0F; // 254 in range sensor over 3.6 V input range
 float mv, in;
@@ -76,7 +76,7 @@ void setup() {
   display.setTextSize(2);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
-  display.println("It's alive!");
+  display.println("It's alive");
   display.setCursor(0,0);
   display.display(); // actually display all of the above
   
@@ -90,7 +90,15 @@ void loop() {
 //  inches = mm/25.4; // Takes mm and converts it to inches
 
   // Get a fresh ADC value
-  adcvalue = analogRead(adcin);
+  long adcvalue_sum = 0;
+  int N = 100; // how many samples in average; more makes the value smoother but take longer to collect
+  for(int i=0; i<N; i++) {
+    adcvalue_sum += analogRead(adcin);
+    Serial.println(adcvalue_sum);
+    Serial.println(i);
+  }
+
+  adcvalue = adcvalue_sum/N;
   mv = (float)adcvalue * mv_per_lsb;
   in = mv*in_per_mv;
   
