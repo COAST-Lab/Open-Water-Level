@@ -9,44 +9,9 @@
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
 
 #include <SoftwareSerial.h>
-#include <SPI.h>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-
-// UART/Serial stuff
 #define txPin 4                                         //define pins used for software serial for sonar (Not Connected)
-#define rxPin 3                                         //Connect to TX of the sensor to RX of Arduino
+#define rxPin 3                                         //Connect to TX of the sensor
 SoftwareSerial sonarSerial(rxPin, txPin, true);         //define serial port for recieving data, output from maxSonar is inverted requiring true to be set.
-
-Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
-
-// OLED FeatherWing buttons map to different pins depending on board:
-#if defined(ESP8266)
-  #define BUTTON_A  0
-  #define BUTTON_B 16
-  #define BUTTON_C  2
-#elif defined(ESP32)
-  #define BUTTON_A 15
-  #define BUTTON_B 32
-  #define BUTTON_C 14
-#elif defined(ARDUINO_STM32_FEATHER)
-  #define BUTTON_A PA15
-  #define BUTTON_B PC7
-  #define BUTTON_C PC5
-#elif defined(TEENSYDUINO)
-  #define BUTTON_A  4
-  #define BUTTON_B  3
-  #define BUTTON_C  8
-#elif defined(ARDUINO_FEATHER52832)
-  #define BUTTON_A 31
-  #define BUTTON_B 30
-  #define BUTTON_C 27
-#else // 32u4, M0, M4, nrf52840 and 328p
-  #define BUTTON_A  9
-  #define BUTTON_B  6
-  #define BUTTON_C  5
-#endif
 
 boolean stringComplete = false;
 
@@ -54,6 +19,9 @@ void setup()
 {
   Serial.begin(9600);                                      //start serial port for display
   sonarSerial.begin(9600);                                 //start serial port for maxSonar
+
+  // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Address 0x3C for 128x32
 
   // Show image buffer on the display hardware.
   // Since the buffer is intialized with an Adafruit splashscreen
