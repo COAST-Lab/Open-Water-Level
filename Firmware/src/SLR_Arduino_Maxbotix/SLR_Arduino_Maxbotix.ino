@@ -1,6 +1,13 @@
 // Code from https://forum.arduino.cc/index.php?topic=114808.0, original solution by 'Goldthing'
 // Modified by PJB, 2-Mar-2020
 
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
+
 #include <SoftwareSerial.h>
 #include <SPI.h>
 #include <Wire.h>
@@ -13,7 +20,7 @@
 SoftwareSerial sonarSerial(rxPin, txPin, true);         //define serial port for recieving data, output from maxSonar is inverted requiring true to be set.
 
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
- 
+
 // OLED FeatherWing buttons map to different pins depending on board:
 #if defined(ESP8266)
   #define BUTTON_A  0
@@ -47,23 +54,17 @@ void setup()
 {
   Serial.begin(9600);                                      //start serial port for display
   sonarSerial.begin(9600);                                 //start serial port for maxSonar
-  
+
   // Show image buffer on the display hardware.
   // Since the buffer is intialized with an Adafruit splashscreen
   // internally, this will display the splashscreen.
   display.display();
   delay(1000);
- 
+
   // Clear the buffer.
   display.clearDisplay();
   display.display();
- 
-  Serial.println("IO test");
- 
-  pinMode(BUTTON_A, INPUT_PULLUP); // Not going to use buttons yet
-  pinMode(BUTTON_B, INPUT_PULLUP);
-  pinMode(BUTTON_C, INPUT_PULLUP);
- 
+
   // text display tests
   display.setTextSize(2);
   display.setTextColor(SSD1306_WHITE);
@@ -71,8 +72,8 @@ void setup()
   display.println("It's alive");
   display.setCursor(0,0);
   display.display(); // actually display all of the above
-  
-  delay(2500);//wait for everything to initialize
+
+  delay(500);                                              //wait for everything to initialize
 
 }
 
@@ -93,9 +94,11 @@ void loop()
     display.println("Dist (in):");
     display.println(range); //Counts * (V range/count range) * (Inch range/V range)
     display.display();
+
+
     delay(500);                                          //delay for debugging
   }
-  
+
 }
 
 
@@ -122,7 +125,7 @@ int EZread()
           {
             inData[index] = sonarSerial.read();
             index++;                                       // Increment where to write next
-          } 
+          }
         }
         inData[index] = 0x00;                              //add a padding byte at end for atoi() function
       }
