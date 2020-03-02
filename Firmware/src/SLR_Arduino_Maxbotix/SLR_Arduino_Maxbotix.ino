@@ -1,4 +1,4 @@
-// Code from https://forum.arduino.cc/index.php?topic=114808.0, original solution by 'Goldthing'
+// Maxbotix UART Code from https://forum.arduino.cc/index.php?topic=114808.0, original solution by 'Goldthing'
 // Modified by PJB, 2-Mar-2020
 
 #include <SPI.h>
