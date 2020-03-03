@@ -3,7 +3,6 @@
 - add photos
 - add hyperlinks to parts
 - add bill of materials
-- add folder with laser enclosure drawings (solidworks and PDF line drawings)
 - add firmware from alternative sensors and microcontrollers tested
 - create a spreadsheet to be used for linear calibration/validation
 
@@ -40,7 +39,7 @@ Generally speaking, it is better to calibrate a sensor once it is fully assemble
 
 **Step 5:** Apply the new calibration coefficients in the firmware and recompile and flash the code.
 
-See the Firmware folder and firmware_getting_started.md files therein for more information if you intend to alter or learn more about the sensor's firmware. 
+See the Firmware folder and firmware_getting_started.md files therein for more information if you intend to alter or learn more about the sensor's firmware.
 
 **Step 6:** Deploy the sensor!
 
