@@ -1,5 +1,6 @@
 // Maxbotix UART Code from https://forum.arduino.cc/index.php?topic=114808.0, original solution by 'Goldthing'
 // Modified by PJB, 2-Mar-2020
+// Modified by BDD, 2-Mar-20
 
 #include <SPI.h>
 #include <Wire.h>
@@ -37,7 +38,7 @@ void setup()
   display.setTextSize(2);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
-  display.println("It's alive");
+  display.println("Seas the day!");
   display.setCursor(0,0);
   display.display(); // actually display all of the above
 
