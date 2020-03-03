@@ -11,7 +11,7 @@ Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
 
 #include <SoftwareSerial.h>
 #define txPin 4                                         //define pins used for software serial for sonar (Not Connected)
-#define rxPin 3                                         //Connect to TX of the sensor
+#define rxPin A1                                         //Connect to TX of the sensor
 SoftwareSerial sonarSerial(rxPin, txPin, true);         //define serial port for recieving data, output from maxSonar is inverted requiring true to be set.
 
 boolean stringComplete = false;
@@ -38,7 +38,10 @@ void setup()
   display.setTextSize(2);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
-  display.println("Seas the day!");
+  
+  display.println("SEAS the");
+  display.println("  day!");
+  
   display.setCursor(0,0);
   display.display(); // actually display all of the above
 
