@@ -5,6 +5,6 @@
     "files.associations": {
         "*.ino": "cpp"
     },
-    "particle.firmwareVersion": "3.0.0",
+    "particle.firmwareVersion": "1.4.4",
     "particle.targetPlatform": "boron"
 }

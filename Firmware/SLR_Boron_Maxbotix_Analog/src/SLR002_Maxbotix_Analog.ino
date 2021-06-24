@@ -1,6 +1,6 @@
 int V_ultraS = A0;
 
-SYSTEM_THREAD(ENABLED);
+// SYSTEM_THREAD(ENABLED);
 SYSTEM_MODE(MANUAL);
 
 void setup(void)

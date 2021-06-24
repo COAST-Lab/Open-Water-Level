@@ -9,7 +9,7 @@ void loop(void);
 #line 1 "/Users/pjb/Dropbox/Particle_Projects/Seaport_SLR_Observation/Seaport_Tide-SLR_Maxbotix_Arduino/Firmware/SLR_Boron_Maxbotix_Analog/src/SLR002_Maxbotix_Analog.ino"
 int V_ultraS = A0;
 
-SYSTEM_THREAD(ENABLED);
+// SYSTEM_THREAD(ENABLED);
 SYSTEM_MODE(MANUAL);
 
 void setup(void)
