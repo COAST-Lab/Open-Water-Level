@@ -15,13 +15,19 @@ int j;
 float dist_in_sum;
 float dist_in_avg;
 
-//------------------Turn off cellular for prelim testing
-SYSTEM_MODE(MANUAL);
-// SYSTEM_THREAD(ENABLED);
+//------------------State variables
+// not yet used but placeholders in case of additional states
+enum State { PUBLISH_STATE, SLEEP_STATE };
+State state = PUBLISH_STATE;
+unsigned long stateTime = 0;
+
+//------------------Turn off cellular for prelim testing; turn on for deployment
+// SYSTEM_MODE(MANUAL); // uncomment for prelim testing
+SYSTEM_MODE(AUTOMATIC); // uncomment for deployment
 
 void setup(void)
 {
-  Cellular.off();
+  // Cellular.off(); turn off cellular for prelim testing (uncomment)
 
   delay(5000); // to see response from begin command
 
@@ -44,9 +50,9 @@ void loop(void)
     dist_in_sum += dist_in;
 
     // Print out distance
-    Serial.print("Time: ");
-    Serial.print(Time.now());
-    Serial.print(", Distance(in): ");
+    // Serial.print("Time: ");
+    // Serial.print(Time.now());
+    // Serial.print(", Distance(in): ");
     
     Serial.println(dist_in);
 
@@ -76,6 +82,7 @@ void loop(void)
     delay(100);
   }
   
+  // Calculate then print average
   dist_in_avg = dist_in_sum/j;
 
   Serial.print(j);
@@ -83,4 +90,52 @@ void loop(void)
   Serial.print(dist_in_sum);
   Serial.print(",");
   Serial.println(dist_in_avg);
+
+  // Get battery charge if Boron provides it
+  float cellVoltage = batteryMonitor.getVCell();
+  float stateOfCharge = batteryMonitor.getSoC();
+
+  char data[120];
+  snprintf(data, sizeof(data), "%d,%.5f,%.02f,%.02f",//,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
+                Time.now(),
+                dist_in_avg,
+                cellVoltage, stateOfCharge
+              );
+
+  // Prep for cellular transmission
+  bool isMaxTime = false;
+  stateTime = millis();
+
+  while(!isMaxTime)
+  {
+    //connect particle to the cloud
+    if (Particle.connected() == false)
+    {
+      Particle.connect();
+    }
+
+    // If connected, publish data buffer
+    if (Particle.connected())
+    {
+      Serial.println("publishing data");
+      Particle.publish(eventName, data, 60, PRIVATE);
+
+      // Wait for the publish data
+      delay(TIME_AFTER_PUBLISH_MS);
+      isMaxTime = true;
+      state = SLEEP_STATE;
+    }
+    // If not connected after certain amount of time, go to sleep to save battery
+    else
+    {
+      // Took too long to publish, just go to sleep
+      if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS)
+      {
+        isMaxTime = true;
+        state = SLEEP_STATE;
+        Serial.println("max time for pulishing reach");
+      }
+      Serial.println("Not max time, try again to publish");
+    }
+  }
 }
