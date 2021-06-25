@@ -20,6 +20,9 @@ bool led_state = HIGH; // starting state
 int V_ultraS = A0;
 float dist_in = 0;
 
+int j;
+float dist_in_sum;
+float dist_in_avg;
 
 //------------------Turn off cellular for prelim testing
 SYSTEM_MODE(MANUAL);
@@ -38,39 +41,55 @@ void setup(void)
 
 void loop(void)
 {
-  // Read analog value and convert
-  //Counts * (V range/count range) * (Inch range/V range)
-  dist_in = analogRead(V_ultraS)*(3.3/2048)*(254/3.3);
+  // Reinitialize sum variable prior to every loop execution
+  dist_in_sum = 0; 
 
-  // Print out distance
-  Serial.print("Time: ");
-  Serial.print(Time.now());
-  Serial.print(", Distance(in): ");
+  for(j=0; j<100; j++){
+    // Read analog value and convert
+    //Counts * (V range/count range) * (Inch range/V range)
+    dist_in = analogRead(V_ultraS)*(3.3/2048)*(254/3.3);
+    
+    // Add new distance to cumulative value
+    dist_in_sum += dist_in;
+
+    // Print out distance
+    Serial.print("Time: ");
+    Serial.print(Time.now());
+    Serial.print(", Distance(in): ");
+    
+    Serial.println(dist_in);
+
+    // Start SD stuff
+    File myFile;
+
+    // Initialize the library
+    if (!sd.begin(SD_CHIP_SELECT, SPI_FULL_SPEED)) {
+      Serial.println("failed to open card");
+      return;
+    }
+
+    // open the file for write at end like the "Native SD library"
+    if (!myFile.open("distance.txt", O_RDWR | O_CREAT | O_AT_END)) {
+      Serial.println("opening test.txt for write failed");
+      return;
+    }
+
+    // Save to SD card
+    myFile.print(Time.now());
+    myFile.print(",");
+    myFile.print(millis());
+    myFile.print(",");
+    myFile.println(dist_in);
+    myFile.close();
+
+    delay(100);
+  }
   
-  Serial.println(dist_in);
+  dist_in_avg = dist_in_sum/j;
 
-  // Start SD stuff
-	File myFile;
-
-	// Initialize the library
-	if (!sd.begin(SD_CHIP_SELECT, SPI_FULL_SPEED)) {
-		Serial.println("failed to open card");
-		return;
-	}
-
-	// open the file for write at end like the "Native SD library"
-	if (!myFile.open("distance.txt", O_RDWR | O_CREAT | O_AT_END)) {
-		Serial.println("opening test.txt for write failed");
-		return;
-	}
-
-  // Save to SD card
-  myFile.print(Time.now());
-  myFile.print(",");
-  myFile.print(millis());
-  myFile.print(",");
-  myFile.println(dist_in);
-  myFile.close();
-
-  delay(5000);
+  Serial.print(j);
+  Serial.print(",");
+  Serial.print(dist_in_sum);
+  Serial.print(",");
+  Serial.println(dist_in_avg);
 }
