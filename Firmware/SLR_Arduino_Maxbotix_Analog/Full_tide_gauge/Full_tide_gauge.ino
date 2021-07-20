@@ -58,7 +58,9 @@ void setup()
 
 void loop()
 {
-  int range = analogRead(A1);    //read signal on pin A1 and assign to variable: range
+  int range_cts = analogRead(A1);    //read signal on pin A1 and assign to variable: range_cts
+  float range_V = (float)range_cts*(3.3/1024); // counts*(V/counts) = V (NB: SAMD21's ADC is configured to 10-bit resolution)
+  float range_in = range_V*(512/3.3); // V*(in/V) = in (NB: in/V conversion factor comes from datasheet)
   unsigned long t = millis()/1000;
   {                                   
      //display range data on screen
@@ -67,7 +69,7 @@ void loop()
     display.setTextColor(SSD1306_WHITE);
     display.setCursor(0,0);
     display.println("Dist (in):");
-    display.println(range); //Counts * (V range/count range) * (Inch range/V range)
+    display.println(range_in); //Counts * (V range/count range) * (Inch range/V range)
    // display.println(t );
     display.display();
     delay(3000);
@@ -79,10 +81,10 @@ File dataFile = SD.open("ME.txt", FILE_WRITE);
   // if the file is available, write to it:
   if (dataFile) {
     String data = "";
-    data +=range;
+    data +=range_in;
     data+= ",";
     data+= t;
-    //dataFile.println(range);
+    //dataFile.println(range_in);
     dataFile.println(data);
     
     dataFile.close();

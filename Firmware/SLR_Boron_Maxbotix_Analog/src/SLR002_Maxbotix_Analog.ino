@@ -67,18 +67,19 @@ void loop(void)
 
     for(j=0; j<100; j++){
       // Read analog value and convert
-      //Counts * (V range/count range) * (Inch range/V range)
-      dist_in = analogRead(V_ultraS)*(3.3/2048)*(254/3.3);
+      int range_cts = analogRead(A1);    //read signal on pin A1 and assign to variable: range_cts
+      float range_V = (float)range_cts*(3.3/1024); // counts*(V/counts) = V (NB: SAMD21's ADC is configured to 10-bit resolution)
+      float range_in = range_V*(512/3.3); // V*(in/V) = in (NB: in/V conversion factor comes from datasheet)
       
       // Add new distance to cumulative value
-      dist_in_sum += dist_in;
+      dist_in_sum += range_in;
 
       // Print out distance
       // Serial.print("Time: ");
       // Serial.print(Time.now());
       // Serial.print(", Distance(in): ");
       
-      Serial.println(dist_in);
+      Serial.println(range_in);
 
       // Start SD stuff
       File myFile;
@@ -100,7 +101,7 @@ void loop(void)
       myFile.print(",");
       myFile.print(millis());
       myFile.print(",");
-      myFile.println(dist_in);
+      myFile.println(range_in);
       myFile.close();
 
       delay(100);
