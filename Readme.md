@@ -1,14 +1,11 @@
 # Seaport Tide and Sea Level Rise Monitor
-*todo*:
-- add photos
-- add hyperlinks to parts
-- add bill of materials
-- add firmware from alternative sensors and microcontrollers tested
-- create a spreadsheet to be used for linear calibration/validation
+This GitHub repository is intended to serve as supplementary information to a manuscript in review for the journal Oceanography, in the special section DIY Oceanography. That manuscript contains additional important information and will be linked here if and when published. Please read the following for a high level overview to the project and the contents of this repository.
 
 ## The Basics
+This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix LV-EZ4 ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, a rechargeable lithium ion battery, and either upcycled plastic parts or a custom laser cut enclosure.
+
 ### Getting Started
-This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Bluefruit Feather nRF52832 or similar microcontroller with BLE, a Maxbotix LV-EZ4 ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, a rechargeable lithium ion battery, and a custom laser cut enclosure.
+There are several If you are new to Arduino, wiring, or coding, we highly recommend the version described in [Firmware/SLR_Arduino_Maxbotix_Analog](Firmware/SLR_Arduino_Maxbotix_Analog). There is additional instructional documentation in that folder.
 
 ### Very Important Notes
 1. The monitor is not waterproof. Not even a little. Do not dunk it, rinse it, let it get rained on, etc. or it will likely be permanently ruined. Waterproofing the instrument is very feasible but not in the scope of this project.
