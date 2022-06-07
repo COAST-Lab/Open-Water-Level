@@ -1,0 +1,2 @@
+# Full_tide_gauge_sleep_avg
+Full_tide_gauge_sleep_avg.ino reads data from Maxbotix sensor, averages samples (a user-determined number), sleeps in between samples, displays data to OLED screen, and logs data to micro-SD card.
