@@ -2,14 +2,10 @@
 This GitHub repository is intended to serve as supplementary information to a manuscript in review for the journal Oceanography, in the special section DIY Oceanography. That manuscript contains additional important information and will be linked here if and when published. Please read the following for a high level overview to the project and the contents of this repository.
 
 ## The Basics
-This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix LV-EZ4 ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, a rechargeable lithium ion battery, and either upcycled plastic parts or a custom laser cut enclosure.
+This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix LV-EZ4 ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, Adafruit FeatherWing Rea-Time Clock, a rechargeable lithium ion battery, and either upcycled plastic parts or a custom laser cut enclosure.
 
-### Getting Started
+## Getting Started
 There are several If you are new to Arduino, wiring, or coding, we highly recommend the version described in [Firmware/SLR_Arduino_Maxbotix_Analog](Firmware/SLR_Arduino_Maxbotix_Analog). There is additional instructional documentation in that folder.
-
-### Very Important Notes
-1. The monitor is not waterproof. Not even a little. Do not dunk it, rinse it, let it get rained on, etc. or it will likely be permanently ruined. Waterproofing the instrument is very feasible but not in the scope of this project.
-2. The monitor is not designed to be used for anything other than educational purposes. The sensor should be a great representation of more accurate and robust methodologies but limitations in sensor resolution, accuracy, and reliability make this embodiment a poor choice for other applications without significant modification.
 
 ## The Fun Stuff
 ### Deployment
@@ -18,9 +14,9 @@ Deployment is actually the last step but it's probably the most exciting, so we'
 ### Assembly
 If your monitor arrived unassembled or you were feeling adventurous enough to disassemble it, you may want to follow these directions to put it (back) together.
 
-**Step 1:** Stack the OLED FeatherWing on top of the Feather microcontroller.
+**Step 1:** Stack the OLED FeatherWing on top of the RTC FeatherWing on top of the Feather microcontroller.
 
-If either or both of those units arrived without their stacking headers, you will first need to solder the headers in place. [Here](https://www.makerspaces.com/how-to-solder/) is a nice soldering description and tutorial. The OLED screen is an Adafruit FeatherWing, a design specifically meant to be stacked on top of an Adafruit Feather microcontroller, such as the Bluefruit nRF52832 which we are using here (note that there are many microcontrollers that use the Feather form factor and they are almost interchangeable; only a few minor changes need to be made in the setup of the Arduino software and possibly firmware). Adafruit also makes FeatherWing "doublers" and "triplers" which are designed to do the same thing (electronically speaking) as stacking Feathers/FeatherWings on top of each other but with a side-by-side layout.
+If any of those units arrived without their stacking headers, you will first need to solder the headers in place. [Here](https://www.makerspaces.com/how-to-solder/) is a nice soldering description and tutorial. The OLED screen is an Adafruit FeatherWing, a design specifically meant to be stacked on top of an Adafruit Feather microcontroller, such as the Bluefruit nRF52832 which we are using here (note that there are many microcontrollers that use the Feather form factor and they are almost interchangeable; only a few minor changes need to be made in the setup of the Arduino software and possibly firmware). Adafruit also makes FeatherWing "doublers" and "triplers" which are designed to do the same thing (electronically speaking) as stacking Feathers/FeatherWings on top of each other but with a side-by-side layout.
 
 **Step 2:** Choose the sensor communication protocol that you will use to get the rangefinder's data from the rangefinder to the microcontroller and wire the sensor to the microcontroller accordingly.
 
@@ -52,5 +48,3 @@ In some cases, there can also be a "gain" correction. A gain correction is the s
 In order to calculate the gain and offset correction factors for a linear correction such as the one we described here, we would want to collect as many sensor measurements as possible over the sensor's full range (in this case, 6&endash;254 inches) as well as make measurements of the "true" value at each of the sensor measurement points. We would then make a plot where sensor value would go on the x-axis and the "true" value would go on the y-axis. We would then use linear regression to calculate the slope (gain) and intercept (offset) of the line and we would apply those values to all future sensor measurements. Note that we put "true" inside quotes because it is extraordinarily difficult to know exactly what the true value is. How will you go about making estimates of the true values against which to compare your sensor measurements? A tape measure? A ruler? A string with distance markings on it? Another electronic distance sensor? How do you know that those measurements are accurate? Who calibrated those instruments and how did they do it???
 
 It is also important to recognize that this simple linear calibration technique does not work for all sensors. Sometimes a more appropriate correction equation could use a quadratic equation or an exponential one or perhaps something with an even more bizarre form. But we'll assume that we can use a linear recalibration or correction for this project because it seems to make meaningful improvements in sensor performance without adding too much complexity to the procedure.
-
-\*NB: in reference to the comment at the beginning of this section that "it is never wise to trust that any sensor will work perfectly out of the box," we wish to add that while this is true for research products and that the same principle could be extended to suggest healthy skepticism of anything you may hear or read (always check sources and facts!), most sensors work as well as they need to work for any given application. For instance, the thermometer used at your doctor's office may not be perfectly accurate&emdash;perhaps it is only accurate to 0.1 ºC&emdash;but it is likely good enough for its specified use.
