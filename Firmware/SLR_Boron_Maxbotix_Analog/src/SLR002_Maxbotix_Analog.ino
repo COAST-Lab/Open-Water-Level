@@ -81,28 +81,28 @@ void loop(void)
       
       Serial.println(range_in);
 
-      // Start SD stuff
-      File myFile;
+    //   // Start SD stuff
+    //   File myFile;
 
-      // Initialize the library
-      if (!sd.begin(SD_CHIP_SELECT, SPI_FULL_SPEED)) {
-        Serial.println("failed to open card");
-        return;
-      }
+    //   // Initialize the library
+    //   if (!sd.begin(SD_CHIP_SELECT, SPI_FULL_SPEED)) {
+    //     Serial.println("failed to open card");
+    //     return;
+    //   }
 
-      // open the file for write at end like the "Native SD library"
-      if (!myFile.open("distance.txt", O_RDWR | O_CREAT | O_AT_END)) {
-        Serial.println("opening test.txt for write failed");
-        return;
-      }
+    //   // open the file for write at end like the "Native SD library"
+    //   if (!myFile.open("distance.txt", O_RDWR | O_CREAT | O_AT_END)) {
+    //     Serial.println("opening test.txt for write failed");
+    //     return;
+    //   }
 
-      // Save to SD card
-      myFile.print(Time.now());
-      myFile.print(",");
-      myFile.print(millis());
-      myFile.print(",");
-      myFile.println(range_in);
-      myFile.close();
+    //   // Save to SD card
+    //   myFile.print(Time.now());
+    //   myFile.print(",");
+    //   myFile.print(millis());
+    //   myFile.print(",");
+    //   myFile.println(range_in);
+    //   myFile.close();
 
       delay(100);
     }
@@ -181,7 +181,7 @@ void loop(void)
     // Set up Gen 3 sleep
     config.mode(SystemSleepMode::ULTRA_LOW_POWER)
           .gpio(D2, FALLING)
-          .duration(59min);
+          .duration(2min);
     System.sleep(config);
 
     // It'll only make it here if the sleep call doesn't work for some reason

@@ -1,0 +1,2 @@
+# SLR_Arduino_Maxbotix_MB7092_cm
+This repo contains a script to operate the MB7092 XL-MaxSonar-WRMA1, with 1 cm resolution, rather than the LV-EZ4 model with 1 in (2.54 cm) resolution which all other repos use.
