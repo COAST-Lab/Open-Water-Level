@@ -27,7 +27,7 @@ float filterArray[200]; // array to store data samples from sensor
 float distance_cm; // store the distance from sensor
 
 // Set time for sleep state in milliseconds
-int desired_sleep_time_ms = 60000;
+//int desired_sleep_time_ms = 60000;
 
 RTC_PCF8523 rtc;
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, & Wire);
@@ -96,32 +96,7 @@ void setup() {
 void loop() {
   int start_time_ms = millis(); 
   DateTime now = rtc.now();
-  // Take multiple measurements and store in array
-  for (int sample = 0; sample < 200; sample++) {
-    filterArray[sample] = analogRead(A1);
-    delay(100); // to get close to sensor's max sampling rate of 10 Hz
-  }
-  // Sort the array in accending order
-  for (int i = 0; i < 199; i++) {
-    for (int j = i + 1; j < 200; j++) {
-      if (filterArray[i] > filterArray[j]) {
-        float swap = filterArray[i];
-        filterArray[i] = filterArray[j];
-        filterArray[j] = swap;
-      }
-    }
-  }
-  // Filter noise by excluding 10 smallest and 10 largest samples 
-  double sum = 0;
-  for (int sample = 10; sample < 190; sample++) {
-    sum += filterArray[sample];
-  }
-  // Get average of the middle samples (from 10 to 190)
-  distance_cm = sum / 180;
-  // Convert analog signal to inches
-  //range_V = (float)distance*(3.3/1024); // counts*(V/counts) = V (NB: SAMD21's ADC is configured to 10-bit resolution)
-  //range_in = range_V * (512 / 3.3); // V*(in/V) = in (NB: in/V conversion factor comes from datasheet)
-    
+
   {
     //display range data on screen
     display.clearDisplay();
@@ -129,7 +104,7 @@ void loop() {
     display.setTextColor(SSD1306_WHITE);
     display.setCursor(0, 0);
     display.println("Dist (cm):");
-    display.println(distance_cm); //Counts * (V range/count range) * (Inch range/V range)
+    display.println(analogRead(A1)); //Counts * (V range/count range) * (Inch range/V range)
     display.display();
     delay(1000);
     display.clearDisplay();
@@ -178,18 +153,20 @@ void loop() {
       display.clearDisplay();
       display.display();
     }
+
+    delay(500);
     
-    // Determine time elapsed for more accurate sleep time
-    int end_time_ms = millis();
-    int elapsed_time = end_time_ms - start_time_ms;
-    int sleep_time = desired_sleep_time_ms - elapsed_time;
-    int sleep_loops = sleep_time / 8000;
-    float sleep_remainder = sleep_time % 8000;
-       
-    // This loop puts board into sleep state for number of milliseconds input into desired_sleep_time_ms
-    for (int i = 0; i < sleep_loops; i++) {
-      int sleepMS = Watchdog.sleep(8000); // puts device in low power state for ms, caps at 8 seconds, repeat code to get longer sleep time
-    } 
-      int sleepMS = Watchdog.sleep(sleep_remainder); // adds on remainder seconds from dividing sleep_time 
+//    // Determine time elapsed for more accurate sleep time
+//    int end_time_ms = millis();
+//    int elapsed_time = end_time_ms - start_time_ms;
+//    int sleep_time = desired_sleep_time_ms - elapsed_time;
+//    int sleep_loops = sleep_time / 8000;
+//    float sleep_remainder = sleep_time % 8000;
+//       
+//    // This loop puts board into sleep state for number of milliseconds input into desired_sleep_time_ms
+//    for (int i = 0; i < sleep_loops; i++) {
+//      int sleepMS = Watchdog.sleep(8000); // puts device in low power state for ms, caps at 8 seconds, repeat code to get longer sleep time
+//    } 
+//      int sleepMS = Watchdog.sleep(sleep_remainder); // adds on remainder seconds from dividing sleep_time 
   }
 }
