@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/243609204.svg)](https://zenodo.org/badge/latestdoi/243609204)
+
 # Seaport Water Level and Sea Level Rise Monitor
 This GitHub repository is intended to serve as supplementary information to a manuscript in review for the journal Oceanography, in the special section DIY (do-it-yourself) Oceanography. That manuscript contains additional important information and will be linked here if and when published. Please read the following for a high level overview to the project and the contents of this repository.
 
