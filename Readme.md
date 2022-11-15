@@ -1,7 +1,11 @@
 [![DOI](https://zenodo.org/badge/243609204.svg)](https://zenodo.org/badge/latestdoi/243609204)
 
 # Seaport Water Level and Sea Level Rise Monitor
-This GitHub repository is intended to serve as supplementary information to a manuscript in review for the journal Oceanography, in the special section DIY (do-it-yourself) Oceanography. That manuscript contains additional important information and will be linked here if and when published. Please read the following for a high level overview to the project and the contents of this repository.
+This GitHub repository is intended to serve as supplementary information to a manuscript in the journal Oceanography, in the special section DIY (do-it-yourself) Oceanography. 
+
+The article, *A Low-Cost, DIY Ultrasonic Water Level Sensor for Education, Citizen Science, and Research*, can be found here: [https://doi.org/10.5670/oceanog.2023.101](https://doi.org/10.5670/oceanog.2023.101).
+
+That manuscript contains additional important information beyond what is in this repository. Please read the following for a high level overview to the project and the contents of this repository.
 
 ## The Basics
 This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix LV-EZ4 ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, Adafruit FeatherWing Rea-Time Clock, a rechargeable lithium ion battery, and either upcycled plastic parts or a custom laser cut enclosure.
