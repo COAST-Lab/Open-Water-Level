@@ -17,6 +17,10 @@ float dist_in_avg;
 int range_cts;
 float range_V;
 float range_in;
+
+long real_time;
+int millis_now; 
+
 float filterArray[200]; // array to store data samples from sensor
 float distance; // store the distance from sensor
 
@@ -95,13 +99,20 @@ void loop(void)
   // Get average of the middle samples (from 10 to 190)
   distance = sum / 180;
 
+  // Get all metrics which are to be reused:
+
   // Convert analog signal to centimeters
   range_V = (float)distance * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
   //range_in = range_V * (512 / 3.3); // V*(in/V) = in (NB: in/V conversion factor comes from MB1040 LV-MaxSonar-EZ4 datasheet)
 
+  // "Real" time and current millis for logging
+  real_time = Time.now();
+  millis_now = millis();
+
+
       // Print out distance
        Serial.print("Time: ");
-       Serial.print(Time.now());
+       Serial.print(real_time);
        Serial.print(", Distance(cm): ");
        Serial.print(range_V);
       
@@ -122,9 +133,9 @@ void loop(void)
 
        // Save to SD card
        // TODO: write this to buffer once, then print buffer to screen, SD card, and publish
-       myFile.print(Time.now());
+       myFile.print(real_time);
        myFile.print(",");
-       myFile.print(millis());
+       myFile.print(millis_now);
        myFile.print(",");
        myFile.print(range_V);
        myFile.close();
@@ -156,7 +167,7 @@ void loop(void)
 
         char data[120];
         snprintf(data, sizeof(data), "%li,%.5f,%.02f,%.02f",//,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
-                      Time.now(), // if it takes a while to connect, this time could be offset from sensor recording
+                      real_time, // if it takes a while to connect, this time could be offset from sensor recording
                       range_V,
                       cellVoltage, stateOfCharge
                     );
