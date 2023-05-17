@@ -21,23 +21,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   8 .module_info_crc 00000004  000b8af0  000b8af0  00028af0  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  9 .debug_info   0017091f  00000000  00000000  00028af4  2**0
+  9 .debug_info   001708f9  00000000  00000000  00028af4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 10 .debug_abbrev 000183b3  00000000  00000000  00199413  2**0
+ 10 .debug_abbrev 000183b3  00000000  00000000  001993ed  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 11 .debug_loc    0004087a  00000000  00000000  001b17c6  2**0
+ 11 .debug_loc    0004087a  00000000  00000000  001b17a0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 12 .debug_aranges 00002e30  00000000  00000000  001f2040  2**0
+ 12 .debug_aranges 00002e30  00000000  00000000  001f201a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_ranges 0000b5f8  00000000  00000000  001f4e70  2**0
+ 13 .debug_ranges 0000b5f8  00000000  00000000  001f4e4a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_macro  000434fe  00000000  00000000  00200468  2**0
+ 14 .debug_macro  000434fe  00000000  00000000  00200442  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_line   0005154d  00000000  00000000  00243966  2**0
+ 15 .debug_line   0005154b  00000000  00000000  00243940  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_str    0013f3a1  00000000  00000000  00294eb3  2**0
+ 16 .debug_str    0013f39b  00000000  00000000  00294e8b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_frame  000084c0  00000000  00000000  003d4254  2**2
+ 17 .debug_frame  000084c0  00000000  00000000  003d4228  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -631,28 +631,28 @@ void loop(void)
    b4300:	460d      	mov	r5, r1
   for (int sample = 10; sample < 190; sample++) {
    b4302:	d1f0      	bne.n	b42e6 <loop+0x76>
-  distance = sum / 180;
+  distance_unconverted = sum / 180;
    b4304:	2200      	movs	r2, #0
    b4306:	4b8a      	ldr	r3, [pc, #552]	; (b4530 <loop+0x2c0>)
-  range_V = (float)distance * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
+  range_cm = (float)distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
    b4308:	4d8a      	ldr	r5, [pc, #552]	; (b4534 <loop+0x2c4>)
   real_time = Time.now();
    b430a:	4f8b      	ldr	r7, [pc, #556]	; (b4538 <loop+0x2c8>)
   millis_now = millis();
    b430c:	f8df 8280 	ldr.w	r8, [pc, #640]	; b4590 <loop+0x320>
-  distance = sum / 180;
+  distance_unconverted = sum / 180;
    b4310:	f003 fe70 	bl	b7ff4 <__aeabi_ddiv>
    b4314:	f004 f83c 	bl	b8390 <__aeabi_d2f>
    b4318:	ee07 0a90 	vmov	s15, r0
-  range_V = (float)distance * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
+  range_cm = (float)distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
    b431c:	eeb5 7a00 	vmov.f32	s14, #80	; 0x3e800000  0.250
-  distance = sum / 180;
+  distance_unconverted = sum / 180;
    b4320:	4b86      	ldr	r3, [pc, #536]	; (b453c <loop+0x2cc>)
-  range_V = (float)distance * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
+  range_cm = (float)distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
    b4322:	ee67 7a87 	vmul.f32	s15, s15, s14
-  distance = sum / 180;
+  distance_unconverted = sum / 180;
    b4326:	6018      	str	r0, [r3, #0]
-  range_V = (float)distance * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
+  range_cm = (float)distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
    b4328:	edc5 7a00 	vstr	s15, [r5]
   real_time = Time.now();
    b432c:	f003 f8aa 	bl	b7484 <_ZN9TimeClass3nowEv>
@@ -680,7 +680,7 @@ size_t Print::print(T n, int base)
    b4350:	f003 f962 	bl	b7618 <_Z16_fetch_usbserialv>
    b4354:	497b      	ldr	r1, [pc, #492]	; (b4544 <loop+0x2d4>)
    b4356:	f002 fdbb 	bl	b6ed0 <_ZN5Print5printEPKc>
-       Serial.print(range_V);
+       Serial.print(range_cm);
    b435a:	f003 f95d 	bl	b7618 <_Z16_fetch_usbserialv>
    b435e:	2102      	movs	r1, #2
    b4360:	ed95 0a00 	vldr	s0, [r5]
@@ -756,7 +756,7 @@ size_t Print::print(T n, int base)
    b43e8:	495f      	ldr	r1, [pc, #380]	; (b4568 <loop+0x2f8>)
    b43ea:	a809      	add	r0, sp, #36	; 0x24
    b43ec:	f002 fd70 	bl	b6ed0 <_ZN5Print5printEPKc>
-       myFile.print(range_V);
+       myFile.print(range_cm);
    b43f0:	ed95 0a00 	vldr	s0, [r5]
    b43f4:	2102      	movs	r1, #2
    b43f6:	a809      	add	r0, sp, #36	; 0x24

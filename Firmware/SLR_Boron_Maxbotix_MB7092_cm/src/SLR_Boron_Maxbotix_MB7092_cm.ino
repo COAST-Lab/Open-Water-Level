@@ -14,15 +14,13 @@ bool led_state = HIGH; // starting state
 int j;
 float dist_in_sum;
 float dist_in_avg;
-int range_cts;
-float range_V;
-float range_in;
+float range_cm;
 
 long real_time;
 int millis_now; 
 
 float filterArray[200]; // array to store data samples from sensor
-float distance; // store the distance from sensor
+float distance_unconverted; // store the distance from sensor
 
 //------------------State variables
 // not yet used but placeholders in case of additional states
@@ -97,13 +95,12 @@ void loop(void)
   }
 
   // Get average of the middle samples (from 10 to 190)
-  distance = sum / 180;
+  distance_unconverted = sum / 180;
 
   // Get all metrics which are to be reused:
 
   // Convert analog signal to centimeters
-  range_V = (float)distance * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
-  //range_in = range_V * (512 / 3.3); // V*(in/V) = in (NB: in/V conversion factor comes from MB1040 LV-MaxSonar-EZ4 datasheet)
+  range_cm = (float)distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
 
   // "Real" time and current millis for logging
   real_time = Time.now();
@@ -114,7 +111,7 @@ void loop(void)
        Serial.print("Time: ");
        Serial.print(real_time);
        Serial.print(", Distance(cm): ");
-       Serial.print(range_V);
+       Serial.print(range_cm);
       
       // Start SD stuff
        File myFile; 
@@ -132,12 +129,11 @@ void loop(void)
       }
 
        // Save to SD card
-       // TODO: write this to buffer once, then print buffer to screen, SD card, and publish
        myFile.print(real_time);
        myFile.print(",");
        myFile.print(millis_now);
        myFile.print(",");
-       myFile.print(range_V);
+       myFile.print(range_cm);
        myFile.close();
 
       delay(100);
@@ -168,7 +164,7 @@ void loop(void)
         char data[120];
         snprintf(data, sizeof(data), "%li,%.5f,%.02f,%.02f",//,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
                       real_time, // if it takes a while to connect, this time could be offset from sensor recording
-                      range_V,
+                      range_cm,
                       cellVoltage, stateOfCharge
                     );
         Serial.println("publishing data");
