@@ -1,6 +1,6 @@
 #include "SdFat.h"
 //------------------SD SPI Configuration Details--------------------------------
-const int SD_CHIP_SELECT = SS;
+const int SD_CHIP_SELECT = D5;
 SdFat sd;
 
 //------------------LED Setup
