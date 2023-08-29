@@ -24,7 +24,8 @@
 11. Check your Device OS by putting the Boron in listening mode (press and hold Mode until the LED blinks blue) and typing the following command into the CLI: particle identify (4.0.2 for me)
 12. Configure Workbench to work with the Device OS that you confirmed you're using in the previous step. Your settings should be in the blue line across the bottom of the page. Make sure the first setting says `boron` and the second says `deviceOS@[4.0.2 or your specific number]` by clicking and changing them if need be
 13. Open the command palette and run Particle: flash application (local) to compile and flash your script (your .ino file) to your device. If successful, this will result in the blinking of a blue LED close to the micro-USB socket on the Boron
-[insert image here]
+
+	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Documentation/images/0.jpg)
 
 ## Practice code with Boron and Adalogger
 
@@ -38,18 +39,21 @@
 8. Now click the tab that says `src` on the left, then `[your project title].ino` (not the .cpp) 
 	- The .ino file will always be the file you will want to use to flash coding 
 9. Highlight and delete everything in the .ino file, replace it with the new coding you just copied from the ReadWrite.ino file 
-10. In line 25, change ``#define SD_CS_PIN SS”`` to ``“#define SD_CS_PIN D5” (SS -> D5) 
+10. In line 25, change `#define SD_CS_PIN SS` to `#define SD_CS_PIN D5` (SS -> D5) 
 11. After `File myFile;` create a new line and type `SYSTEM_MODE(MANUAL);`
-12. After `void setup(){,` create a new line and type `Cellular.off();”` and in the next line type `delay(2500);” 
+12. After `void setup(){,` create a new line and type `Cellular.off();”` and in the next line type `delay(2500);` 
 13. Where it says `if (!SD.begin(SD_CS_PIN,)) {` type `if (!SD.begin(SD_CS_PIN,SPI_FULL_SPEED)) {`
-[insert image here]
+
+	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Documentation/images/1.jpg)
+
 14. Click the checkmark to compile the project (will take a minute) 
 15. Once it compiles, click the lightning bolt button to flash the code to the Boron 
 	- Boron should flash yellow/green when being put into DFU mode, then should breathe a white/blue light once it’s flashed 
 	- Should also say it flashed successfully, unplugging and re-plugging chord into Boron can sometimes help if it doesn’t flash 
 16. Open the serial monitor: command palette -> “Particle: Serial monitor”  
 17. If the adalogger does not work, serial monitor may read something like the first chunk of text below, if it does work, it should read like the second chunk of text
-[insert image here]
+
+	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Documentation/images/2.jpg)
 
 ## Practice water level sensor full code (Boron and Adalogger) 
 
@@ -57,24 +61,36 @@
 2. Copy all the coding on this page 
 3. In particle workbench, create a new project 
 4. Go to the .ino file and delete the coding and paste the new coding you copied from GitHub there 
-5. In line 4, where it says `const int SD_CHIP_SELECT =SS` change the ``SS`` to `D5` 
+5. In line 4, where it says `const int SD_CHIP_SELECT =SS` change the `SS` to `D5` 
 6. In lines 32 and 33, change the comments so that 32 is uncommented (delete the double slashes in front) and 33 is commented out (add double slashes in front)
-[insert image here]
-7. In line 45, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the 60000 to 20000
+
+	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Documentation/images/3.jpg)
+
+7. In line 45, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
 8. In lines 49 and 50, swap the comments so that 49 is commented out and 50 is uncommented
+
+	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Documentation/images/4.jpg)
+
 9. Comment out lines 148–153. You can select all the text in those lines and use the shortcut Ctrl+/
-[insert image here]
-10. In line 208, where it says “.duration(54min)” change the 54 to 1 
-11. After line 138 that says “myFile.print(range_cm);” create a new line and make sure it’s in line with the previous line and type “myFile.print(";");” This will make the data easier to read 
+
+	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Documentation/images/5.jpg)
+
+10. In line 208, where it says `.duration(54min)` change the `54` to `1` 
+11. After line 138 that says `myFile.print(range_cm);` create a new line and make sure it’s in line with the previous line and type `myFile.print(";");` This will make the data easier to read 
 12. Compile and flash code to boron 
 13. Open the serial monitor 
 14. Give it a second, but the terminal should look something like the picture below 
 	- If it still doesn’t work, try pressing the reset button on the Boron, or unplug and re-plug cord in 
 15. It should publish the time and distance once before repeating the phrase “not max time, try again to publish”
-16. After 20 seconds (because of the value you changed from 60000 to 20000), the serial monitor should say `serial connection closed. Attempting to reconnect…
-17. After 1 minute (because of the value you changed from 54min to 1min), the serial monitor should say “serial monitor opened successfully” 
+
+	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Documentation/images/6.jpg)
+
+16. After 20 seconds (because of the value you changed from 60000 to 20000), the serial monitor should say `serial connection closed. Attempting to reconnect…`
+17. After 1 minute (because of the value you changed from 54min to 1min), the serial monitor should say `serial monitor opened successfully` 
 18. Unplug the boron to stop the code from running 
 19. To check all the collected values, take out the SD card from the adalogger and put it into a SD card reader to then plug into your computer 
 20. Navigate to file explorer -> this PC -> USB drive -> distance. You should see values like below!
-[insert image here]
+
+	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Documentation/images/7.jpg)
+
 21. Unix time values are listed first, then another value, and then the distance(cm) values followed by a semi-colon
