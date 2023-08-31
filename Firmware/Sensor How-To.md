@@ -18,14 +18,22 @@
 ---
 ![Adalogger FeatherWing - RTC + SD Add-on, CR1220 battery and stacking headers](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image3.png)
 
+Adalogger FeatherWing - RTC + SD Add-on, CR1220 battery and stacking headers
+
 ---
 ![Adafruit Feather M0 Adalogger, SD card and stacking headers](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image4.png)
+
+Adafruit Feather M0 Adalogger, SD card and stacking headers
 
 ---
 ![Adafruit FeatherWing OLED 128x32 with headers](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image5.png)
 
+Adafruit FeatherWing OLED 128x32 with headers
+
 ---
 ![Maxbotix Ultrasonic Rangefinder LV-EZ4 and wires](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image6.png)
+
+Maxbotix Ultrasonic Rangefinder LV-EZ4 and wires
 
 ---
 # Connecting the sensor wiring
