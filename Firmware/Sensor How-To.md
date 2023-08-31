@@ -1,5 +1,5 @@
 # DIY TIDE SENSOR
-![](image1
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image1.png)
 
 ---
 # Parts List
@@ -14,137 +14,137 @@
 - 3 Solid-Core Wires, 22 AWG
 - CR1220 battery
 - 10050mAh 3.7 volt lithium battery
-![](image2
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image2.png)
 ---
-![Adalogger FeatherWing - RTC + SD Add-on, CR1220 battery and stacking headers](image3
+![Adalogger FeatherWing - RTC + SD Add-on, CR1220 battery and stacking headers](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image3.png)
 
 ---
-![Adafruit Feather M0 Adalogger, SD card and stacking headers](image4
+![Adafruit Feather M0 Adalogger, SD card and stacking headers](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image4.png)
 
 ---
-![Adafruit FeatherWing OLED 128x32 with headers](image5
+![Adafruit FeatherWing OLED 128x32 with headers](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image5.png)
 
 ---
-![Maxbotix Ultrasonic Rangefinder LV-EZ4 and wires](image6
+![Maxbotix Ultrasonic Rangefinder LV-EZ4 and wires](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image6.png)
 
 ---
 # Connecting the sensor wiring
-![](image7
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image7.png)
 
 ---
 # Assembled Components
-![](image8
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image8.png)
 
 ---
 # Install SD card
-![](image9
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image9.png)
 
 ---
 # Clip bottom pins
 - This step is optional, but it makes the hardware easier to insert into the housing.
-![](image10
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image10.png)
 
 ---
 # Stack finished components
-![](image11
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image11.png)
 
 ---
 # Location of battery port
-![](image12
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image12.png)
 
 ---
 # Complete sensor
-![](image13
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image13.png)
 
 ---
 # Location of USB port
 - Connect USB cable to PC to upload code.
-![](image14
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image14.png)
 
 ---
 # Arduino IDE
-![](image15
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image15.png)
 
 ---
 # IDE interface
 ## Where the coding happens
-![](image16
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image16.png)
 
 ---
 # Open preferences
-![](image17
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image17.png)
 
 ---
 # Add URL to access additional boards
-![](image18
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image18.png)
 
 ---
 # Open board manager
-![](image19
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image19.png)
 
 ---
 # Install boards
-![](image20
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image20.png)
 
 ---
 # Open Manage Libraries
-![](image21
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image21.png)
 
 ---
 # Install libraries
-![](image22
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image22.png)
 
 ---
 # Select correct port
-![](image23
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image23.png)
 
 ---
 # Upload Real Time Clock Code
-![](image24
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image24.png)
 
 ---
 # Open serial monitor
-![](image25
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image25.png)
 
 ---
 # Select serial
-![](image26
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image26.png)
 
 ---
 # Confirm that clock is set
-![](image27
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image27.png)
 
 ---
 # Upload sensor code
-![](image28
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image28.png)
 
 ---
 # Select port
-![](image29
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image29.png)
 
 ---
 # Click upload
-![](image30
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image30.png)
 
 ---
 # Upload complete
-![](image31
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image31.png)
 
 ---
 # Housing construction
-![](image32
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image32.png)
 
 ---
 # Insert sensor
-![](image33
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image33.png)
 
 ---
 # Make rain hood
-![](image34
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image34.png)
 
 ---
 # Deployment
-![](image35
+![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image35.png)
 
 ---
 # Collect Data
