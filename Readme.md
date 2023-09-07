@@ -8,10 +8,12 @@ The article, *A Low-Cost, DIY Ultrasonic Water Level Sensor for Education, Citiz
 That manuscript contains additional important information beyond what is in this repository. Please read the following for a high level overview to the project and the contents of this repository.
 
 ## The Basics
-This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix LV-EZ4 ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, Adafruit FeatherWing Rea-Time Clock, a rechargeable lithium ion battery, and either upcycled plastic parts or a custom laser cut enclosure.
+This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, Adafruit FeatherWing Real-Time Clock, a rechargeable lithium ion battery, and either upcycled plastic parts or an off-the-shelf water-resistant enclosure.
 
 ## Getting Started
-There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation).  If you are new to Arduino, wiring, or coding, we highly recommend the version described in [Firmware/SLR_Arduino_Maxbotix_Analog](Firmware/SLR_Arduino_Maxbotix_Analog). There is additional instructional documentation in that folder.
+There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation).  If you are new to sensor development, wiring, or coding, we recommend the version described in [Firmware/SLR_Arduino_Maxbotix_Analog](Firmware/SLR_Arduino_Maxbotix_Analog). There is additional instructional documentation in that folder.
+
+If you are looking for a cellular data transmission&ndash;enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and the Getting Started guide in that repository's README.
 
 ## The Fun Stuff
 ### Deployment
