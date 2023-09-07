@@ -1,3 +1,4 @@
+# Getting Started with Cell-Enabled Water Level Sensing
 ## Particle and Visual Studio
 
 1. Download Particle Workbench [here](https://www.particle.io/workbench/) and create an account as a student using your email
