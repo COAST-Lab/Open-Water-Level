@@ -1,8 +1,9 @@
 # Getting Started with Cell-Enabled Water Level Sensing
 ## Particle and Visual Studio
 
-1. Download Particle Workbench [here](https://www.particle.io/workbench/) and create an account as a student using your email
-2. Download visual studio (the one with the blue icon, not purple) [here](https://code.visualstudio.com/).
+1. Download Visual Studio (the one with the blue icon, not purple) [here](https://code.visualstudio.com/).
+2. Download Particle Workbench [here](https://www.particle.io/workbench/) and create an account as a student using your email. Make sure you have Visual Studio installed prior to running the installer
+	- The installer says that it will install VS along with Particle, but this does not work properly and will fail if VS is not installed first.
 3. Log into Particle on Visual Studio, if it doesn’t automatically (this is important because it won’t let you install necessary libraries without being logged in)
 ## Useful commands
 
@@ -12,18 +13,19 @@
 	- Flash: lightning bolt
 ## Practice code with Boron
 
-1. Plug in Boron to your computer with correct cord
+1. Plug in the Boron to your computer using a micro USB cable.
+	- If you get the message `Could not identify device: No serial port identified` but the Boron powers up, ensure that your cable has data transfer capabilities (many are only capable of charging).
 2. Create a folder on your computer to store Particle related items (no spaces in title)
 3. Create a new project by opening the Particle command palette and selecting “Particle: Create New Project.” You can also click the blue text that says, “Create new project” on the welcome page under Development workflow -> Code
 4. Choose the folder you just made on your computer for this class when it asks for the parent folder
 5. Once you have the directory in which you want to store your Particle projects, create a project name (no spaces). Something like Blink_LED.
 6. Copy the code from the file named `Blink_LED.ino` (not the one you just made but from the example [here](https://github.com/SUPScientist/Smart-Coasts/blob/main/Class-01-Intro/Blink_LED.ino))
 7. Navigate to the .ino file that is generated for your new project under the src tab on the left-hand side of screen (under explorer). Delete all the text there and past the coding you just copied
-8. Open the command palette. Type `particle` and select "Particle Launch CLI"
+8. Open the command palette. Type "particle" and select "Particle Launch CLI"
 9. Put the Boron into DFU (device firmware update) mode by pressing and holding the Mode button on the Boron while pressing and releasing the Reset button. Continue holding Mode until the RGB (Red Green Blue) LED starts flashing yellow.
-10. Type `particle update` and press enter in the CLI (command line interface) that pops up. This should update your Device OS (mine updated to 4.0.2)
-11. Check your Device OS by putting the Boron in listening mode (press and hold Mode until the LED blinks blue) and typing the following command into the CLI: particle identify (4.0.2 for me)
-12. Configure Workbench to work with the Device OS that you confirmed you're using in the previous step. Your settings should be in the blue line across the bottom of the page. Make sure the first setting says `boron` and the second says `deviceOS@[4.0.2 or your specific number]` by clicking and changing them if need be
+10. Type `particle update` and press enter in the CLI (command line interface) that pops up. This should update your Device OS (mine updated to 4.1.0)
+11. Check your Device OS by putting the Boron in listening mode (press and hold Mode until the LED blinks blue) and typing the following command into the CLI: `particle identify` (4.1.0 for me)
+12. Configure Workbench to work with the Device OS that you confirmed you're using in the previous step. Your settings should be in the blue line across the bottom of the page. Make sure the first setting says "boron" and the second says "deviceOS@[4.1.0 or your specific number]" by clicking and changing them if need be
 13. Open the command palette and run Particle: flash application (local) to compile and flash your script (your .ino file) to your device. If successful, this will result in the blinking of a blue LED close to the micro-USB socket on the Boron
 
 	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/0.jpg)
