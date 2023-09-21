@@ -32,16 +32,16 @@
 
 ## Practice code with Boron and Adalogger
 
-1. Plug in the boron and make sure the settings say `boron` again 
+1. Plug in the Boron and put it in listening mode again. Type `particle identify` into the CLI again and make sure "Boron" is selected in the bottom bar
 2. Create a new project (I named mine RTCtest) 
-3. Open command palette and type `Particle: Install Library` 
-4. Type in SdFat and press enter to install SdFat library 
-5. A new tab titled `lib` should now be under the explorer tab for this project on the left, open it 
-6. Click on examples -> ReadWrite -> ReadWrite.ino 
+3. Open command palette and type "Particle: Install Library" 
+4. Type in 'SdFat' and press enter to install SdFat library 
+5. A new tab titled 'lib' should now be under the explorer tab for this project on the left, open it 
+6. Click on examples -> ReadWrite -> `ReadWrite.ino` 
 7. Copy all the coding on this page 
-8. Now click the tab that says `src` on the left, then `[your project title].ino` (not the .cpp) 
-	- The .ino file will always be the file you will want to use to flash coding 
-9. Highlight and delete everything in the .ino file, replace it with the new coding you just copied from the ReadWrite.ino file 
+8. Now click the tab that says "src" on the left, then `[your project title].ino` (not the .cpp) 
+	- The .ino file will always be the file you will want to use to flash code
+9. Highlight and delete everything in the .ino file, replace it with the new code you just copied from the ReadWrite.ino file 
 10. In line 25, change `#define SD_CS_PIN SS` to `#define SD_CS_PIN D5` (SS -> D5) 
 11. After `File myFile;` create a new line and type `SYSTEM_MODE(MANUAL);`
 12. After `void setup(){,` create a new line and type `Cellular.off();”` and in the next line type `delay(2500);` 
@@ -52,8 +52,8 @@
 14. Click the checkmark to compile the project (will take a minute) 
 15. Once it compiles, click the lightning bolt button to flash the code to the Boron 
 	- Boron should flash yellow/green when being put into DFU mode, then should breathe a white/blue light once it’s flashed 
-	- Should also say it flashed successfully, unplugging and re-plugging chord into Boron can sometimes help if it doesn’t flash 
-16. Open the serial monitor: command palette -> “Particle: Serial monitor”  
+	- Should also say it flashed successfully, unplugging and re-plugging cord into Boron can sometimes help if it doesn’t flash 
+16. Open the serial monitor: command palette -> “Particle: Serial Monitor”  
 17. If the adalogger does not work, serial monitor may read something like the first chunk of text below, if it does work, it should read like the second chunk of text
 
 	![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/2.jpg)
