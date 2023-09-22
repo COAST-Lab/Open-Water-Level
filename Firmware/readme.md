@@ -64,35 +64,33 @@
 2. Copy all the code on this page 
 3. In particle workbench, create a new project 
 4. Go to the .ino file and delete the code and paste the new code you copied from GitHub there 
-5. In line 4, where it says `const int SD_CHIP_SELECT =SS` change the `SS` to `D5` 
-6. In lines 32 and 33, change the comments so that 32 is uncommented (delete the double slashes in front) and 33 is commented out (add double slashes in front)
+5. In lines 32 and 33, change the comments so that 32 is uncommented (delete the double slashes in front) and 33 is commented out (add double slashes in front)
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/3.jpg)
 
-7. In line 45, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
-8. In lines 49 and 50, swap the comments so that 49 is commented out and 50 is uncommented
+6. In line 44, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
+7. In lines 49 and 50, swap the comments so that 49 is commented out and 50 is uncommented
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/4.jpg)
 
-9. Comment out lines 148–153. You can select all the text in those lines and use the shortcut Ctrl+/
+8. Comment out lines 150–154. You can select all the text in those lines and use the shortcut Ctrl+/
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/5.jpg)
-
+9. After line 136 that says `myFile.print(range_cm);` create a new line and make sure it’s in line with the previous line and type `myFile.print(";");` This will make the data easier to read
 10. In line 208, where it says `.duration(54min)` change the `54` to `1` 
-11. After line 138 that says `myFile.print(range_cm);` create a new line and make sure it’s in line with the previous line and type `myFile.print(";");` This will make the data easier to read 
-12. Compile and flash code to boron 
-13. Open the serial monitor 
-14. Give it a second, but the terminal should look something like the picture below 
+11. Compile and flash code to boron 
+12. Open the serial monitor 
+13. Give it a second, but the terminal should look something like the picture below 
 	-If it still doesn’t work, try pressing the reset button on the Boron, or unplug and re-plug cord in 
-15. It should publish the time and distance once before repeating the phrase “not max time, try again to publish”
+14. It should publish the time and distance once before repeating the phrase “not max time, try again to publish”
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/6.jpg)
 
-16. After 20 seconds (because of the value you changed from 60000 to 20000), the serial monitor should say `serial connection closed. Attempting to reconnect…`
-17. After 1 minute (because of the value you changed from 54min to 1min), the serial monitor should say `serial monitor opened successfully` 
-18. Unplug the boron to stop the code from running 
-19. To check all the collected values, take out the SD card from the adalogger and put it into a SD card reader to then plug into your computer 
-20. Navigate to file explorer -> this PC -> USB drive -> distance. You should see values like below!
+15. After 20 seconds (because of the value you changed from 60000 to 20000), the serial monitor should say `serial connection closed. Attempting to reconnect…`
+16. After 1 minute (because of the value you changed from 54min to 1min), the serial monitor should say `serial monitor opened successfully` 
+17. Unplug the boron to stop the code from running 
+18. To check all the collected values, take out the SD card from the adalogger and put it into a SD card reader to then plug into your computer 
+19. Navigate to file explorer -> this PC -> USB drive -> `distance.txt`. You should see values like below!
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/7.jpg)
 
