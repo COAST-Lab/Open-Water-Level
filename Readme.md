@@ -10,7 +10,7 @@ That manuscript contains additional important information beyond what is in this
 ## The Basics
 This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, Adafruit FeatherWing Real-Time Clock, a rechargeable lithium ion battery, and either upcycled plastic parts or an off-the-shelf water-resistant enclosure.
 
-## Getting Started
+## Introduction
 There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation).  If you are new to sensor development, wiring, or coding, we recommend the version described in [Firmware/SLR_Arduino_Maxbotix_Analog](Firmware/SLR_Arduino_Maxbotix_Analog). There is additional instructional documentation in that folder.
 
 If you are looking for a cellular data transmission&ndash;enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and the Getting Started guide in that repository's README.
