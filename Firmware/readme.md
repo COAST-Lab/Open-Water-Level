@@ -61,39 +61,42 @@
 
 ## Practice water level sensor full code (Boron and Adalogger) 
 
-1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron. 
-2. On the GitHub repository, go to Firmware -> SLR_Boron_Maxbotix_MB7092_cm -> src -> `SLR_Boron_Maxbotix_MB7092_cm.ino` (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino))  
-3. Copy all the code on this page 
-4. In particle workbench, create a new project 
-5. Go to the .ino file and delete the code and paste the new code you copied from GitHub there 
-6. In lines 32 and 33, change the comments so that 32 is uncommented (delete the double slashes in front) and 33 is commented out (add double slashes in front)
+1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron.
+   
+        ![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg)
+
+3. On the GitHub repository, go to Firmware -> SLR_Boron_Maxbotix_MB7092_cm -> src -> `SLR_Boron_Maxbotix_MB7092_cm.ino` (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino))  
+4. Copy all the code on this page 
+5. In particle workbench, create a new project 
+6. Go to the .ino file and delete the code and paste the new code you copied from GitHub there 
+7. In lines 32 and 33, change the comments so that 32 is uncommented (delete the double slashes in front) and 33 is commented out (add double slashes in front)
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/3.jpg)
 
-7. In line 44, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
-8. In lines 49 and 50, swap the comments so that 49 is commented out and 50 is uncommented
+8. In line 44, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
+9. In lines 49 and 50, swap the comments so that 49 is commented out and 50 is uncommented
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/4.jpg)
 
-9. Comment out lines 150–154. You can select all the text in those lines and use the shortcut Ctrl+/
+10. Comment out lines 150–154. You can select all the text in those lines and use the shortcut Ctrl+/
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/5.jpg)
-10. After line 136 that says `myFile.print(range_cm);` create a new line and make sure it’s in line with the previous line and type `myFile.print(";");` This will make the data easier to read
-11. In line 208, where it says `.duration(54min)` change the `54` to `1` 
-12. Compile and flash code to boron 
-13. Open the serial monitor 
-14. Give it a second, but the terminal should look something like the picture below 
+11. After line 136 that says `myFile.print(range_cm);` create a new line and make sure it’s in line with the previous line and type `myFile.print(";");` This will make the data easier to read
+12. In line 208, where it says `.duration(54min)` change the `54` to `1` 
+13. Compile and flash code to boron 
+14. Open the serial monitor 
+15. Give it a second, but the terminal should look something like the picture below 
 	-If it still doesn’t work, try pressing the reset button on the Boron, or unplug and re-plug cord in 
-15. It should publish the time and distance once before repeating the phrase “not max time, try again to publish”
+16. It should publish the time and distance once before repeating the phrase “not max time, try again to publish”
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/6.jpg)
 
-16. After 20 seconds (because of the value you changed from 60000 to 20000), the serial monitor should say `serial connection closed. Attempting to reconnect…`
-17. After 1 minute (because of the value you changed from 54min to 1min), the serial monitor should say `serial monitor opened successfully` 
-18. Unplug the boron to stop the code from running 
-19. To check all the collected values, take out the SD card from the adalogger and put it into a SD card reader to then plug into your computer 
-20. Navigate to file explorer -> this PC -> USB drive -> `distance.txt`. You should see values like below!
+17. After 20 seconds (because of the value you changed from 60000 to 20000), the serial monitor should say `serial connection closed. Attempting to reconnect…`
+18. After 1 minute (because of the value you changed from 54min to 1min), the serial monitor should say `serial monitor opened successfully` 
+19. Unplug the boron to stop the code from running 
+20. To check all the collected values, take out the SD card from the adalogger and put it into a SD card reader to then plug into your computer 
+21. Navigate to file explorer -> this PC -> USB drive -> `distance.txt`. You should see values like below!
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/7.jpg)
 
-21. Unix time values are listed first, then another value, and then the distance(cm) values followed by a semi-colon
+22. Unix time values are listed first, then another value, and then the distance(cm) values followed by a semi-colon
