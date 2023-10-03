@@ -32,7 +32,7 @@
 
 ## Practice code with Boron and Adalogger 
 
-1. Stack the Boron on top of the Adalogger using female headers. You can see and example [here](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg)
+1. Stack the Boron on top of the Adalogger using female headers. You can see an example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg)
 2. Plug in the Boron and put it in listening mode again. Type `particle identify` into the CLI again and make sure "Boron" is selected in the bottom bar
 3. Create a new project (I named mine RTCtest) 
 4. Open command palette and type "Particle: Install Library" 
@@ -61,10 +61,7 @@
 
 ## Practice water level sensor full code (Boron and Adalogger) 
 
-1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron.
-   
-        ![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg)
-
+1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron. Example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/MAX.jpg)
 3. On the GitHub repository, go to Firmware -> SLR_Boron_Maxbotix_MB7092_cm -> src -> `SLR_Boron_Maxbotix_MB7092_cm.ino` (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino))  
 4. Copy all the code on this page 
 5. In particle workbench, create a new project 
