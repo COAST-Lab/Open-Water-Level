@@ -30,9 +30,9 @@
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/0.jpg)
 
-## Practice code with Boron and Adalogger
+## Practice code with Boron and Adalogger 
 
-1. Stack the Boron on top of the Adalogger using female headers. 
+1. Stack the Boron on top of the Adalogger using female headers. You can see and example [here](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg)
 2. Plug in the Boron and put it in listening mode again. Type `particle identify` into the CLI again and make sure "Boron" is selected in the bottom bar
 3. Create a new project (I named mine RTCtest) 
 4. Open command palette and type "Particle: Install Library" 
