@@ -43,6 +43,7 @@ SystemSleepConfiguration config;
 // Various timing constants
 const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000; // Only stay awake for 60 seconds trying to connect to the cloud and publish
 const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 360; // What should sampling period be?
 
 void setup(void)
 {
@@ -201,13 +202,18 @@ void loop(void)
     Serial.println("going to sleep");
     delay(500);
    	
-    // Set up Gen 3 sleep
+    // Sleep time determination and configuration
+    int wakeInSeconds = secondsUntilNextEvent(); // Calculate how long to sleep 
+
     config.mode(SystemSleepMode::ULTRA_LOW_POWER)
           .gpio(D2, FALLING)
-          .duration(54min);
-    System.sleep(config);
+          .duration(wakeInSeconds*1000L)		     // Set seconds until wake
+          .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY); // keeps the cellular modem powered, but does not wake the MCU for received data
 
-    // It'll only make it here if the sleep call doesn't work for some reason
+    // Ready to sleep
+    SystemSleepResult result = System.sleep(config);    // Device sleeps here
+
+    // It'll only make it here if the sleep call doesn't work for some reason (UPDATE: only true for hibernate. ULP will wake here.)
     Serial.print("Feeling restless");
     stateTime = millis();
     state = PUBLISH_STATE;
@@ -216,4 +222,15 @@ void loop(void)
 
   }
 
+}
+
+
+int secondsUntilNextEvent() {
+
+  int current_seconds = Time.now()
+  int seconds_to_sleep = 0;
+
+  seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS-current_seconds%SECONDS_BETWEEN_MEASUREMENTS;
+
+  return seconds_to_sleep;
 }
