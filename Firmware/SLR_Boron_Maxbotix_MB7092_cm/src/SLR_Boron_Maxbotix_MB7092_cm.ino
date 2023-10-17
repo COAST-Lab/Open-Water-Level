@@ -68,7 +68,7 @@ void loop(void)
   go to SLEEP_STATE
   If not connected, still get/print value then go to SLEEP_STATE.
   ***/
- case PUBLISH_STATE: {
+case PUBLISH_STATE: {
     // Collects, prints, saves, and publishes data.
 
     // Collect data
@@ -83,143 +83,144 @@ void loop(void)
     // Publish data
     publishData(range_cm);
 
-// Declare variables
-float range_cm; 
-float real_time;
-unsigned long millis_now;
+    // Declare variables
+    float range_cm;
+    float real_time;
+    unsigned long millis_now;
 
-// Function to collect distance data from ultrasonic sensor
-float collectData(); {
-// Reinitialize sum variable prior to every loop execution
-//dist_in_sum = 0; 
+    // Function to collect distance data from ultrasonic sensor
+    float collectData();
+    {
+      // Reinitialize sum variable prior to every loop execution
+      //dist_in_sum = 0; 
 
-    // Take multiple measurements and store in array
-    for (int sample = 0; sample < 200; sample++) {
-      filterArray[sample] = (analogRead(A1));
-      delay(50); // to avoid untrasonic interfering
-    }
-    // Sort
-    for (int i = 0; i < 199; i++) {
-      for (int j = i + 1; j < 200; j++) {
-        if (filterArray[i] > filterArray[j]) {
-          float swap = filterArray[i];
-          filterArray[i] = filterArray[j];
-          filterArray[j] = swap;
+      // Take multiple measurements and store in array
+      for (int sample = 0; sample < 200; sample++) {
+        filterArray[sample] = (analogRead(A1));
+        delay(50); // to avoid untrasonic interfering
       }
+      // Sort
+      for (int i = 0; i < 199; i++) {
+        for (int j = i + 1; j < 200; j++) {
+          if (filterArray[i] > filterArray[j]) {
+            float swap = filterArray[i];
+            filterArray[i] = filterArray[j];
+            filterArray[j] = swap;
+          }
+        }
+      }
+
+      // Filter noise by excluding 10 smallest and 10 largest samples 
+      double sum = 0;
+      for (int sample = 10; sample < 190; sample++) {
+        sum += filterArray[sample];
+      }
+
+      // Get average of the middle samples (from 10 to 190)
+      distance_unconverted = sum / 180;
+
+      // Get all metrics which are to be reused:
+
+      // Convert analog signal to centimeters
+      range_cm = (float) distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
+
+      // "Real" time and current millis for logging
+      real_time = Time.now();
+      millis_now = millis();
     }
-  }
 
-  // Filter noise by excluding 10 smallest and 10 largest samples 
-  double sum = 0;
-  for (int sample = 10; sample < 190; sample++) {
-    sum += filterArray[sample];
-  }
-
-
-  // Get average of the middle samples (from 10 to 190)
-  distance_unconverted = sum / 180;
-
-  // Get all metrics which are to be reused:
-
-  // Convert analog signal to centimeters
-  range_cm = (float)distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
-
-  // "Real" time and current millis for logging
-  real_time = Time.now();
-  millis_now = millis();
-}
-
-// Function to print data to serial port
-void printData(float range_cm); {
-       Serial.print("Time: ");
-       Serial.print(real_time);
-       Serial.print(", Distance(cm): ");
-       Serial.print(range_cm);
-}
-// Function to save data to the SD card
-void saveData(float range_cm); {
+    // Function to print data to serial port
+    void printData(float range_cm);
+    {
+      Serial.print("Time: ");
+      Serial.print(real_time);
+      Serial.print(", Distance(cm): ");
+      Serial.print(range_cm);
+    }
+    // Function to save data to the SD card
+    void saveData(float range_cm);
+    {
       // Start SD stuff
-       File myFile; 
-                 
-          // Initialize the library
-         if (!sd.begin(SD_CHIP_SELECT, SPI_FULL_SPEED)) {
-         Serial.println("failed to open card");
+      File myFile;
+
+      // Initialize the library
+      if (!sd.begin(SD_CHIP_SELECT, SPI_FULL_SPEED)) {
+        Serial.println("failed to open card");
         return;
-       }
+      }
 
       // open the file for write at end like the "Native SD library"
-       if (!myFile.open("distance.txt", O_RDWR | O_CREAT | O_AT_END)) {
-         Serial.println("opening test.txt for write failed");
-         return;
+      if (!myFile.open("distance.txt", O_RDWR | O_CREAT | O_AT_END)) {
+        Serial.println("opening test.txt for write failed");
+        return;
       }
 
-       // Save to SD card
-       myFile.print(real_time);
-       myFile.print(",");
-       myFile.print(millis_now);
-       myFile.print(",");
-       myFile.print(range_cm);
-       myFile.print(";");
-       myFile.close();
+      // Save to SD card
+      myFile.print(real_time);
+      myFile.print(",");
+      myFile.print(millis_now);
+      myFile.print(",");
+      myFile.print(range_cm);
+      myFile.print(";");
+      myFile.close();
 
       delay(100);
-    //}
+      //}
 
-// Function to publish data to the cloud
-void publishData(float range_cm); {
-    // Prep for cellular transmission
-    bool isMaxTime = false;
-    stateTime = millis();
-
-    while(!isMaxTime)
-    {
-      // //connect particle to the cloud
-      // if (Particle.connected() == false)
-      // {
-      //   Particle.connect();
-      //   Serial.print("Trying to connect");
-      // }
-
-      // If connected, publish data buffer
-      if (Particle.connected())
+      // Function to publish data to the cloud
+      void publishData(float range_cm);
       {
-        // Get power and time once connected. TODO: ensure contemporaneous time and sensor sampling
+        // Prep for cellular transmission
+        bool isMaxTime = false;
+        stateTime = millis();
 
-        // Get battery charge if Boron provides it
-        float cellVoltage = batteryMonitor.getVCell();
-        float stateOfCharge = batteryMonitor.getSoC();
+        while (!isMaxTime) {
+          // //connect particle to the cloud
+          // if (Particle.connected() == false)
+          // {
+          //   Particle.connect();
+          //   Serial.print("Trying to connect");
+          // }
 
-        char data[120];
-        snprintf(data, sizeof(data), "%li,%.5f,%.02f,%.02f",//,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
-                      real_time, // if it takes a while to connect, this time could be offset from sensor recording
-                      range_cm,
-                      cellVoltage, stateOfCharge
-                    );
-        Serial.println("publishing data");
-        Particle.publish(eventName, data, 60, PRIVATE);
+          // If connected, publish data buffer
+          if (Particle.connected()) {
+            // Get power and time once connected. TODO: ensure contemporaneous time and sensor sampling
 
-        // Wait for the publish data
-        delay(TIME_AFTER_PUBLISH_MS);
-        isMaxTime = true;
-        state = SLEEP_STATE;
-      }
-      // If not connected after certain amount of time, go to sleep to save battery
-      else {
-      {
-        // Took too long to publish, just go to sleep
-        if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS)
-        
-          isMaxTime = true;
-          state = SLEEP_STATE;
-          Serial.println("max time for publishing reached without success; go to sleep");
+            // Get battery charge if Boron provides it
+            float cellVoltage = batteryMonitor.getVCell();
+            float stateOfCharge = batteryMonitor.getSoC();
+
+            char data[120];
+            snprintf(data, sizeof(data), "%li,%.5f,%.02f,%.02f", //,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
+              real_time, // if it takes a while to connect, this time could be offset from sensor recording
+              range_cm,
+              cellVoltage, stateOfCharge
+            );
+            Serial.println("publishing data");
+            Particle.publish(eventName, data, 60, PRIVATE);
+
+            // Wait for the publish data
+            delay(TIME_AFTER_PUBLISH_MS);
+            isMaxTime = true;
+            state = SLEEP_STATE;
+          }
+          // If not connected after certain amount of time, go to sleep to save battery
+          else {
+            {
+              // Took too long to publish, just go to sleep
+              if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS)
+
+                isMaxTime = true;
+              state = SLEEP_STATE;
+              Serial.println("max time for publishing reached without success; go to sleep");
+            }
+            Serial.println("Not max time, try again to publish");
+            delay(100);
+          }
+
         }
-        Serial.println("Not max time, try again to publish");
-        delay(100);
       }
-
-    }
-  }
-  break;
+      break;
 
   //////////////////////////////////////////////////////////////////////////////
   /*** SLEEP_STATE ***/
