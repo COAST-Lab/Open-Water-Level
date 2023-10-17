@@ -68,10 +68,31 @@ void loop(void)
   go to SLEEP_STATE
   If not connected, still get/print value then go to SLEEP_STATE.
   ***/
-  case PUBLISH_STATE: {
-    // Reinitialize sum variable prior to every loop execution
-    //dist_in_sum = 0; 
-    
+ case PUBLISH_STATE: {
+    // Collects, prints, saves, and publishes data.
+
+    // Collect data
+    float range_cm = collectData();
+
+    // Print data
+    printData(range_cm);
+
+    // Save data
+    saveData(range_cm);
+
+    // Publish data
+    publishData(range_cm);
+
+// Declare variables
+float range_cm; 
+float real_time;
+unsigned long millis_now;
+
+// Function to collect distance data from ultrasonic sensor
+float collectData(); {
+// Reinitialize sum variable prior to every loop execution
+//dist_in_sum = 0; 
+
     // Take multiple measurements and store in array
     for (int sample = 0; sample < 200; sample++) {
       filterArray[sample] = (analogRead(A1));
@@ -94,6 +115,7 @@ void loop(void)
     sum += filterArray[sample];
   }
 
+
   // Get average of the middle samples (from 10 to 190)
   distance_unconverted = sum / 180;
 
@@ -105,14 +127,17 @@ void loop(void)
   // "Real" time and current millis for logging
   real_time = Time.now();
   millis_now = millis();
+}
 
-
-      // Print out distance
+// Function to print data to serial port
+void printData(float range_cm); {
        Serial.print("Time: ");
        Serial.print(real_time);
        Serial.print(", Distance(cm): ");
        Serial.print(range_cm);
-      
+}
+// Function to save data to the SD card
+void saveData(float range_cm); {
       // Start SD stuff
        File myFile; 
                  
@@ -134,23 +159,26 @@ void loop(void)
        myFile.print(millis_now);
        myFile.print(",");
        myFile.print(range_cm);
+       myFile.print(";");
        myFile.close();
 
       delay(100);
     //}
-    
+
+// Function to publish data to the cloud
+void publishData(float range_cm); {
     // Prep for cellular transmission
     bool isMaxTime = false;
     stateTime = millis();
 
     while(!isMaxTime)
     {
-      //connect particle to the cloud
-      if (Particle.connected() == false)
-      {
-        Particle.connect();
-        Serial.print("Trying to connect");
-      }
+      // //connect particle to the cloud
+      // if (Particle.connected() == false)
+      // {
+      //   Particle.connect();
+      //   Serial.print("Trying to connect");
+      // }
 
       // If connected, publish data buffer
       if (Particle.connected())
@@ -176,11 +204,11 @@ void loop(void)
         state = SLEEP_STATE;
       }
       // If not connected after certain amount of time, go to sleep to save battery
-      else
+      else {
       {
         // Took too long to publish, just go to sleep
         if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS)
-        {
+        
           isMaxTime = true;
           state = SLEEP_STATE;
           Serial.println("max time for publishing reached without success; go to sleep");
@@ -188,6 +216,7 @@ void loop(void)
         Serial.println("Not max time, try again to publish");
         delay(100);
       }
+
     }
   }
   break;
