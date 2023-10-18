@@ -35,11 +35,17 @@ float distance_unconverted; // store the distance from sensor
 //------------------State variables
 // not yet used but placeholders in case of additional states
 enum State {
+  DATALOG_STATE,
   PUBLISH_STATE,
   SLEEP_STATE
 };
-State state = PUBLISH_STATE;
+State state = DATALOG_STATE;
+
+// Define whether (1) or not (0) to publish
+#define PUBLISHING 0
+
 unsigned long stateTime = 0;
+char data[120];
 
 //------------------Turn off cellular for prelim testing; turn on for deployment
 //SYSTEM_MODE(MANUAL); // uncomment for prelim testing
@@ -58,8 +64,12 @@ const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 secon
 const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 360; // What should sampling period be?
 
 void setup(void) {
-  // Particle.connect();
-  Cellular.off(); // turn off cellular for prelim testing (uncomment)
+  if (PUBLISHING==1) {
+    Particle.connect();
+  }
+  else{
+    Cellular.off(); // turn off cellular for prelim testing (uncomment)
+  }
 
   // delay(5000); // to see response from begin command
 
@@ -73,22 +83,19 @@ void loop(void) {
   switch (state) {
 
     //////////////////////////////////////////////////////////////////////////////
-    /*** PUBLISH_STATE ***/
-    /*** Get here from boot. Ensure that we're connected to Particle Cloud.
-    If so, poll Maxbotix and send to cloud then
-    go to SLEEP_STATE
-    If not connected, still get/print value then go to SLEEP_STATE.
+    /*** DATALOG_STATE ***/
+    /*** Get here from boot. 
+    If so, poll Maxbotix and save to SD card.
+    Then, if PUBLISHING==1, go to PUBLISH_STATE. Else,
+    go to SLEEP_STATE.
     ***/
-  case PUBLISH_STATE: {
-    // Reinitialize sum variable prior to every loop execution
-    //dist_in_sum = 0; 
-
+  case DATALOG_STATE: {
     // Take multiple measurements and store in array
     for (int sample = 0; sample < 200; sample++) {
       filterArray[sample] = (analogRead(A1));
       delay(50); // to avoid untrasonic interfering
     }
-    // Sort
+    // Sort; TODO: this looks inefficient. Investigate options to improve (or reject) sorting
     for (int i = 0; i < 199; i++) {
       for (int j = i + 1; j < 200; j++) {
         if (filterArray[i] > filterArray[j]) {
@@ -117,7 +124,6 @@ void loop(void) {
     float cellVoltage = batteryMonitor.getVCell();
     float stateOfCharge = batteryMonitor.getSoC();
 
-    char data[120];
     snprintf(data, sizeof(data), "%li,%.5f,%.02f,%.02f", //,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
       real_time, // if it takes a while to connect, this time could be offset from sensor recording
       range_cm,
@@ -146,8 +152,24 @@ void loop(void) {
     myFile.print(data);
     myFile.close();
 
-    delay(100);
-    //}
+    if (PUBLISHING==1) {
+      state = PUBLISH_STATE;
+    }
+    else{
+      state = SLEEP_STATE;
+    }
+
+  }
+  break;
+
+    //////////////////////////////////////////////////////////////////////////////
+    /*** PUBLISH_STATE ***/
+    /*** Get here from DATALOG_STATE if PUBLISHING==1. Ensure that we're connected to Particle Cloud.
+    If so, send data to cloud then
+    go to SLEEP_STATE
+    If not connected, then go to SLEEP_STATE.
+    ***/
+  case PUBLISH_STATE: {
 
     // Prep for cellular transmission
     bool isMaxTime = false;
@@ -155,17 +177,17 @@ void loop(void) {
 
     while (!isMaxTime) {
       //connect particle to the cloud
-      // if (Particle.connected() == false) {
-      //   Particle.connect();
-      //   Serial.print("Trying to connect");
-      // }
+      if (Particle.connected() == false) {
+        Particle.connect();
+        Serial.print("Trying to connect");
+      }
 
       // If connected, publish data buffer
       if (Particle.connected()) {
         // Get power and time once connected. TODO: ensure contemporaneous time and sensor sampling
 
         Serial.println("publishing data");
-        // Particle.publish(eventName, data, 60, PRIVATE);
+        Particle.publish(eventName, data, 60, PRIVATE);
 
         // Wait for the publish data
         delay(TIME_AFTER_PUBLISH_MS);
@@ -180,8 +202,8 @@ void loop(void) {
           state = SLEEP_STATE;
           Serial.println("max time for publishing reached without success; go to sleep");
         }
-        Serial.println("Not max time, try again to publish");
-        delay(100);
+        Serial.println("Not max time, try again to connect and publish");
+        delay(500);
       }
     }
   }
@@ -189,8 +211,7 @@ void loop(void) {
 
   //////////////////////////////////////////////////////////////////////////////
   /*** SLEEP_STATE ***/
-  /*** Get here from PUBLISH_STATE and go to GPS_WAIT_STATE (if code makes it that far)
-  or SLEEP_MODE_DEEP after calculating a wakeup time based off of the current time from the cloud.
+  /*** Get here from PUBLISH_STATE after attempted publish or DATALOG_STATE if PUBLISHING==0
   ***/
   case SLEEP_STATE: {
     Serial.println("going to sleep");
@@ -210,7 +231,7 @@ void loop(void) {
     // It'll only make it here if the sleep call doesn't work for some reason (UPDATE: only true for hibernate. ULP will wake here.)
     Serial.print("Feeling restless");
     stateTime = millis();
-    state = PUBLISH_STATE;
+    state = DATALOG_STATE;
   }
   break;
   }
