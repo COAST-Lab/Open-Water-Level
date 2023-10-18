@@ -113,11 +113,19 @@ void loop(void) {
     real_time = Time.now(); // "Real" time and current millis for logging
     millis_now = millis();
 
-    // Print out distance
-    Serial.print("Time: ");
-    Serial.print(real_time);
-    Serial.print(", Distance(cm): ");
-    Serial.print(range_cm);
+    // Get battery charge if Boron provides it
+    float cellVoltage = batteryMonitor.getVCell();
+    float stateOfCharge = batteryMonitor.getSoC();
+
+    char data[120];
+    snprintf(data, sizeof(data), "%li,%.5f,%.02f,%.02f", //,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
+      real_time, // if it takes a while to connect, this time could be offset from sensor recording
+      range_cm,
+      cellVoltage, stateOfCharge
+    );
+
+    // Print out data buffer
+    Serial.println(data);
 
     // Start SD stuff
     File myFile;
@@ -135,11 +143,7 @@ void loop(void) {
     }
 
     // Save to SD card
-    myFile.print(real_time);
-    myFile.print(",");
-    myFile.print(millis_now);
-    myFile.print(",");
-    myFile.print(range_cm);
+    myFile.print(data);
     myFile.close();
 
     delay(100);
@@ -160,16 +164,6 @@ void loop(void) {
       if (Particle.connected()) {
         // Get power and time once connected. TODO: ensure contemporaneous time and sensor sampling
 
-        // Get battery charge if Boron provides it
-        float cellVoltage = batteryMonitor.getVCell();
-        float stateOfCharge = batteryMonitor.getSoC();
-
-        char data[120];
-        snprintf(data, sizeof(data), "%li,%.5f,%.02f,%.02f", //,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
-          real_time, // if it takes a while to connect, this time could be offset from sensor recording
-          range_cm,
-          cellVoltage, stateOfCharge
-        );
         Serial.println("publishing data");
         // Particle.publish(eventName, data, 60, PRIVATE);
 
