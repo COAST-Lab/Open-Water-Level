@@ -1,4 +1,4 @@
-/Users/pjb/Dropbox/Smart_Coasts_Sensors/Open-Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/target/4.2.0/boron//obj/./src/newlib_stubs.o: \
+/Users/pjb/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/target/4.2.0/boron//obj/./src/newlib_stubs.o: \
  src/newlib_stubs.cpp \
  ../../../modules/shared/nRF52840/inc/user-part/newlib_stubs.inc \
  /Users/pjb/.particle/toolchains/gcc-arm/10.2.1/arm-none-eabi/include/sys/types.h \

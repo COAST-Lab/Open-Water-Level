@@ -1,4 +1,4 @@
-/Users/pjb/Dropbox/Smart_Coasts_Sensors/Open-Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/target/4.2.0/boron//obj/./src/module_info.o: \
+/Users/pjb/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/target/4.2.0/boron//obj/./src/module_info.o: \
  src/module_info.c ../../../dynalib/inc/module_info.inc \
  ../../../dynalib/inc/module_info.h ../../../services/inc/static_assert.h \
  /Users/pjb/.particle/toolchains/gcc-arm/10.2.1/arm-none-eabi/include/assert.h \
