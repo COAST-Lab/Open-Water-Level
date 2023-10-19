@@ -8,9 +8,6 @@ int led = D7; // blink to let us know you're alive
 bool led_state = HIGH; // starting state
 
 //------------------Maxbotix sensor
-//int V_ultraS = A1;
-//float dist_in = 0;
-
 int j;
 float dist_in_sum;
 float dist_in_avg;
@@ -32,7 +29,7 @@ enum State {
 State state = DATALOG_STATE;
 
 // Define whether (1) or not (0) to publish
-#define PUBLISHING 0
+#define PUBLISHING 1
 
 unsigned long stateTime = 0;
 char data[120];
@@ -44,7 +41,7 @@ SYSTEM_THREAD(ENABLED);
 
 // Global objects
 FuelGauge batteryMonitor;
-const char * eventName = "waterlevel";
+const char * eventName = "waterLevel";
 
 SystemSleepConfiguration config;
 
@@ -139,7 +136,7 @@ void loop(void) {
     }
 
     // Save to SD card
-    myFile.print(data);
+    myFile.println(data);
     myFile.close();
 
     if (PUBLISHING==1) {

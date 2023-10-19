@@ -3,13 +3,13 @@
 /******************************************************/
 
 #include "Particle.h"
-#line 1 "/Users/pjb/Dropbox/Smart_Coasts_Sensors/Open-Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino"
+#line 1 "/Users/pjb/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino"
 #include "SdFat.h"
  //------------------SD SPI Configuration Details--------------------------------
 void setup(void);
 void loop(void);
 int secondsUntilNextEvent();
-#line 3 "/Users/pjb/Dropbox/Smart_Coasts_Sensors/Open-Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino"
+#line 3 "/Users/pjb/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino"
 const int SD_CHIP_SELECT = D5;
 SdFat sd;
 
@@ -18,9 +18,6 @@ int led = D7; // blink to let us know you're alive
 bool led_state = HIGH; // starting state
 
 //------------------Maxbotix sensor
-//int V_ultraS = A1;
-//float dist_in = 0;
-
 int j;
 float dist_in_sum;
 float dist_in_avg;
@@ -42,7 +39,7 @@ enum State {
 State state = DATALOG_STATE;
 
 // Define whether (1) or not (0) to publish
-#define PUBLISHING 0
+#define PUBLISHING 1
 
 unsigned long stateTime = 0;
 char data[120];
@@ -54,7 +51,7 @@ SYSTEM_THREAD(ENABLED);
 
 // Global objects
 FuelGauge batteryMonitor;
-const char * eventName = "waterlevel";
+const char * eventName = "waterLevel";
 
 SystemSleepConfiguration config;
 
