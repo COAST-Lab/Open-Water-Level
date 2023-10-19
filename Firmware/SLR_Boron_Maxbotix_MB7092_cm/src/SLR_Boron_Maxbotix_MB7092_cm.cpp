@@ -57,7 +57,7 @@ SystemSleepConfiguration config;
 
 // Various timing constants
 const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this time trying to connect to the cloud and publish
-const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
+// const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 360; // What should sampling period be?
 
 void setup(void) {
@@ -187,8 +187,12 @@ void loop(void) {
         Serial.println("publishing data");
         Particle.publish(eventName, data, 60, PRIVATE);
 
-        // Wait for the publish data
-        delay(TIME_AFTER_PUBLISH_MS);
+        // Hang here till acknowledgment received
+        bool success = false;
+        while(!success){
+          success = Particle.publish("Received", NULL, WITH_ACK);
+        }
+
         isMaxTime = true;
         state = SLEEP_STATE;
       }
