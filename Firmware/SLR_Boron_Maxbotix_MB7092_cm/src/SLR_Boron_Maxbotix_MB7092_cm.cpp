@@ -140,13 +140,14 @@ void loop(void) {
     }
 
     // open the file for write at end like the "Native SD library"
-    if (!myFile.open("distance.txt", O_RDWR | O_CREAT | O_AT_END)) {
-      Serial.println("opening test.txt for write failed");
+    if (!myFile.open("distance.csv", O_RDWR | O_CREAT | O_AT_END)) {
+      Serial.println("opening distance.csv for write failed");
       return;
     }
 
     // Save to SD card
     myFile.print(data);
+    myFile.print("\n"); // put next data on new line
     myFile.close();
 
     if (PUBLISHING==1) {
