@@ -126,13 +126,13 @@ void loop(void) {
     // Initialize the library
     if (!sd.begin(SD_CHIP_SELECT, SPI_FULL_SPEED)) {
       Serial.println("failed to open card");
-      return;
+      while(1); // do nothing. This is bad.
     }
 
     // open the file for write at end like the "Native SD library"
     if (!myFile.open("distance.csv", O_RDWR | O_CREAT | O_AT_END)) {
       Serial.println("opening distance.csv for write failed");
-      return;
+      while(1); // do nothing. This is bad.
     }
 
     // Save to SD card
