@@ -176,11 +176,9 @@ void loop(void) {
 
         Serial.println("publishing data");
 
-        // Hang here till acknowledgment received
-        bool success = false;
-        while(!success){
-          success = Particle.publish(eventName, data, 60, PRIVATE, WITH_ACK);
-        }
+        // bool (or Future) below requires acknowledgment to proceed
+        bool success = Particle.publish(eventName, data, 60, PRIVATE, WITH_ACK);
+        Serial.printlnf("publish result %d", success); 
 
         isMaxTime = true;
         state = SLEEP_STATE;

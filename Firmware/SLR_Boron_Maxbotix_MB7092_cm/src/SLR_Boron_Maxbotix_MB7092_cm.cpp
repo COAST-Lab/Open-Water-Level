@@ -183,16 +183,12 @@ void loop(void) {
 
       // If connected, publish data buffer
       if (Particle.connected()) {
-        // Get power and time once connected. TODO: ensure contemporaneous time and sensor sampling
 
         Serial.println("publishing data");
-        Particle.publish(eventName, data, 60, PRIVATE);
 
-        // Hang here till acknowledgment received
-        bool success = false;
-        while(!success){
-          success = Particle.publish("Received", NULL, WITH_ACK); // costs an extra data operation
-        }
+        // bool (or Future) below requires acknowledgment to proceed
+        bool success = Particle.publish(eventName, data, 60, PRIVATE, WITH_ACK);
+        Serial.printlnf("publish result %d", success); 
 
         isMaxTime = true;
         state = SLEEP_STATE;
