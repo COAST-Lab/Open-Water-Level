@@ -173,10 +173,8 @@ void loop(void) {
 
       // If connected, publish data buffer
       if (Particle.connected()) {
-        // Get power and time once connected. TODO: ensure contemporaneous time and sensor sampling
 
         Serial.println("publishing data");
-        
 
         // Hang here till acknowledgment received
         bool success = false;
