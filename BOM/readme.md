@@ -17,4 +17,4 @@ USB DIY Slim Connector Shell - MicroB Plug | https://www.adafruit.com/product/18
 3-pin cable | https://www.adafruit.com/product/4721 | $0.95 | Power, ground, and analog signal to/from sonar
 Loctite PL Marine Fast Cure Adhesive Sealant |  | $11.16 | Seal gland (necessary?)
 Cell plan (we currently use Particle's Free Plan) |  | $0.00 | Cloud data management
-Total |  | $242.80 | 
+Total |  | $271.75 | 
