@@ -59,7 +59,6 @@ SystemSleepConfiguration config;
 const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this time trying to connect to the cloud and publish
 // const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 360; // What should sampling period be?
-const unsigned long EARLYBIRD_SECONDS = 10; // how long before desired time should I wake up? Sample currenly takes 10 s, so wake up 10 s early
 
 void setup(void) {
   if (PUBLISHING==1) {
@@ -238,7 +237,7 @@ void loop(void) {
 int secondsUntilNextEvent() {
 
   int current_seconds = Time.now();
-  int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - (current_seconds % SECONDS_BETWEEN_MEASUREMENTS) - EARLYBIRD_SECONDS;
+  int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - (current_seconds % SECONDS_BETWEEN_MEASUREMENTS);
 
   Serial.print("Sleeping for ");
   Serial.println(seconds_to_sleep);
