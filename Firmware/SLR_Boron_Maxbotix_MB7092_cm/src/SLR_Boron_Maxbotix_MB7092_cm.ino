@@ -133,11 +133,12 @@ void loop(void) {
     if (!myFile.open("distance.csv", O_RDWR | O_CREAT | O_AT_END)) {
       Serial.println("opening distance.csv for write failed");
     }
-
-    // Save to SD card
-    myFile.print(data);
-    myFile.print("\n"); // put next data on new line
-    myFile.close();
+    else{ // if file does open, save to SD; otherwise, proceed to publish
+      // Save to SD card
+      myFile.print(data);
+      myFile.print("\n"); // put next data on new line
+      myFile.close();
+    }
 
     if (PUBLISHING==1) {
       state = PUBLISH_STATE;
