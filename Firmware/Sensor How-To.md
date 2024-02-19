@@ -1,4 +1,7 @@
 # DIY TIDE SENSOR
+
+Note: This how-to guide was written for an Arduino and non-cellular version that preceded the Particle Boron/cellular version that this repository is intended to support. It is here for informational purposes and general guidance but major changes are needed for accuracy now that a new microcontroller is used. The OLED screen is also not used in the latest version. 
+
 ![](https://github.com/acl3053/Seaport_Tide-SLR/blob/main/Firmware/Sensor%20How-To%20Images/image1.png)
 
 ---

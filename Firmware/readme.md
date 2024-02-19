@@ -5,12 +5,15 @@
 2. Download Particle Workbench [here](https://www.particle.io/workbench/) and create an account as a student using your email. Make sure you have Visual Studio installed prior to running the installer
 	- The installer says that it will install VS along with Particle, but this does not work properly and will fail if VS is not installed first.
 3. Log into Particle on Visual Studio, if it doesn’t automatically (this is important because it won’t let you install necessary libraries without being logged in)
-## Useful commands
+
+## Useful features
 
 1. Open Particle command palette: Ctrl+Shift+P on Windows (or select View tab -> command palette, or click “Launch command palette” button on the Welcome tab)
 2. In the top right corner, there are some important symbols in white circles
 	- Compile: checkmark
 	- Flash: lightning bolt
+3. Keep this in your back pocket but don't use it yet: in cases where the Boron stops responding as expected or displaying error LED sequences, you may need to restore the device. Particle has an online, USB-based option here: [https://docs.particle.io/tools/device-restore/device-restore-usb/](https://docs.particle.io/tools/device-restore/device-restore-usb/).
+
 ## Practice code with Boron
 
 1. Plug in the Boron to your computer using a micro USB cable.
