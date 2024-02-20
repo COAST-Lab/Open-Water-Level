@@ -529,7 +529,7 @@ class SPISettings : public Printable {
 // Various timing constants
 const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this time trying to connect to the cloud and publish
 // const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
-const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 360; // What should sampling period be?
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 3600; // What should sampling period be?
 
 void setup(void) {
    b424c:	b508      	push	{r3, lr}
@@ -571,7 +571,7 @@ int secondsUntilNextEvent() {
   int current_seconds = Time.now();
    b4272:	f003 f881 	bl	b7378 <_ZN9TimeClass3nowEv>
   int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - (current_seconds % SECONDS_BETWEEN_MEASUREMENTS);
-   b4276:	f44f 74b4 	mov.w	r4, #360	; 0x168
+   b4276:	f44f 6461 	mov.w	r4, #3600	; 0xe10
    b427a:	fbb0 f3f4 	udiv	r3, r0, r4
    b427e:	fb03 0014 	mls	r0, r3, r4, r0
    b4282:	1a24      	subs	r4, r4, r0

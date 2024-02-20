@@ -58,7 +58,7 @@ SystemSleepConfiguration config;
 // Various timing constants
 const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this time trying to connect to the cloud and publish
 // const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
-const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 360; // What should sampling period be?
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 3600; // What should sampling period be?
 
 void setup(void) {
   if (PUBLISHING==1) {
