@@ -15,6 +15,9 @@ There are several versions of the DIY water level sensor, including different mi
 
 If you are looking for a cellular data transmission&ndash;enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and the Getting Started guide in that repository's README.
 
+## DataSheets
+https://github.com/dylan9081/Open-Water-Level/tree/fe50ec0d2f774a548f7332a16c332af01e4140e5/Datasheets 
+
 ## The Fun Stuff
 ### Deployment
 Deployment is actually the last step but it's probably the most exciting, so we'll start our procedural notes here. The Seaport Tide and Sea Level Rise Monitor has a ~ 6.5 m (21') range with 2.5 cm (1") resolution. Deployment location must be chosen with these values in mind. If you are deploying the monitor at a location reasonably close to an existing NOAA tide station, start by examining the known tidal range at your location: [NOAA tide predictions](https://tidesandcurrents.noaa.gov/tide_predictions.html). You will want to deploy the monitor at location where it can aim straight down to the water's surface and at a height that is slightly higher than the highest high tide that the location is expected to experience. As described above, the package is currently not designed in to be waterproof so it should not be deployed in extreme weather events unless it is modified.
