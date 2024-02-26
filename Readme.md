@@ -16,7 +16,7 @@ There are several versions of the DIY water level sensor, including different mi
 If you are looking for a cellular data transmission&ndash;enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and the Getting Started guide in that repository's README.
 
 ## DataSheets
-https://github.com/dylan9081/Open-Water-Level/tree/fe50ec0d2f774a548f7332a16c332af01e4140e5/Datasheets 
+https://github.com/COAST-Lab/Open-Water-Level/tree/e00c465049842374815a742543874c4c1ce38e34/Datasheets
 
 ## The Fun Stuff
 ### Deployment
