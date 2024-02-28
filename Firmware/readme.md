@@ -16,7 +16,7 @@
 4. Keep this in your back pocket but don't use it yet: in cases where the Boron stops responding as expected or displaying error LED sequences, you may need to restore the device. Particle has an online, USB-based option here: [https://docs.particle.io/tools/device-restore/device-restore-usb/](https://docs.particle.io/tools/device-restore/device-restore-usb/).
 
 ## Common Problems
-1. Skip for now and try **Practise Code with Boron** first
+1. Skip for now and try **Practice Code with Boron** first
 2. If No Device Found or Serial Time out when using Particle: Identify. First, double-check that you have selected Boron in the bottom right bar, have the correct OS version 4.2.0 should work, put the device in listing mode (press and hold Mode until the LED blinks blue), and if those are both correct try restarting your computer.
 
 
