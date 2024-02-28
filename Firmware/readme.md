@@ -90,7 +90,7 @@ SYSTEM_THREAD(ENABLED);;`
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/4.jpg)
 
-11. Comment out lines, 172-176
+11. Comment out the lines below. Should be between 172-176 depending on how many new lines you created. 
     You can select all the text in those lines and use the shortcut Ctrl+/
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/5.jpg)
