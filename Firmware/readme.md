@@ -18,6 +18,7 @@
 ## Common Problems
 1. Skip for now and try **Practice Code with Boron** first
 2. If No Device Found or Serial Time out when using Particle: Identify. First, double-check that you have selected Boron in the bottom right bar, have the correct OS version 4.2.0 should work, put the device in listing mode (press and hold Mode until the LED blinks blue), and if those are both correct try restarting your computer.
+3. If problems in **Practice code with Boron and Adalogger** if Initializing SD Card... initialization failed, check that micro SD card is empty. Plug into your computer and open SD card and delete every file on it.
 
 
 ## Practice code with Boron
@@ -42,9 +43,9 @@
 ## Practice code with Boron and Adalogger 
 
 1. Stack the Boron on top of the Adalogger using female headers. You can see an example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg)
-2. Plug in the Boron and put it in listening mode again. Type `particle identify` into the CLI again and make sure "Boron" is selected in the bottom bar
+2. Plug in the Boron and put it in listening mode again (press and hold Mode until the LED blinks blue). Type `particle identify` into the CLI again and make sure "Boron" is selected in the bottom bar
 3. Create a new project (I named mine RTCtest) 
-4. Open command palette and type "Particle: Install Library" 
+4. Open the command palette and type "Particle: Install Library" 
 5. Type in 'SdFat' and press enter to install SdFat library 
 6. A new tab titled 'lib' should now be under the explorer tab for this project on the left, open it 
 7. Click on examples -> ReadWrite -> `ReadWrite.ino` 
@@ -53,8 +54,9 @@
 	- The .ino file will always be the file you will want to use to flash code
 10. Highlight and delete everything in the .ino file, replace it with the new code you just copied from the ReadWrite.ino file 
 11. In line 25, change `#define SD_CS_PIN SS` to `#define SD_CS_PIN D5` (SS -> D5) 
-12. After `File myFile;` create a new line and type `SYSTEM_MODE(MANUAL);`
-13. After `void setup(){,` create a new line and type `Cellular.off();”` and in the next line type `delay(2500);` 
+12. After `File myFile;` create a new line and type `SYSTEM_MODE(SEMI_AUTOMATIC); 
+SYSTEM_THREAD(ENABLED);;`
+13. After `void setup(){,` create a new line and type `Cellular.off();”` and in the next line type `delay(5500);` 
 14. Where it says `if (!SD.begin(SD_CS_PIN,)) {` type `if (!SD.begin(SD_CS_PIN,SPI_FULL_SPEED)) {`
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/1.jpg)
@@ -62,11 +64,13 @@
 15. Click the checkmark to compile the project (will take a minute) 
 16. Once it compiles, click the lightning bolt button to flash the code to the Boron 
 	- Boron should flash yellow/green when being put into DFU mode, then should breathe a white/blue light once it’s flashed 
-	- Should also say it flashed successfully, unplugging and re-plugging cord into Boron can sometimes help if it doesn’t flash 
+	- Should also say it flashed successfully, unplugging and re-plugging the cord into Boron can sometimes help if it doesn’t flash 
 17. Open the serial monitor: command palette -> “Particle: Serial Monitor”  
-18. If the adalogger does not work, serial monitor may read something like the first chunk of text below, if it does work, it should read like the second chunk of text
+18. If the adalogger does not work, the serial monitor may read something like the first chunk of text below, if it does work, it should read like the second chunk of text
+ 
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/2.jpg)
+19. If problems go to **Common Problems** and double check that you did each step correctly
 
 ## Practice water level sensor full code (Boron and Adalogger) 
 
