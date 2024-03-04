@@ -1,0 +1,13 @@
+{
+    "name": "TinyCamML for google.com",
+    "event": "FloodorNo",
+    "disabled": false,
+    "url": "{GOOGLE_SHEETS_SCRIPT_URL}",
+    "requestType": "POST",
+    "noDefaults": false,
+    "rejectUnauthorized": true,
+    "todayCounters": {
+        "date": "20240304",
+        "success": 36
+    }
+}
