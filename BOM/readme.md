@@ -4,7 +4,7 @@ See .xlsx files for similar info |  formatted in markdown for better GitHub rend
 
 Parts | URL | Cost | Function
 | :---------------- | :------ | :---- | :---- |
-Boron LTE CAT-M1 (NorAm) with EtherSIM (BRN404X) | https://www.digikey.com/en/products/detail/particle-industries-inc/BRN404X/17632424 | $65.31  | "Microcontroller |  cell modem |  power management"
+Boron LTE CAT-M1 (NorAm) with EtherSIM (BRN404X) | https://www.digikey.com/en/products/detail/particle-industries-inc/BRN404X/17632424 | $65.31  | Microcontroller, cell modem, power management
 Antenna (included in above) |  |  | Cellular communications
 "Cable gland |  for 0.08""-0.24"" Cord OD" | https://www.digikey.com/en/products/detail/lapp/S2209/11200603 | $4.14  | Waterproof cable entry
 MB7092 XL-MaxSonar-WRMA1 | https://www.adafruit.com/product/1137 | $99.95  | Distance sensor
@@ -13,7 +13,7 @@ Stacking header pins for FeatherWing | https://www.adafruit.com/product/2830 | $
 SD/MicroSD Memory Card (8 GB SDHC) | https://www.adafruit.com/product/1294 | $9.95  | Data storage
 Lithium Ion Battery - 3.7V 4400mAh | https://www.adafruit.com/product/354 | $19.95  | Rechargeable battery
 USB DIY Slim Connector Shell - MicroB Plug | https://www.adafruit.com/product/1826 | $0.95  | Splice to solar panel power for Boron USB connection
-3-pin cable | https://www.adafruit.com/product/4721 | $0.95  | "Power |  ground |  and analog signal to/from sonar"
+3-pin cable | https://www.adafruit.com/product/4721 | $0.95  | Power, ground, and analog signal to/from sonar
 ML-24F Outdoor NEMA Enclosure | https://www.polycase.com/ml-24f | $14.24  | Enclosure for electronics; old design: new design uses PVC pipe and 3D-printed parts
 5 Watt 5 Volt 35Wh Solar System | https://voltaicsystems.com/5-watt-5-volt-35wh-solar-system/ | $99.00  | Solar charging
 Loctite PL Marine Fast Cure Adhesive Sealant |  | $11.16  | Seal gland (necessary?)
