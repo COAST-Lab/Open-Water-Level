@@ -21,5 +21,5 @@ FormLabs Tough Resin | https://formlabs.com/store/materials/tough-2000-resin/ | 
 Cell plan (we use Particle's Free Plan for now*) |  | $0.00  | Cloud data management
 Total |  | $375.80  | 
 
-Adafruit wishlist: http://www.adafruit.com/wishlists/589193
+Adafruit wishlist: http://www.adafruit.com/wishlists/589193  
 Digi-Key wishlist: https://www.digikey.com/en/mylists/list/3G4W9NENB6
