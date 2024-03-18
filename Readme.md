@@ -7,7 +7,7 @@ The article, *A Low-Cost, DIY Ultrasonic Water Level Sensor for Education, Citiz
 
 That manuscript contains additional important information beyond what is in this repository. Please read the following for a high-level overview of the project and the contents of this repository.
 
-## The Basics
+## About
 This project comprises a sensor package designed to measure distance and either transmit or store measurements.  It utilizes an Arduino-based Adafruit Adalogger with a Particle Boron with cellular data transfer a Maxbotix ultrasonic rangefinder, a rechargeable lithium-ion battery, and either upcycled plastic parts or an off-the-shelf water-resistant enclosure.
 
 ## Introduction
