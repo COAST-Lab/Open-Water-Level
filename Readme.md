@@ -42,7 +42,7 @@ Link to  the data sheets of each part in the sensor package
 
 ## How to get started 
 
-
+Click this link below to find instructions on getting started with programing and soldering your sensor.
 
 [Firmware](Firmware)
 
