@@ -26,16 +26,16 @@ The goals of this repository are to enable citizen scientists, businesses, and a
 
 
 ## Introduction
-There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation).  If you are new to sensor development, wiring, or coding, we recommend the version described in [Firmware/SLR_Arduino_Maxbotix_Analog](Firmware/SLR_Arduino_Maxbotix_Analog). There is additional instructional documentation in that folder.
+There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation). 
 
 If you are looking for a cellular data transmission&ndash;enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and the Getting Started guide in that repository's README.
 
 ## Datasheets
-https://github.com/COAST-Lab/Open-Water-Level/tree/e00c465049842374815a742543874c4c1ce38e34/Datasheets
+
 
 ## How to get started 
 
-Link to firmware getting started 
+Firmware
 
 
 ## The Fun Stuff
