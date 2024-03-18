@@ -5,10 +5,10 @@ This GitHub repository is intended to serve as supplementary information to a ma
 
 The article, *A Low-Cost, DIY Ultrasonic Water Level Sensor for Education, Citizen Science, and Research*, can be found here: [https://doi.org/10.5670/oceanog.2023.101](https://doi.org/10.5670/oceanog.2023.101). This article corresponds to an older version of the code which can be found here: [https://github.com/SUPScientist/Seaport_Tide-SLR](https://github.com/SUPScientist/Seaport_Tide-SLR). 
 
-That manuscript contains additional important information beyond what is in this repository. Please read the following for a high level overview to the project and the contents of this repository.
+That manuscript contains additional important information beyond what is in this repository. Please read the following for a high-level overview of the project and the contents of this repository.
 
 ## The Basics
-This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, Adafruit FeatherWing Real-Time Clock, a rechargeable lithium ion battery, and either upcycled plastic parts or an off-the-shelf water-resistant enclosure.
+This project comprises a sensor package designed to measure distance and either transmit or store measurements.  It utilizes an Arduino-based Adafruit Adalogger with a Particle Boron with cellular data transfer a Maxbotix ultrasonic rangefinder, a rechargeable lithium-ion battery, and either upcycled plastic parts or an off-the-shelf water-resistant enclosure.
 
 ## Introduction
 There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation).  If you are new to sensor development, wiring, or coding, we recommend the version described in [Firmware/SLR_Arduino_Maxbotix_Analog](Firmware/SLR_Arduino_Maxbotix_Analog). There is additional instructional documentation in that folder.
