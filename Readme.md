@@ -35,7 +35,7 @@ If you are looking for a cellular data transmission&ndash;enabled device with hi
 
 ## How to get started 
 
-Firmware
+[Firmware](Firmware)
 
 
 ## The Fun Stuff
