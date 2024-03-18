@@ -31,9 +31,11 @@ There are several versions of the DIY water level sensor, including different mi
 If you are looking for a cellular data transmission&ndash;enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and the Getting Started guide in that repository's README.
 
 ## Datasheets
-
+Link to  the data sheets of each part in the sensor package
+[Datasheets](Datasheets)
 
 ## How to get started 
+Once you have attained sensors you can begin following instructions to solder parts together and to connect the sensor package. 
 
 [Firmware](Firmware)
 
