@@ -28,7 +28,7 @@ The goals of this repository are to enable citizen scientists, businesses, and a
 ## Introduction
 There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation). 
 
-If you are looking for a cellular data transmission-enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and the Getting Started guide in that repository's README.
+If you are looking for a cellular data transmission-enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and to get started on soldering and building your sensor package, click here [Firmware](Firmware)
 
 ## How to get your sensor
 [BOM](BOM)
