@@ -16,7 +16,7 @@ The goals of this repository are to enable citizen scientists, businesses, and a
 
 ## Table of Contents 
 
-- [Introduction](#Inroduction)
+- [Introduction](#Introduction)
 
 - [How to get your sensor](How-to-get-your-sensor)
   
