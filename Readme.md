@@ -22,8 +22,6 @@ The goals of this repository are to enable citizen scientists, businesses, and a
   
 - [Datasheets](#Datasheets) 
 
-- [How to get started](#How-to-get-started)
-
 - [Deployment](#Deployment)
 
 
@@ -39,13 +37,6 @@ If you are looking for a cellular data transmission-enabled device with higher r
 Link to  the data sheets of each part in the sensor package
 
 [Datasheets](Datasheets)
-
-## How to get started 
-
-Click this link below to find instructions on getting started with programing and soldering your sensor.
-
-[Firmware](Firmware)
-
 
 ## The Fun Stuff
 ### Deployment
