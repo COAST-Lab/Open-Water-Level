@@ -20,7 +20,7 @@ The goals of this repository are to enable citizen scientists, businesses, and a
 - [Datasheets](#Datasheets) 
 - [Deployment](#Deployment)
 - [Sensor components/bill of materials](Fabrication/BOM)  
-- [Sensor housing](Fabrication/Enclosure-and-Assembly)
+- [Sensor housing](Fabrication/Enclosure%20and%20Assembly)
 
 
 ## Introduction
