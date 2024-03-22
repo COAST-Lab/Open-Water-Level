@@ -17,12 +17,10 @@ The goals of this repository are to enable citizen scientists, businesses, and a
 ## Table of Contents 
 
 - [Introduction](#Introduction)
-
-- [How to get your sensor](How-to-get-your-sensor)
-  
 - [Datasheets](#Datasheets) 
-
 - [Deployment](#Deployment)
+- [Sensor components/bill of materials](./tree/main/Fabrication/BOM)  
+- [Sensor housing](./tree/main/Fabrication/Enclosure-and-Assembly))  
 
 
 ## Introduction
