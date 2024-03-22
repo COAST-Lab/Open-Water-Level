@@ -5,18 +5,38 @@ This GitHub repository is intended to serve as supplementary information to a ma
 
 The article, *A Low-Cost, DIY Ultrasonic Water Level Sensor for Education, Citizen Science, and Research*, can be found here: [https://doi.org/10.5670/oceanog.2023.101](https://doi.org/10.5670/oceanog.2023.101). This article corresponds to an older version of the code which can be found here: [https://github.com/SUPScientist/Seaport_Tide-SLR](https://github.com/SUPScientist/Seaport_Tide-SLR). 
 
-That manuscript contains additional important information beyond what is in this repository. Please read the following for a high level overview to the project and the contents of this repository.
+That manuscript contains additional important information beyond what is in this repository. Please read the following for a high-level overview of the project and the contents of this repository.
 
-## The Basics
-This project comprises a sensor package designed to make distance measurements and display output. It utilizes an Arduino-based Adafruit Adalogger (alternatively, a Bluefruit Feather nRF52832 or similar microcontroller with BLE or Particle Boron with cellular data transfer), a Maxbotix ultrasonic rangefinder, an Adafruit FeatherWing OLED screen, Adafruit FeatherWing Real-Time Clock, a rechargeable lithium ion battery, and either upcycled plastic parts or an off-the-shelf water-resistant enclosure.
+(insert picture)
+
+## About
+This project comprises a low-cost open-sourced sensor package designed to measure distance and either transmit or store measurements.  It utilizes an Arduino-based Adafruit Adalogger with a Particle Boron with cellular data transfer a Maxbotix ultrasonic rangefinder, a rechargeable lithium-ion battery, and either upcycled plastic parts or an off-the-shelf water-resistant enclosure. 
+
+The goals of this repository are to enable citizen scientists, businesses, and anyone with the motivation to monitor their local sea level. To get started read through this page and subsequent directions. 
+
+## Table of Contents 
+
+- [Introduction](#Introduction)
+
+- [How to get your sensor](How-to-get-your-sensor)
+  
+- [Datasheets](#Datasheets) 
+
+- [Deployment](#Deployment)
+
 
 ## Introduction
-There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation).  If you are new to sensor development, wiring, or coding, we recommend the version described in [Firmware/SLR_Arduino_Maxbotix_Analog](Firmware/SLR_Arduino_Maxbotix_Analog). There is additional instructional documentation in that folder.
+There are several versions of the DIY water level sensor, including different microcontrollers and different sensor interfacing options (analog, serial, and pulse-width modulation). 
 
-If you are looking for a cellular data transmission&ndash;enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and the Getting Started guide in that repository's README.
+If you are looking for a cellular data transmission-enabled device with higher resolution, see [Firmware/SLR_Boron_Maxbotix_MB7092_cm](Firmware/SLR_Boron_Maxbotix_MB7092_cm) and to get started on soldering and building your sensor package, click here [Firmware](Firmware).
 
-## DataSheets
-https://github.com/COAST-Lab/Open-Water-Level/tree/e00c465049842374815a742543874c4c1ce38e34/Datasheets
+## How to get your sensor
+[BOM](BOM)
+
+## Datasheets
+Link to  the data sheets of each part in the sensor package
+
+[Datasheets](Datasheets)
 
 ## The Fun Stuff
 ### Deployment
