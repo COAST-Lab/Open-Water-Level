@@ -48,7 +48,14 @@ SystemSleepConfiguration config;
 // Various timing constants
 const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this time trying to connect to the cloud and publish
 // const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
+
+// ***** IMPORTANT!!!
+// If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
+// .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
+// in sleep configuration to avoid reconnection penalty
 const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 3600; // What should sampling period be?
+// ***** IMPORTANT!!! See note above this const.
+
 
 void setup(void) {
   if (PUBLISHING==1) {
@@ -209,8 +216,8 @@ void loop(void) {
 
     config.mode(SystemSleepMode::ULTRA_LOW_POWER)
       .gpio(D2, FALLING)
-      .duration(wakeInSeconds* 1000L) // Set seconds until wake
-      .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY); // keeps the cellular modem powered, but does not wake the MCU for received data
+      .duration(wakeInSeconds* 1000L); // Set seconds until wake
+      // .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY); // keeps the cellular modem powered, but does not wake the MCU for received data
 
     // Ready to sleep
     SystemSleepResult result = System.sleep(config); // Device sleeps here
