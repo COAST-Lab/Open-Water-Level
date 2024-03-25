@@ -5,12 +5,10 @@
 ## Table of Contents 
 
 - [Introduction](#Introduction)
-
-- [How to get your sensor](How-to-get-your-sensor)
-  
 - [Datasheets](#Datasheets) 
-
 - [Deployment](#Deployment)
+- [Sensor components/bill of materials](Fabrication/BOM)  
+- [Sensor housing](Fabrication/Enclosure%20and%20Assembly)
 
 - [Calibration](#Calibration)
 
