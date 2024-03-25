@@ -10,10 +10,11 @@ Please read the following for a high-level overview of the project and the conte
 
 ## Table of Contents 
 Scroll down or click the following links for more information: 
-- [Introduction to the Sensor](#introduction-to-the-sensor)
-- [How to Build a Sensor](#how-to-build-a-sensor)
+- [Introduction to the Sensor](#-introduction-to-the-sensor)
+- [How to Build a Sensor](#-how-to-build-a-sensor)
 - [Firmware and getting started guide](Firmware)
-- [Deployment Considerations](#Deployment)
+- [Deployment Considerations](#-Deployment-considerations)
+- [Data Analysis](#-example-data-analysis-routine)
 
 ![Water level sensor](Photos/SMCKERR_WL_WL01.jpeg)
 
@@ -35,4 +36,5 @@ This repository aims to enable students, communities, businesses, and anyone els
 ## 🌊 Deployment Considerations
 Deployment is the last step but it's probably the most exciting, so we'll start our procedural notes here. The Open Water Level sensor has a ~ 6.5 m (21') range with a 1 cm (0.39") resolution. Deployment locations must be chosen with these values in mind. If you are deploying the monitor at a location reasonably close to an existing NOAA tide station, start by examining the known tidal range at your location: [NOAA tide predictions](https://tidesandcurrents.noaa.gov/tide_predictions.html). You will want to deploy the monitor at a location where it can aim straight down (normal) to the water's surface and at a height that is slightly higher than the highest high tide or floodwater height that the location is expected to experience. You also want it to be low enough that it can capture the lowest low water. The package is water resistant, but not fully waterproof if submerged for extended periods.
 
-## 💻 Example Data Analysis Scripts
+## 💻 Example Data Analysis Routine
+Please see this [example notebook](Data%20Analysis/open_water_level_analysis.ipynb) for Python code that reads in, parses, and plots water level data, including the critical conversion of `distance from the sensor to the water` to a `referenced water level`.
