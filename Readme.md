@@ -8,7 +8,7 @@ The article, *A Low-Cost, DIY Ultrasonic Water Level Sensor for Education, Citiz
 
 Please read the following for a high-level overview of the project and the contents of this repository.
 
-## Table of Contents 
+## 🔮 Table of Contents 
 Scroll down or click the following links for more information: 
 - [Introduction to the Sensor](#-introduction-to-the-sensor)
 - [How to Build a Sensor](#-how-to-build-a-sensor)
