@@ -6,7 +6,7 @@ Parts | URL | Cost | Function
 | :---------------- | :------ | :---- | :---- |
 Boron LTE CAT-M1 (NorAm) with EtherSIM (BRN404X) | https://www.digikey.com/en/products/detail/particle-industries-inc/BRN404X/17632424 | $65.31  | Microcontroller, cell modem, power management
 Antenna (included in above) |  |  | Cellular communications
-"Cable gland |  for 0.08""-0.24"" Cord OD" | https://www.digikey.com/en/products/detail/lapp/S2209/11200603 | $4.14  | Waterproof cable entry
+Cable gland for 0.08""-0.24"" Cord OD | https://www.digikey.com/en/products/detail/lapp/S2209/11200603 | $4.14  | Waterproof cable entry
 MB7092 XL-MaxSonar-WRMA1 | https://www.adafruit.com/product/1137 | $99.95  | Distance sensor
 Adalogger FeatherWing - RTC + SD Add-on For All Feather Boards | https://www.adafruit.com/product/2922 | $8.95  | Data storage board
 Stacking header pins for FeatherWing | https://www.adafruit.com/product/2830 | $1.25  | Stack Boron on FeatherWing
