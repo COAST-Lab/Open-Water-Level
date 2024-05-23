@@ -3,13 +3,13 @@
 /******************************************************/
 
 #include "Particle.h"
-#line 1 "/Users/bresnahanp/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino"
+#line 1 "/Users/pjb/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino"
 #include "SdFat.h"
  //------------------SD SPI Configuration Details--------------------------------
 void setup(void);
 void loop(void);
 int secondsUntilNextEvent();
-#line 3 "/Users/bresnahanp/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino"
+#line 3 "/Users/pjb/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino"
 const int SD_CHIP_SELECT = D5;
 SdFat sd;
 
@@ -56,7 +56,7 @@ const char * eventName = "waterLevel";
 SystemSleepConfiguration config;
 
 // Various timing constants
-const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this time trying to connect to the cloud and publish
+const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000; // Only stay awake for this time trying to connect to the cloud and publish
 // const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 
 // ***** IMPORTANT!!!

@@ -1,5 +1,5 @@
 
-/Users/bresnahanp/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/target/4.2.0/boron/SLR_Boron_Maxbotix_MB7092_cm.elf:     file format elf32-littlearm
+/Users/pjb/Dropbox/Smart_Coasts_Sensors/Water-Level/Open-Water-Level/Firmware/SLR_Boron_Maxbotix_MB7092_cm/target/4.2.0/boron/SLR_Boron_Maxbotix_MB7092_cm.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -33,31 +33,46 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  14 .debug_macro  000438b2  00000000  00000000  0020b979  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_line   00052c34  00000000  00000000  0024f22b  2**0
+ 15 .debug_line   000520db  00000000  00000000  0024f22b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_str    0013f265  00000000  00000000  002a1e5f  2**0
+ 16 .debug_str    0013f203  00000000  00000000  002a1306  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_frame  00008450  00000000  00000000  003e10c4  2**2
+ 17 .debug_frame  00008450  00000000  00000000  003e050c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
 
 000b401c <module_user_pre_init>:
+/**
+ * Initializes this user module. Returns the start of the heap.
+ */
+void* module_user_pre_init() {
+
+    if ( (&link_global_data_start!=&link_global_data_initial_values) && (link_global_data_size != 0))
    b401c:	4809      	ldr	r0, [pc, #36]	; (b4044 <module_user_pre_init+0x28>)
    b401e:	490a      	ldr	r1, [pc, #40]	; (b4048 <module_user_pre_init+0x2c>)
    b4020:	4288      	cmp	r0, r1
+void* module_user_pre_init() {
    b4022:	b508      	push	{r3, lr}
+    if ( (&link_global_data_start!=&link_global_data_initial_values) && (link_global_data_size != 0))
    b4024:	d005      	beq.n	b4032 <module_user_pre_init+0x16>
    b4026:	4a09      	ldr	r2, [pc, #36]	; (b404c <module_user_pre_init+0x30>)
    b4028:	4282      	cmp	r2, r0
    b402a:	d002      	beq.n	b4032 <module_user_pre_init+0x16>
+    {
+        memcpy(&link_global_data_start, &link_global_data_initial_values, link_global_data_size);
    b402c:	1a12      	subs	r2, r2, r0
    b402e:	f004 f87d 	bl	b812c <memcpy>
+    }
+
+    memset(&link_bss_location, 0, link_bss_size );
    b4032:	4807      	ldr	r0, [pc, #28]	; (b4050 <module_user_pre_init+0x34>)
    b4034:	4a07      	ldr	r2, [pc, #28]	; (b4054 <module_user_pre_init+0x38>)
    b4036:	2100      	movs	r1, #0
    b4038:	1a12      	subs	r2, r2, r0
    b403a:	f004 f885 	bl	b8148 <memset>
+    return &link_global_data_start;
+}
    b403e:	4801      	ldr	r0, [pc, #4]	; (b4044 <module_user_pre_init+0x28>)
    b4040:	bd08      	pop	{r3, pc}
    b4042:	bf00      	nop
@@ -68,48 +83,98 @@ Disassembly of section .text:
    b4054:	2003e7ed 	.word	0x2003e7ed
 
 000b4058 <module_user_init>:
+extern constructor_ptr_t link_constructors_location[];
+extern constructor_ptr_t link_constructors_end;
+#define link_constructors_size   ((unsigned long)&link_constructors_end  -  (unsigned long)&link_constructors_location )
+
+void module_user_init()
+{
    b4058:	b570      	push	{r4, r5, r6, lr}
+    module_user_init_hook();
+
+    // invoke constructors
+    for (size_t ctor_num=0; ctor_num < link_constructors_size/sizeof(constructor_ptr_t); ctor_num++ )
    b405a:	4e07      	ldr	r6, [pc, #28]	; (b4078 <module_user_init+0x20>)
    b405c:	4c07      	ldr	r4, [pc, #28]	; (b407c <module_user_init+0x24>)
+    module_user_init_hook();
    b405e:	f003 fab9 	bl	b75d4 <module_user_init_hook>
+    for (size_t ctor_num=0; ctor_num < link_constructors_size/sizeof(constructor_ptr_t); ctor_num++ )
    b4062:	1ba4      	subs	r4, r4, r6
    b4064:	08a4      	lsrs	r4, r4, #2
    b4066:	2500      	movs	r5, #0
    b4068:	42ac      	cmp	r4, r5
    b406a:	d100      	bne.n	b406e <module_user_init+0x16>
+    {
+        link_constructors_location[ctor_num]();
+    }
+}
    b406c:	bd70      	pop	{r4, r5, r6, pc}
+        link_constructors_location[ctor_num]();
    b406e:	f856 3b04 	ldr.w	r3, [r6], #4
    b4072:	4798      	blx	r3
+    for (size_t ctor_num=0; ctor_num < link_constructors_size/sizeof(constructor_ptr_t); ctor_num++ )
    b4074:	3501      	adds	r5, #1
    b4076:	e7f7      	b.n	b4068 <module_user_init+0x10>
    b4078:	000b86e0 	.word	0x000b86e0
    b407c:	000b8704 	.word	0x000b8704
 
 000b4080 <module_user_setup>:
+
+/**
+ * Export these functions with a fuller name so they don't clash with the setup/loop wrappers in the system module.
+ */
+void module_user_setup() {
+    setup();
    b4080:	f000 b8dc 	b.w	b423c <setup>
 
 000b4084 <module_user_loop>:
+}
+
+void module_user_loop() {
    b4084:	b508      	push	{r3, lr}
+    loop();
    b4086:	f000 f929 	bl	b42dc <loop>
+    _post_loop();
+}
    b408a:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+    _post_loop();
    b408e:	f003 ba59 	b.w	b7544 <_post_loop>
 
 000b4092 <_Znwj>:
+ * Implement C++ new/delete operators using the heap
+ */
+
+void *operator new(size_t size)
+{
+	return malloc(size);
    b4092:	f002 b8ef 	b.w	b6274 <malloc>
 
 000b4096 <_Znaj>:
    b4096:	f002 b8ed 	b.w	b6274 <malloc>
 
 000b409a <_ZdlPvj>:
+	free(p);
+}
+
+void operator delete(void *p, size_t size)
+{
+	free(p);
    b409a:	f002 b8f3 	b.w	b6284 <free>
 
 000b409e <__cxa_guard_acquire>:
+
+/* Provide default implemenation for __cxa_guard_acquire() and
+ * __cxa_guard_release(). Note: these must be revisited if a multitasking
+ * OS is ported to this platform. */
+__extension__ typedef int __guard __attribute__((mode (__DI__)));
+int __cxa_guard_acquire(__guard *g) {return !*(char *)(g);};
    b409e:	7800      	ldrb	r0, [r0, #0]
    b40a0:	fab0 f080 	clz	r0, r0
    b40a4:	0940      	lsrs	r0, r0, #5
    b40a6:	4770      	bx	lr
 
 000b40a8 <__cxa_guard_release>:
+void __cxa_guard_release (__guard *g) {*(char *)g = 1;};
    b40a8:	2301      	movs	r3, #1
    b40aa:	7003      	strb	r3, [r0, #0]
    b40ac:	4770      	bx	lr
@@ -875,7 +940,7 @@ inline particle::Flags<TagT, ValueT> particle::Flags<TagT, ValueT>::operator|(Fl
         if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS) {
    b44f8:	682b      	ldr	r3, [r5, #0]
    b44fa:	1ac0      	subs	r0, r0, r3
-   b44fc:	f644 631f 	movw	r3, #19999	; 0x4e1f
+   b44fc:	f64e 235f 	movw	r3, #59999	; 0xea5f
    b4500:	4298      	cmp	r0, r3
    b4502:	d907      	bls.n	b4514 <loop+0x238>
           state = SLEEP_STATE;
