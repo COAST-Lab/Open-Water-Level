@@ -3,24 +3,24 @@
 This section will help you set up Visual Studio Code and Particle Workbench, two important platforms you'll need for the following exercises.
 
 1. Download Visual Studio (the one with the blue icon, not purple) [here](https://code.visualstudio.com/).
-2. Download Particle Workbench [here](https://www.particle.io/workbench/) and create an account using your email address of choice (select 'Education' if applicable). Make sure you have Visual Studio installed prior to running the installer.
+2. Download Particle Workbench [here](https://www.particle.io/workbench/) and create an account using your email address of choice (select 'Education' for account type if applicable). Make sure you have Visual Studio installed prior to running the installer.
 	- The installer says that it will install Visual Studio (VS) along with Particle, but this does not work properly and will fail if VS is not installed first.
 3. Log into Particle on Visual Studio if it doesn’t automatically (this is important because you won’t be able to install necessary libraries without being logged in).
 
 ## Useful features
-This section lists some features that will be helpful in the following exercises.
+This section lists some commands and programming features that will be helpful in the following exercises.
 
 1. Open the Particle Command Palette: Ctrl+Shift+P on Windows; or select the 'view' tab -> Command Palette; or click the 'Launch Command Palette' button on the 'welcome' tab).
 2. In the top right corner, there are some important symbols in white circles:
 	- Compile: checkmark
 	- Flash: lightning bolt
-3. These symbols will be used later to compile and flash code (importing code to the Boron device).
+3. These symbols will be used later to compile and flash code (i.e. importing code to the Boron device).
 4. Keep this in your back pocket, but don't use it yet: in cases where the Boron stops responding as expected or displaying error LED sequences, you may need to restore the device. Particle has an online, USB-based option here: [https://docs.particle.io/tools/device-restore/device-restore-usb/](https://docs.particle.io/tools/device-restore/device-restore-usb/).
 
 ## Common problems
 This section lists some common problems you may encounter in the following exercises and how to address them.
 
-Skip this section for now and try **Practice Code with Boron** first. Refer back to this list if you encounter problems.
+Skip this section for now and try the **Practice Code with Boron** section first. Refer back to this list if you encounter problems.
 1. If you receive a "No Device Found" or "Serial Time Out" message when using "Particle: Identify" ... First, double-check that you have selected Boron in the bottom right bar, have selected the correct OS version 4.2.0, and put the device in listening mode (by pressing and holding the Mode button until the LED blinks blue). If those settings are correct, try restarting your computer.
 2. If you have problems in **Practice code with Boron and Adalogger** ... If Initializing SD Card and initialization failed, check that the micro SD card is empty. Plug it into your computer, open the SD card, and delete every file on it.
 
@@ -28,23 +28,26 @@ Skip this section for now and try **Practice Code with Boron** first. Refer back
 ## Practice code with Boron
 This section will take you through an exercise to set up your Boron device and practice using code with it.
 
-1. Plug in the Boron device to your computer using a micro-USB cable.
-	- If you get the message `Could not identify device: No serial port identified` but the Boron powers up, ensure that your cable has data transfer capabilities (many are only capable of charging).
-	- Visit [https://docs.particle.io/tools/device-restore/device-restore-usb/](https://docs.particle.io/tools/device-restore/device-restore-usb/) and click 'Select Device.' Restore to system firmware version matching the example. Current compiled [target](SLR_Boron_Maxbotix_MB7092_cm/target) is 4.2.0.
-2. Create a folder on your computer to store Particle related items (no spaces in the title; use underscores (_)).
-3. Create a new project by opening the Particle Command Palette and selecting 'Particle: Create New Project.' You can also click the blue text that says 'Create New Project' on the welcome page under Development workflow -> Code
+1. Plug in the Boron device to your computer using a micro-USB cable. Visit [https://docs.particle.io/tools/device-restore/device-restore-usb/](https://docs.particle.io/tools/device-restore/device-restore-usb/) and click 'Select Device.' Restore to the default system firmware version matching the example (not 'custom user firmware') and set the current compiled [target](SLR_Boron_Maxbotix_MB7092_cm/target) to be 4.2.0.
+	- Note: If you get the message `Could not identify device: No serial port identified` but the Boron powers up, ensure that your cable has data transfer capabilities (many are only capable of charging).
+2. Create a folder on your computer to store Particle-related items (no spaces in the title; use underscores (_) ... something like Particle_Items).
+3. Create a new project by opening the Particle Command Palette (see: 'Useful features') and selecting 'Particle: Create New Project.' You can also click the blue text that says 'Create New Project' on the welcome page under Development Workflow -> Code.
 4. Choose the folder you just made on your computer for this class when asked to choose the 'parent' folder.
 5. Once you have the directory in which you want to store your Particle projects, create a project name (no spaces) ... Something like Blink_LED.
 6. Copy the code from the file named `Blink_LED.ino` (not the one you just made but from the example [here](https://github.com/SUPScientist/Smart-Coasts/blob/main/Class-01-Intro/Blink_LED.ino)).
-7. Navigate to the .cpp file that is generated for your new project under the 'src' tab on the left-hand side of screen (under 'explorer'). Delete all the text in the .cpp file and paste the code you just copied.
-8. Open the Command Palette. Type 'particle' and select 'Particle Launch CLI.'
-9. Put the Boron into DFU (Device Firmware Update) mode by pressing and holding the 'Mode' button on the Boron while simultaneously pressing and releasing the 'Reset' button. Continue holding 'Mode' until the RGB (Red Green Blue) LED starts flashing yellow.
-11. Check your Device OS by putting the Boron in listening mode (press and hold 'Mode' until the LED blinks blue) and typing the following command into the CLI: `particle identify` (the CLI results should present the OS with which you're working; for me, it is 4.2.0).
- 	- Note: You may have to press the ‘Reset’ button after putting the Boron in DFU mode and before putting it in listening mode if the LED doesn't begin blinking blue after a few seconds.
-13. Configure Workbench to work with the Device OS that you confirmed you're using in the previous steps. Your settings should be across the bottom of the page. Make sure the first setting says "Boron" and the second says "deviceOS@[4.2.0 or your specific number]" by clicking and changing them if need be.
-14. Open the Command Palette and run 'Particle: flash application (local)' to compile and flash your script (your .cpp file) to your device. If successful, this will result in the blinking of a blue LED near the micro-USB socket on the Boron.
- 	- If unsuccessful, check that all steps were followed correctly. Changing "Particle.h" to <Particle.h> may also address certain errors.
-
+7. Navigate to the .cpp file that is generated for your new project under the 'src' tab on the left-hand side of screen (under 'explorer').
+8. Delete all the text in the .cpp file after line 10 and paste the code you just copied.
+	- Note: Make sure you leave lines 9-10 (seen below), as your .cpp file will not run properly without line 10.
+// Include Particle Device OS APIs
+#include "Particle.h"
+	- Optional: Fill in applicable information (i.e. project name, author name, date, etc.) in lines 1-8 of the .cpp file; this is considered optional as it is for organizational purposes and will not affect the validity of your code.
+10. Open the Command Palette. Type 'Particle' and select 'Particle Launch CLI.'
+11. Configure Workbench to work with the Device OS that you confirmed you're using in the beginning of this section. Your settings should be across the bottom of the page; make sure the first setting says "Boron" and the second says "deviceOS@[4.2.0 or your specific number]" by clicking and changing them if need be.
+12. Put the Boron into DFU (Device Firmware Update) mode by pressing and holding the 'Mode' button on the Boron while simultaneously pressing and releasing the 'Reset' button. Continue holding 'Mode' until the RGB (Red Green Blue) LED starts flashing yellow.
+13. Put the Boron in listening mode by pressing and holding 'Mode' until the LED blinks blue).
+	- Note: You may have to press the ‘Reset’ button after putting the Boron in DFU mode and before putting it in listening mode if the LED doesn't begin blinking blue after a few seconds.
+14. Type the following command into the CLI: `particle identify` ... The CLI results should present the OS with which you're working; for me, it is 4.2.0.
+15. Open the Command Palette and run 'Particle: flash application (local)' to compile and flash your script (your .cpp file) to your device. If successful, this will result in the blinking of a blue LED near the micro-USB socket on the Boron.
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/0.jpg)
 
