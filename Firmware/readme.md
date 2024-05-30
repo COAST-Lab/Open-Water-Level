@@ -10,12 +10,13 @@ This section will help you set up Visual Studio Code and Particle Workbench, two
 ## Useful features
 This section lists some commands and programming features that will be helpful in the following exercises.
 
-1. Open the Particle Command Palette: Ctrl+Shift+P on Windows; or select the 'view' tab -> Command Palette; or click the 'Launch Command Palette' button on the 'welcome' tab).
+1. Open the Particle Command Palette: Ctrl+Shift+P on Windows; or Command+Shift+P on Mac; or select the 'view' tab -> Command Palette; or click the 'Launch Command Palette' button on the 'welcome' tab).
 2. In the top right corner, there are some important symbols in white circles:
 	- Compile: checkmark
 	- Flash: lightning bolt
 3. These symbols will be used later to compile and flash code (i.e. importing code to the Boron device).
-4. Keep this in your back pocket, but don't use it yet: in cases where the Boron stops responding as expected or displaying error LED sequences, you may need to restore the device. Particle has an online, USB-based option here: [https://docs.particle.io/tools/device-restore/device-restore-usb/](https://docs.particle.io/tools/device-restore/device-restore-usb/).
+4. Save your projects frequently using Ctrl+S on Windows or Command+S on Mac. Make sure your directory is just how you want it to avoid pathway issues in your coding projects!
+5. Keep this in your back pocket, but don't use it yet: in cases where the Boron stops responding as expected or displaying error LED sequences, you may need to restore the device. Particle has an online, USB-based option here: [https://docs.particle.io/tools/device-restore/device-restore-usb/](https://docs.particle.io/tools/device-restore/device-restore-usb/).
 
 ## Common problems
 This section lists some common problems you may encounter in the following exercises and how to address them.
@@ -23,6 +24,7 @@ This section lists some common problems you may encounter in the following exerc
 Skip this section for now and try the **Practice Code with Boron** section first. Refer back to this list if you encounter problems.
 1. If you receive a "No Device Found" or "Serial Time Out" message when using "Particle: Identify" ... First, double-check that you have selected Boron in the bottom right bar, have selected the correct OS version 4.2.0, and put the device in listening mode (by pressing and holding the Mode button until the LED blinks blue). If those settings are correct, try restarting your computer.
 2. If you have problems in **Practice code with Boron and Adalogger** ... If Initializing SD Card and initialization failed, check that the micro SD card is empty. Plug it into your computer, open the SD card, and delete every file on it.
+3. If met with error codes / unsuccessful compiling and a message stating that your file is dirty, try accepting the offer to 'clean' your file. If this doesn't fix the issue, try closing VS, deleting the project from your computer, and starting over.
 
 
 ## Practice code with Boron
@@ -55,20 +57,20 @@ This section will take you through an exercise to set up your Boron device and p
 This section will take you through an exercise to set up the Boron and Adalogger devices and practice using code with them.
 
 1. Stack the Boron on top of the Adalogger using female headers. You can see an example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg)
-2. Plug in the Boron and put it in listening mode again (by pressing and holding 'Mode' until the LED blinks blue). Type `particle identify` into the CLI again and make sure "Boron" and the correct Device OS are selected in the bottom bar.
+2. Plug in the Boron and put it in listening mode again (by pressing and holding 'Mode' until the LED blinks blue). Type `particle identify` into the CLI again and make sure 'Boron' and the correct Device OS (e.g. 4.2.0) are selected in the bottom bar.
 3. Create a new project (I named mine RTCtest).
 4. Open the Command Palette and type 'Particle: Install Library'
 5. Type in 'SdFat' and press enter to install the SdFat library.
-6. A new tab titled 'lib' should now be under the 'explorer' tab for this project on the left – open it.
+6. A new tab titled 'lib' should now be under the 'explorer' tab for this project on the left ... open it!
 7. Click on 'examples' -> 'ReadWrite' -> 'ReadWrite.ino' 
 8. Copy all the code on this page.
 9. Now click the tab that says 'src' on the left, then '[yourprojecttitle].cpp'
-10. In the .cpp file, delete all code after line [ENTER NUMBER] and paste the new code you just copied from the 'ReadWrite.ino' file. 
-12. In line 25, change `#define SD_CS_PIN SS` to `#define SD_CS_PIN D5` (SS -> D5) 
+10. In the .cpp file, delete all code after line 10 and paste the new code you just copied from the 'ReadWrite.ino' file. (Like earlier, make sure `#include "Particle.h"` is left in the code! Otherwise, your .cpp file won't work properly.)
+12. In line 36, change `#define SD_CS_PIN SS` to `#define SD_CS_PIN D5` (SS -> D5)
 13. After `File myFile;` create a new line and paste
 `SYSTEM_MODE(SEMI_AUTOMATIC);
 SYSTEM_THREAD(ENABLED);`
-14. After `void setup(){,` create a new line and paste `Cellular.off();”` and in the next line paste `delay(5500);` 
+14. After `void setup(){` create a new line and paste `Cellular.off();` and in the next line paste `delay(5500);` 
 15. Where it says `if (!SD.begin(SD_CS_PIN,)) {` paste `if (!SD.begin(SD_CS_PIN,SPI_FULL_SPEED)) {`
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/1.jpg)
@@ -77,54 +79,60 @@ SYSTEM_THREAD(ENABLED);`
 17. Once it compiles, click the lightning bolt button to flash the code to the Boron. 
 	- Boron should flash yellow/green when being put into DFU mode, then should breathe a white/blue light once it’s flashed.
 	- Should also say it flashed successfully; unplugging and re-plugging the cord into Boron can sometimes help if it doesn’t flash.
-18. Open the serial monitor: Command Palette -> 'Particle: Serial Monitor' 
-19. If the Adalogger does not work, the serial monitor may read something like the first chunk of text below. If it does work, it should read like the second chunk of text.
+18. Open the serial monitor: Command Palette -> 'Particle: Serial Monitor'
+ 	- Select 'yes' if prompted whether you want to 'automatically reconnect when port is closed'
+20. If the Adalogger does not work, the serial monitor may read something like the first chunk of text below. If it does work, it should read like the second chunk of text.
  
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/2.jpg)
-20. If you encounter problems, go to **Common Problems** and double check that you did each step correctly.
+21. If you encounter problems, go to **Common Problems** and double check that you did each step correctly. You can also try pressing the 'Reset' button on the Boron, or unplugging and re-plugging the cord.
 
 ## Practice water level sensor full code (Boron and Adalogger) 
 This section will allow you to practice using water level sensor code and working with the Boron and Adalogger devices.
 
 1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron. Example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/MAX.jpg)
-3. On the GitHub repository, go to 'Firmware' -> 'SLR_Boron_Maxbotix_MB7092_cm' -> 'src' -> 'SLR_Boron_Maxbotix_MB7092_cm.ino' (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino))  
-4. Copy all the code on this page.
-5. In particle workbench, create a new project.
-6. Open the Command Palette and type 'Particle: Install Library' 
-5. Type in 'SdFat' and press enter to install the SdFat library.
+2. On the GitHub repository, go to 'Firmware' -> 'SLR_Boron_Maxbotix_MB7092_cm' -> 'src' -> 'SLR_Boron_Maxbotix_MB7092_cm.ino' (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino))
+3. Copy all the code on this page.
+4. In Particle Workbench, create a new project (I named mine BAdaFull).
+ 	- See 'Useful features' and 'Practice code with Boron' if you need a refresher on how to do this.
+5. Open the Command Palette and type 'Particle: Install Library' 
+6. Type in 'SdFat' and press enter to install the SdFat library.
 7. Go to the .cpp file in the new project you created (it should have the same name as your project).
-8. Delete all code after line [ENTER NUMBER] and paste the new code you copied from GitHub.
-9. Change [AUTOMATIC] to [SEMI_AUTOMATIC]
-10. In lines [ENTER NUMBERS], change the comments so that 32 is uncommented (delete the double slashes in front of the line) and 33 is commented out (add double slashes in front of the line).
+8. Delete all code after line 10 and paste the new code you copied from GitHub (remember: keep #include "Particle.h").
+9. Make sure line 50 says [SEMI_AUTOMATIC] not [AUTOMATIC]
+10. In lines 49-50, change the comments so that 49 is uncommented (delete the double slashes in front of the line) and 50 is commented out (add double slashes in front of the line).
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/3.jpg)
 
-11. In line [NUMBER], where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
-12. In lines [ENTER NUMBERS], swap the comments so that [NUMBER] is commented out and [NUMBER] is uncommented
+11. In line 60, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
+12. Comment out line 73 (add //) and make sure line 76 is uncommented (no //).
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/4.jpg)
 
-13. Comment out the lines below. Should be between [ENTER NUMBERS] depending on how many new lines you created. 
+13. Comment out the lines below. Should be around 184-187 depending on how many new lines you created. 
     You can select all the text in those lines and use the shortcut Ctrl+/
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/5.jpg)
+
+**ISSUE: THE LINES DESCRIBED IN STEPS 14 AND 15 DO NOT EXIST!
+**
+
 14. After line [NUMBER] that says `myFile.print(range_cm);` create a new line and make sure it’s in line with the previous line and type `myFile.print(";");` This will make the data easier to read.
-16. In line [NUMBER], where it says `.duration(54min)` change the `54` to `1` 
-17. Compile and flash code to the Boron device.
-18. Open the serial monitor.
-19. It may take a moment, but the terminal should look something like the picture below.
-	-If it still doesn’t work, try pressing the 'Reset' button on the Boron, or unplug and re-plug the cord. 
-20. It should publish the time and distance once before repeating the phrase “not max time, try again to publish”
+15. In line [NUMBER], where it says `.duration(54min)` change the `54` to `1`
+16. Compile and flash code to the Boron device.
+17. Open the serial monitor.
+18. It may take a moment, but the terminal should look something like the picture below.
+	-If it still doesn’t work, try pressing the 'Reset' button on the Boron, or unplug and re-plug the cord.
+19. It should publish the time and distance once before repeating the phrase “not max time, try again to publish”
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/6.jpg)
 
-21. After 20 seconds (because of the value you changed from 60000 to 20000), the serial monitor should say `serial connection closed. Attempting to reconnect…`
-22. After 1 minute (because of the value you changed from 54min to 1min), the serial monitor should say `serial monitor opened successfully` 
-23. Unplug the Boron to stop the code from running.
-24. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
-25. Navigate to file explorer -> this PC -> USB drive -> `distance.txt`. You should see values like below!
+20. After 20 seconds (because of the value you changed from 60000 to 20000, which represents milliseconds), the serial monitor should say `serial connection closed. Attempting to reconnect…`
+21. After 1 minute (because of the value you changed from 54min to 1min), the serial monitor should say `serial monitor opened successfully`
+22. Unplug the Boron to stop the code from running.
+23. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
+24. Navigate to file explorer -> this PC -> USB drive -> `distance.txt`. You should see values like below!
 
 	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/7.jpg)
 
-26. Unix time values are listed first, then another value, and then the distance (cm) values, followed by a semi-colon.
+25. Unix time values are listed first, then another value, and then the distance (cm) values, followed by a semi-colon.
