@@ -40,16 +40,19 @@ This section will take you through an exercise to set up your Boron device and p
 7. Navigate to the .cpp file that is generated for your new project under the 'src' tab on the left-hand side of screen (under 'explorer').
 8. Delete all the text in the .cpp file after line 10 and paste the code you just copied.
 	- Note: Make sure you leave lines 9-10 (seen below), as your .cpp file will not run properly without line 10. <br />
- `// Include Particle Device OS APIs` <br />
+`// Include Particle Device OS APIs` <br />
 `#include "Particle.h"`
 	- Optional: Fill in applicable information (i.e. project name, author name, date, etc.) in lines 1-8 of the .cpp file; this info is for organizational purposes and will not affect your code.
-10. Open the Command Palette. Type 'Particle' and select 'Particle Launch CLI.'
-11. Configure Workbench to work with the Device OS that you confirmed you're using in the beginning of this section. Your settings should be across the bottom of the page; make sure the first setting says 'Boron' and the second says "deviceOS@[4.2.0 or your specific number]" by clicking and changing them if need be.
-12. Put the Boron into DFU (Device Firmware Update) mode by pressing and holding the 'Mode' button on the Boron while simultaneously pressing and releasing the 'Reset' button. Continue holding 'Mode' until the RGB (Red Green Blue) LED starts flashing yellow.
-13. Put the Boron in listening mode by pressing and holding 'Mode' until the LED blinks blue).
+
+<img src="Getting-Started-Photos-Summer24/1_Blink_LED.jpg" width="600">
+
+9. Open the Command Palette. Type 'Particle' and select 'Particle Launch CLI.'
+10. Configure Workbench to work with the Device OS that you confirmed you're using in the beginning of this section. Your settings should be across the bottom of the page; make sure the first setting says 'Boron' and the second says "deviceOS@[4.2.0 or your specific number]" by clicking and changing them if need be.
+11. Put the Boron into DFU (Device Firmware Update) mode by pressing and holding the 'Mode' button on the Boron while simultaneously pressing and releasing the 'Reset' button. Continue holding 'Mode' until the RGB (Red Green Blue) LED starts flashing yellow.
+12. Put the Boron in listening mode by pressing and holding 'Mode' until the LED blinks blue).
 	- Note: You may have to press the ‘Reset’ button after putting the Boron in DFU mode and before putting it in listening mode if the LED doesn't begin blinking blue after a few seconds.
-14. Type the following command into the CLI: `particle identify` ... The CLI results should present the OS with which you're working; for me, it is 4.2.0.
-15. Open the Command Palette and run 'Particle: flash application (local)' to compile and flash your script (your .cpp file) to your device. If successful, this will result in the blinking of a blue LED near the micro-USB socket on the Boron.
+13. Type the following command into the CLI: `particle identify` ... The CLI results should present the OS with which you're working; for me, it is 4.2.0.
+14. Open the Command Palette and run 'Particle: flash application (local)' to compile and flash your script (your .cpp file) to your device. If successful, this will result in the blinking of a blue LED near the micro-USB socket on the Boron.
 
 ## Practice code with Boron and Adalogger 
 This section will take you through an exercise to set up the Boron and Adalogger devices and practice using code with them.
@@ -63,9 +66,11 @@ This section will take you through an exercise to set up the Boron and Adalogger
 7. Click on 'examples' -> 'ReadWrite' -> 'ReadWrite.ino' 
 8. Copy all the code on this page.
 9. Now click the tab that says 'src' on the left, then '[yourprojecttitle].cpp'
-10. In the .cpp file, delete all code after line 10 and paste the new code you just copied from the 'ReadWrite.ino' file. (Like earlier, make sure `#include "Particle.h"` is left in the code! Otherwise, your .cpp file won't work properly.)
+10. In the .cpp file, delete all code after line 10 and paste the new code you just copied from the 'ReadWrite.ino' file.
+	- Like earlier, make sure `#include "Particle.h"` is left in the code! Otherwise, your .cpp file won't work properly.
+ 	- You have the option again to fill in applicable information in lines 1-8.
 
-ISSUE: INSERT NEW PHOTO (RTCTEST_STEP10)
+<img src="Getting-Started-Photos-Summer24/2_RTCtest.jpg" width="500">
 
 12. In line 36, change `#define SD_CS_PIN SS` to `#define SD_CS_PIN D5` (SS -> D5)
 13. After `File myFile;` create a new line and paste
@@ -74,7 +79,9 @@ SYSTEM_THREAD(ENABLED);`
 14. After `void setup(){` create a new line and paste `Cellular.off();` and in the next line paste `delay(5500);` 
 15. Where it says `if (!SD.begin(SD_CS_PIN,)) {` paste `if (!SD.begin(SD_CS_PIN,SPI_FULL_SPEED)) {`
 
-ISSUE: INSERT NEW PHOTO (RTCTEST2_STEP15)
+This image shows what your code should look like after you make the changes from steps 12-15.
+
+<img src="Getting-Started-Photos-Summer24/3_RTCtest.jpg" width="500">
 
 16. Click the checkmark to compile the project (will take a minute).
 17. Once it compiles, click the lightning bolt button to flash the code to the Boron. 
@@ -105,7 +112,7 @@ This section will allow you to practice using water level sensor code and workin
 `// function prototype` <br />
 `int secondsUntilNextEvent();`
 
-ISSUE: INSERT PHOTO (BADAFULL2_STEP9)
+<img src="Getting-Started-Photos-Summer24/4_BAdaFull" width="500">
 
 10. In line 45, replace the `1` after `#define PUBLISHING` with `0`
  	- This step is very important! It ensures that publishing and cellular connection do NOT occur, which is what we want for this test run.
@@ -113,12 +120,14 @@ ISSUE: INSERT PHOTO (BADAFULL2_STEP9)
 11. Make sure line 52 says `SEMI_AUTOMATIC` not `AUTOMATIC`
 12. In lines 51-52, change the comments so that 51 is uncommented (delete the double slashes in front of the line) and 52 is commented out (add double slashes in front of the line).
 
-ISSUE: INSERT NEW PHOTO (BADAFULL5_STEP12)
+<img src="Getting-Started-Photos-Summer24/5_BAdaFull" width="500">
 
 13. In line 62, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
-14. Comment out the lines below; these should be around 187-190 depending on how many new lines you created. (You can select all the text in those lines using the shortcut Ctrl+/)
+14. Comment out the lines below; these should be around 187-190 depending on how many new lines you created.
+	- You can select all the text in those lines using the shortcut Ctrl+/
+	- The image below shows what your lines of code should look like once commented out.
 
-ISSUE: INSERT NEW PHOTO (BADAFULL5_STEP14)
+<img src="Getting-Started-Photos-Summer24/6_BAdaFull" width="400">
 
 16. Compile and flash code to the Boron device.
 	- If your device is not responding or the flash is unsuccessful, try unplugging/replugging the cord or putting the Boron in DFU mode (press and hold 'Mode' while pressing and releasing 'Reset').
@@ -126,20 +135,21 @@ ISSUE: INSERT NEW PHOTO (BADAFULL5_STEP14)
 18. It may take a moment, but the terminal should look something like the picture below. The serial monitor should say `serial connection closed. Attempting to reconnect…`
 	- If it still doesn't work, try the problem-solving methods from Step 16 again.
 
-ISSUE: INSERT NEW PHOTO (BADAFULL5_STEP18)
+<img src="Getting-Started-Photos-Summer24/7_BAdaFull" width="400">
 
 19. The numbers produced in the serial monitor represent four useful data values, listed as follows: Unix timestamp (seconds since 1 Jan 1970 UTC), distance measured by the sensor (cm), battery voltage (volts), battery level (%)
 	- See lines 134-138 (pictured) for where these values are printed in the code
 
-ISSUE: INSERT PHOTO (BADAFULL5_STEP19)
+<img src="Getting-Started-Photos-Summer24/8_BAdaFull" width="600">
 
 20. To finish collecting data, unplug the Boron to stop the code from running.
 21. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
 22. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.txt`. You should see values like below!
 
-ISSUE: I DON'T HAVE AN SD CARD READER SO I CAN'T TELL IF THIS IS WHAT IS SHOWN ONCE THE DATA IS UPLOADED TO A COMPUTER OR IF THESE VALUES SHOULD ACTUALLY MATCH THOSE IN STEP 19
+***** ISSUE: I DON'T HAVE AN SD CARD READER SO I CAN'T TELL IF THIS IS WHAT IS SHOWN ONCE THE DATA IS UPLOADED TO A COMPUTER OR IF THESE VALUES SHOULD ACTUALLY MATCH THOSE IN STEP 19
 
 ![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/7.jpg)
 
 23. Unix time values are listed first, then another value, and then the distance (cm) values, followed by a semi-colon.
-ISSUE: SEE ABOVE ISSUE, APPLIES HERE TOO
+
+***** ISSUE: SEE ABOVE ISSUE, APPLIES HERE TOO
