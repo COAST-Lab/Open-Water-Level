@@ -155,8 +155,9 @@ This section will allow you to practice using water level sensor code and workin
 *** Please note: Steps 21-23 have not yet been validated.
 
 21. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
-22. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.txt`. You should see values like below!
+22. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.csv`. You should see a table with values like below!
+	- On Mac, access this file via Finder -> Locations (Untitled) -> `distance.csv`
 
-![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/7.jpg)
+<img src="Getting-Started-Photos-Summer24/9_BAdaFull.jpg" width="600">
 
 23. Unix time values are listed first, then another value, and then the distance (cm) values, followed by a semi-colon.
