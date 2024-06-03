@@ -142,9 +142,9 @@ This section will allow you to practice using water level sensor code and workin
 
 <img src="Getting-Started-Photos-Summer24/7_BAdaFull.jpg" width="400">
 
-19. The numbers produced under `Serial monitor opened successfully:` represent four useful data values, listed as follows: Unix timestamp (seconds since 1 Jan 1970 UTC), distance measured by the sensor (cm), battery voltage (volts), battery level (%)
+19. The numbers produced under `Serial monitor opened successfully:` represent four useful data values, listed as follows: Unix timestamp, distance measured by the sensor (cm), battery voltage (volts), battery level (%)
 	- Lines 134-138 (pictured) show how these values are printed from the code!
-	- Please note that the Unix timestamps during these non-cellular test trials will indicate seconds from 1 Jan 2000 each time the Boron is restarted. Once cellular connection is applied for field deployment of the device, real time stamps will be provided.
+	- Please note that Unix timestamps represent seconds since 1 Jan 1970. However, the Unix timestamps during our non-cellular test trials will represent seconds from 1 Jan 2000 each time the Boron is restarted. Once cellular connection is applied for field deployment of the device, we'll have real time stamps (i.e. since 1970).
 	- Please note that the battery voltage and battery level may show values of zero because these measures are related to an external rechargeable battery that we did not connect for these test trials; instead, we powered the device from a laptop / computer.
 
 <img src="Getting-Started-Photos-Summer24/8_BAdaFull.jpg" width="600">
@@ -152,12 +152,13 @@ This section will allow you to practice using water level sensor code and workin
 20. To finish collecting data, unplug the Boron to stop the code from running.
 	- Don't forget to save your project.
 
-*** Please note: Steps 21-23 have not yet been validated.
-
 21. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
 22. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.csv`. You should see a table with values like below!
 	- On Mac, access this file via Finder -> Locations (Untitled) -> `distance.csv`
 
 <img src="Getting-Started-Photos-Summer24/9_BAdaFull.jpg" width="600">
 
-23. Unix time values are listed first, then another value, and then the distance (cm) values, followed by a semi-colon.
+23. Unix timestamps are listed in the leftmost column, then distance (cm), then battery voltage (volts), and battery level (%) in the rightmost column.
+	- If you want to save the data from the micro SD card, press ctrl+s (Windows) or command+s (Mac) to save the data file on your computer.
+
+All done! Now, you're more familiar with powerful tools like the Boron and Adalogger devices and VS Code, and you've learned how to collect and store the distance data. Great work!
