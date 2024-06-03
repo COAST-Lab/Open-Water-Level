@@ -150,7 +150,7 @@ This section will allow you to practice using water level sensor code and workin
 20. To finish collecting data, unplug the Boron to stop the code from running.
 	- Don't forget to save your project.
 
-***** ISSUE: I don't have an SD card reader so I can't show for whether the data produced consists of the three-value sequences pictured, or if they actually produce the four-value sequences I have found. Instructions following this notice may need to be updated based on this 
+*** Please note: Steps 21-23 have not yet been validated.
 
 21. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
 22. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.txt`. You should see values like below!
