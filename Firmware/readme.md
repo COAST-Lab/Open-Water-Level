@@ -158,8 +158,6 @@ This section will allow you to practice using water level sensor code and workin
 
 <img src="Getting-Started-Photos-Summer24/9_BAdaFull.jpg" width="300">
 
-
-
 23. Unix timestamps are listed in the leftmost column, then distance (cm), then battery voltage (volts), and battery level (%) in the rightmost column.
 	- If you want to save the data from the micro SD card, press ctrl+s (Windows) or command+s (Mac) to save the data file on your computer.
 
