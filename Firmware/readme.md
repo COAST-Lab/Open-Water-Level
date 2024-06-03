@@ -117,7 +117,7 @@ This section will allow you to practice using water level sensor code and workin
 `// function prototype` <br />
 `int secondsUntilNextEvent();`
 
-<img src="Getting-Started-Photos-Summer24/4_BAdaFull" width="500">
+<img src="Getting-Started-Photos-Summer24/4_BAdaFull.jpg" width="500">
 
 10. In line 45, replace the `1` after `#define PUBLISHING` with `0`
  	- This step is very important! It ensures that publishing and cellular connection do NOT occur, which is necessary since we are just completing a test run.
@@ -125,14 +125,14 @@ This section will allow you to practice using water level sensor code and workin
 11. Make sure line 52 says `SEMI_AUTOMATIC` not `AUTOMATIC`
 12. In lines 51-52, change the comments so that 51 is uncommented (delete the double slashes in front of the line) and 52 is commented out (add double slashes in front of the line).
 
-<img src="Getting-Started-Photos-Summer24/5_BAdaFull" width="500">
+<img src="Getting-Started-Photos-Summer24/5_BAdaFull.jpg" width="500">
 
 13. In line 62, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
 14. Comment out the lines below; these should be around 187-190 depending on how many new lines you created.
 	- You can select all the text in those lines using the shortcut Ctrl+/
 	- The image below shows what your lines of code should look like once commented out.
 
-<img src="Getting-Started-Photos-Summer24/6_BAdaFull" width="400">
+<img src="Getting-Started-Photos-Summer24/6_BAdaFull.jpg" width="400">
 
 16. Compile and flash code to the Boron device.
 	- If your device is not responding or the flash is unsuccessful, try unplugging/replugging the cord or putting the Boron in DFU mode.
@@ -140,12 +140,14 @@ This section will allow you to practice using water level sensor code and workin
 18. It may take a moment, but the terminal should look something like the picture below. The serial monitor should say `serial connection closed. Attempting to reconnect…`
 	- If it still doesn't work, try the problem-solving methods from Step 16 again or visit 'Useful features' and 'Common problems.'
 
-<img src="Getting-Started-Photos-Summer24/7_BAdaFull" width="400">
+<img src="Getting-Started-Photos-Summer24/7_BAdaFull.jpg" width="400">
 
 19. The numbers produced under `Serial monitor opened successfully:` represent four useful data values, listed as follows: Unix timestamp (seconds since 1 Jan 1970 UTC), distance measured by the sensor (cm), battery voltage (volts), battery level (%)
 	- Lines 134-138 (pictured) show how these values are printed from the code!
+	- Please note that the Unix timestamps during these non-cellular test trials will indicate seconds from 1 Jan 2000 each time the Boron is restarted. Once cellular connection is applied for field deployment of the device, real time stamps will be provided.
+	- Please note that the battery voltage and battery level may show values of zero because these measures are related to an external rechargeable battery that we did not connect for these test trials; instead, we powered the device from a laptop / computer.
 
-<img src="Getting-Started-Photos-Summer24/8_BAdaFull" width="600">
+<img src="Getting-Started-Photos-Summer24/8_BAdaFull.jpg" width="600">
 
 20. To finish collecting data, unplug the Boron to stop the code from running.
 	- Don't forget to save your project.
