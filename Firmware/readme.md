@@ -31,7 +31,7 @@ Skip this section for now and try the **Practice Code with Boron** section first
 This section will take you through an exercise to set up your Boron device and practice using code with it.
 
 1. Plug in the Boron device to your computer using a micro-USB cable. Visit [https://docs.particle.io/tools/device-restore/device-restore-usb/](https://docs.particle.io/tools/device-restore/device-restore-usb/) and click 'Select Device.' Restore to the default system firmware version matching the example (not 'custom user firmware') and set the current compiled [target](SLR_Boron_Maxbotix_MB7092_cm/target) to be 4.2.0 (this is the version I am using).
-	- Note: If you get the message `Could not identify device: No serial port identified` but the Boron powers up, ensure that your cable has data transfer capabilities (many are only capable of charging).
+	- Note: If you get the message `Could not identify device: No serial port identified` but the Boron powers up, ensure that your cable has data transfer capabilities (many are only capable of charging). Or, if no device is found using the device restore page, Put the Boron into DFU (Device Firmware Update) mode by pressing and holding the 'Mode' button on the Boron while simultaneously pressing and releasing the 'Reset' button.
 2. Create a folder on your computer to store Particle-related items (no spaces in the title; use underscores (_) ... something like Particle_Items).
 3. Create a new project by opening the Particle Command Palette (see: 'Useful features') and selecting 'Particle: Create New Project.' You can also click the blue text that says 'Create New Project' on the welcome page under Development Workflow -> Code.
 4. Choose the folder you just made on your computer for this class when asked to choose the 'parent' folder.
@@ -48,7 +48,7 @@ This section will take you through an exercise to set up your Boron device and p
 
 9. Open the Command Palette. Type 'Particle' and select 'Particle Launch CLI.'
 10. Configure Workbench to work with the Device OS that you confirmed you're using in the beginning of this section. Your settings should be across the bottom of the page; make sure the first setting says 'Boron' and the second says "deviceOS@[4.2.0 or your specific number]" by clicking and changing them if need be.
-11. Put the Boron into DFU (Device Firmware Update) mode by pressing and holding the 'Mode' button on the Boron while simultaneously pressing and releasing the 'Reset' button. Continue holding 'Mode' until the RGB (Red Green Blue) LED starts flashing yellow.
+11. Put the Boron into DFU (Device Firmware Update) mode again by pressing and holding the 'Mode' button on the Boron while simultaneously pressing and releasing the 'Reset' button. Continue holding 'Mode' until the RGB (Red Green Blue) LED starts flashing yellow.
 12. Put the Boron in listening mode by pressing and holding 'Mode' until the LED blinks blue).
 	- Note: You may have to press the ‘Reset’ button after putting the Boron in DFU mode and before putting it in listening mode if the LED doesn't begin blinking blue after a few seconds.
 13. Type the following command into the CLI: `particle identify` ... The CLI results should present the OS with which you're working; for me, it is 4.2.0.
@@ -156,7 +156,7 @@ This section will allow you to practice using water level sensor code and workin
 22. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.csv`. You should see a table with values like below!
 	- On Mac, access this file via Finder -> Locations (Untitled) -> `distance.csv`
 
-<img src="Getting-Started-Photos-Summer24/9_BAdaFull.jpg" width="300">
+<img src="Getting-Started-Photos-Summer24/9_BAdaFull.jpeg" width="300">
 
 23. Unix timestamps are listed in the leftmost column, then distance (cm), then battery voltage (volts), and battery level (%) in the rightmost column.
 	- If you want to save the data from the micro SD card, press ctrl+s (Windows) or command+s (Mac) to save the data file on your computer.
