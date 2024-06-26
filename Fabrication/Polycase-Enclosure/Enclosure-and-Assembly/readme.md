@@ -1,0 +1,1 @@
+This directory holds enclosure details and assembly procedures for the Polycase design.
