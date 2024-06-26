@@ -22,3 +22,10 @@ Cable gland for 0.08""-0.24"" Cord OD | Waterproof cable entry | $2.45 | https:/
 Loctite PL Marine Fast Cure Adhesive Sealant | Seal gland | ~$12.00 | https://www.loctiteproducts.com/products/central-pdp.html/loctite-pl-marine-fast-cure/SAP_0201XFL02WQG.html
 FormLabs Clear Resin V4 | Chassis to secure internal parts; $150 per L; using [INSERT AMOUNT] | [INSERT PRICE] | https://formlabs.com/store/materials/clear-resin-v4/
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
+
+Total cost | | [INSERT COST] |
+
+Adafruit wishlist: http://www.adafruit.com/wishlists/589193
+Digi-Key wishlist: https://www.digikey.com/en/mylists/list/3G4W9NENB6
+
+Please note: These wishlists may need to be udpated as design changes progress.
