@@ -4,7 +4,7 @@ Please note: Prices are listed in USD and are subject to change based on market 
 
 Parts | Function | Cost | URL
 | :---------------- | :------ | :---- | :---- |
-Boron LTE CAT-M1 (NorAm) with EtherSIM (BRN404X) | Microcontroller, cell modem, power management | $65.31 | https://www.digikey.com/en/products/detail/particle-industries-inc/BRN404X/17632424
+Boron LTE CAT-M1 (NorAm) with EtherSIM (BRN404X) | Microcontroller, cell modem, power management | $65.31 (available at lower cost from Particle?) | https://www.digikey.com/en/products/detail/particle-industries-inc/BRN404X/17632424
 Antenna (included in above) | | Cellular communications |
 MB7092 XL-MaxSonar-WRMA1 | Distance sensor | $99.95 | https://www.adafruit.com/product/1137
 Adalogger FeatherWing - RTC + SD Add-on For All Feather Boards | Data storage board | $8.95 | https://www.adafruit.com/product/2922
