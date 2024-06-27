@@ -1,5 +1,6 @@
 In this Fabrication directory, you'll find design details for both versions of the DIY sensor (i.e. PVC and Polycase enclosures).
 
+Inside the `PVC-Enclosure` and `Polycase-Enclosure` folders:
 - `BOM,` or Bill of Materials, lists components, their costs, and where to purchase them.
 - `Enclosure-and-Assembly` houses information about using physical parts and assembling sensors.
 - `Datasheets` has documents with comprehensive info about specific parts.
