@@ -1,1 +1,1 @@
-Here, you'll find datasheets for components of the PVC design.
+Here, you'll find datasheets for components of the Polycase design.
