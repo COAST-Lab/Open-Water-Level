@@ -28,6 +28,7 @@ The device designs in this repository comprise a low-cost open-sourced sensor pa
 This repository aims to enable students, communities, businesses, and anyone else to monitor their local water level. To get started, read through this page and subsequent directions. 
 
 ## 🔨 How to Build a Sensor
+We currently have two effective enclosure designs for the DIY sensor, one using a PVC pipe and the other using a Polycase housing. Below, find links to BOMs, enclosure designs, and datasheets for each model.
 - Getting started with the code: [Firmware](Firmware) 
 - Link to parts, suppliers, and costs: [PVC BOM](Fabrication/PVC-Enclosure/BOM/), [Polycase BOM](Fabrication/Polycase-Enclosure/BOM/)
 - Enclosure designs: [PVC Enclosure & Assembly](Fabrication/PVC-Enclosure/Enclosure-and-Assembly/), [Polycase Enclosure & Assembly](Fabrication/Polycase-Enclosure/Enclosure-and-Assembly/)
