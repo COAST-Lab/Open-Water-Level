@@ -1,4 +1,4 @@
-# What's in this directory?
+## What's in this directory?
 In `Fabrication`, find design details for both versions of the DIY sensor (i.e. PVC and Polycase enclosures).
 
 Inside the `PVC-Enclosure` and `Polycase-Enclosure` folders:
@@ -6,7 +6,7 @@ Inside the `PVC-Enclosure` and `Polycase-Enclosure` folders:
 - `Enclosure-and-Assembly` houses information about using physical parts and assembling sensors.
 - `Datasheets` has documents with comprehensive info about specific parts.
 
-# What design should I use?
+## What design should I use?
 If you're deciding whether to proceed with a PVC or Polycase housing for your DIY sensor, we suggest exploring the folders in this directory to determine which design best fits your needs.
 
 For any inquiries about choosing a design or the fabrication process, please contact [INSERT NAME & INFO].
