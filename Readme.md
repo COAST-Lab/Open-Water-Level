@@ -29,9 +29,9 @@ This repository aims to enable students, communities, businesses, and anyone els
 
 ## 🔨 How to Build a Sensor
 - Getting started with the code: [Firmware](Firmware) 
-- Link to parts, suppliers, and costs: [BOM](Fabrication/BOM)
-- Enclosure designs (improvements needed!): [Enclosure](Fabrication/Enclosure%20and%20Assembly)
-- More information on parts: [Datasheets](Fabrication/Datasheets)
+- Link to parts, suppliers, and costs: [PVC BOM](Fabrication/PVC-Enclosure/BOM/), [Polycase BOM](Fabrication/Polycase-Enclosure/BOM/)
+- Enclosure designs: [PVC Enclosure & Assembly](Fabrication/PVC-Enclosure/Enclosure-and-Assembly/), [Polycase Enclosure & Assembly](Fabrication/Polycase-Enclosure/Enclosure-and-Assembly/)
+- More information on parts: [PVC Datasheets](Fabrication/PVC-Enclosure/Datasheets/), [Polycase Datasheets](Fabrication/Polycase-Enclosure/Datasheets/)
 
 ## 🌊 Deployment Considerations
 Deployment is the last step but it's probably the most exciting, so we'll start our procedural notes here. The Open Water Level sensor has a ~ 6.5 m (21') range with a 1 cm (0.39") resolution. Deployment locations must be chosen with these values in mind. If you are deploying the monitor at a location reasonably close to an existing NOAA tide station, start by examining the known tidal range at your location: [NOAA tide predictions](https://tidesandcurrents.noaa.gov/tide_predictions.html). You will want to deploy the monitor at a location where it can aim straight down (normal) to the water's surface and at a height slightly higher than the highest high tide or floodwater height that the location is expected to experience. You also want it to be low enough to capture the lowest low water. The package is water resistant, but not fully waterproof if submerged for extended periods.
