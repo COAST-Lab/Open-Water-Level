@@ -1,5 +1,5 @@
-## What's in this directory?
-In `Fabrication`, find design details for both versions of the DIY sensor (i.e. PVC and Polycase enclosures).
+## What's in this `Fabrication` directory?
+In `Fabrication`, you'll find design details for both versions of the DIY sensor (i.e. PVC and Polycase enclosures).
 
 Inside the `PVC-Enclosure` and `Polycase-Enclosure` folders:
 - `BOM,` or Bill of Materials, lists components, their costs, and where to purchase them.
