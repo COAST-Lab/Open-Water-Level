@@ -15,5 +15,5 @@ Firmware Parts List (see `Fabrication` for complete BOMs)
 
 <img src="Photos/BRN404X.jpg" width="400">
 <img src="Photos/AdaFeather+Pins.jpg" width="400">
-<img src="Photos/Maxbotix.jpg" width="400">
+<img src="Photos/Maxbotix.jpeg" width="400">
 <img src="Photos/Install_SD.jpg" width="400">
