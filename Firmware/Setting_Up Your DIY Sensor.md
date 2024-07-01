@@ -2,7 +2,7 @@
 ## Firmware
 This section will help you set up the physical firmware for your DIY sensor.
 
-Parts List (see `Fabrication` for BOMs)
+Firmware Parts List (see `Fabrication` for complete BOMs)
 - Boron LTE CAT-M1 (NorAm) with EtherSIM (BRN404X)
 - Cellular antenna (included with BRN404X)
 - Adalogger FeatherWing - RTC + SD Add-on
@@ -13,6 +13,4 @@ Parts List (see `Fabrication` for BOMs)
 - 3-pin cable
 - 5 Watt 5 Volt 35 Wh Solar System
 
-[INSERT PHOTOS OF PARTS]
-
-[INSERT UPDATED INSTRUCTIONS]
+![](Open-Water-Level/Photos/AdaFeather+Pins)
