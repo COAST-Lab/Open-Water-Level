@@ -13,4 +13,5 @@ Firmware Parts List (see `Fabrication` for complete BOMs)
 - 3-pin cable
 - 5 Watt 5 Volt 35 Wh Solar System
 
-<img src="Photos/AdaFeather+Pins" width="400">
+<img src="Photos/AdaFeather+Pins.jpg" width="400">
+<img src="Photos/BRN404X.jpg" width="400">
