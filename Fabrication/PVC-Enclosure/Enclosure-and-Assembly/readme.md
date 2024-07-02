@@ -3,9 +3,7 @@
 1. We're working on this page!
 2. Please return soon for step-by-step assembly instructions.
 3. Thanks for your patience!
-4. Cont'd
-5. Cont'd
-6. 
+4. [Insert instructions]
 
 Instructions: Rough Draft
 - [ ] Chop 1.5” sch-40 PVC into 8” sections
