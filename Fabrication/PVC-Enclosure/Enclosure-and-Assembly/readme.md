@@ -1,4 +1,4 @@
-# How to assemble a DIY Open Water Level Sensor with a PVC Enclosure
+# How to assemble a DIY Open Water Level Sensor with a PVC enclosure
 
 1. We're working on this page!
 2. Please return soon for step-by-step assembly instructions.
