@@ -1,6 +1,13 @@
-# How to assemble an Open Water Level sensor using a PVC Enclosure
-## Rough draft
+# How to assemble a DIY Open Water Level Sensor with a PVC Enclosure
 
+1. We're working on this page!
+2. Please return soon for step-by-step assembly instructions.
+3. Thanks for your patience!
+4. Cont'd
+5. Cont'd
+6. 
+
+Instructions: Rough Draft
 - [ ] Chop 1.5” sch-40 PVC into 8” sections
 - [ ] Drill 9/64” hole 5 cm from top of PVC for solar panel cable (red cable)
 - [ ] 3D print top end cap; sand
