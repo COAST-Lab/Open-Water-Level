@@ -1,1 +1,1 @@
-This directory has information specific to the sensor using a PVC enclosure.
+In this directory, find the bill of materials, enclosure & assembly info, and datasheets for the DIY sensor with a `PVC enclosure`.

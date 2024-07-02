@@ -8,5 +8,3 @@ Inside the `PVC-Enclosure` and `Polycase-Enclosure` folders:
 
 ## What design should I use?
 If you're deciding whether to proceed with a PVC or Polycase housing for your DIY sensor, we suggest exploring the folders in this directory to determine which design best fits your needs.
-
-For any inquiries about choosing a design or the fabrication process, please contact [INSERT NAME & INFO].
