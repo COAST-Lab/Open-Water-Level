@@ -5,7 +5,7 @@
 3. Thanks for your patience!
 4. [Insert instructions]
 
-Instructions: Rough Draft
+# Instructions: Rough Draft
 - [ ] Chop 1.5” sch-40 PVC into 8” sections
 - [ ] Drill 9/64” hole 5 cm from top of PVC for solar panel cable (red cable)
 - [ ] 3D print top end cap; sand
