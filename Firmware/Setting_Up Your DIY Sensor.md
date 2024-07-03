@@ -1,3 +1,5 @@
+We're working on this page! Come back soon for updated instructions for setting up your physical firmware.
+
 # Setting Up Your DIY Sensor
 ## Firmware
 This section will help you set up the physical firmware for your DIY sensor.
