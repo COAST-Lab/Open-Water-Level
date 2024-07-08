@@ -1,0 +1,1 @@
+In this directory, find the bill of materials, enclosure & assembly info, and datasheets for the DIY sensor with a `Polycase enclosure`.

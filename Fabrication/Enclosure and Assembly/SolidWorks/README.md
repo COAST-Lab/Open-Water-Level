@@ -1,1 +1,0 @@
-Laser cut enclosure not remotely water resistant. For handheld/demo purposes only.
