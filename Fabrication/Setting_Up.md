@@ -1,9 +1,8 @@
-We're working on this page! Come back soon for updated instructions for setting up your physical firmware.
+We're working on this page! Come back soon for updated instructions for setting up your sensor.
 
 # Setting Up Your DIY Sensor
-This section will help you set up the hardware for your DIY sensor.
 
-Firmware Parts List (see `Fabrication` for complete BOMs)
+Hardware (see `Fabrication` for complete BOMs)
 - Boron LTE CAT-M1 (NorAm) with EtherSIM (BRN404X)
 - Cellular antenna (included with BRN404X)
 - Adalogger FeatherWing - RTC + SD Add-on
