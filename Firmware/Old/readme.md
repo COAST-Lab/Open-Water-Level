@@ -1,1 +1,0 @@
-Refer to this folder for information about previous procedures and versions of the Open Water Level sensor. Materials in this folder can be helpful for understanding our development process, but be aware that much of the technology and programming has since been updated!
