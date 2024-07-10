@@ -134,6 +134,8 @@ This section will allow you to practice using water level sensor code and workin
 
 <img src="Photos/6_BAdaFull.jpg" width="400">
 
+15. Using the command+f or control+f function, find all `Serial.print` statements; there should be 13 in total. Replace each `Serial.print` or `Serial.println` with `Log.info` and replace line 255 with `Log.info("Sleeping for %i", seconds_to_sleep);`.
+
 16. Compile and flash code to the Boron device.
 	- If your device is not responding or the flash is unsuccessful, try unplugging/replugging the cord or putting the Boron in DFU mode.
 17. Quickly open the serial monitor: Command Palette -> 'Particle: Serial Monitor'
