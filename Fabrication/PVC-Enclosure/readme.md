@@ -1,9 +1,32 @@
+We're working on this page! Come back soon for complete step-by-step assembly instructions.
+
 # How to assemble a DIY Open Water Level Sensor with a PVC enclosure
 
-1. We're working on this page!
-2. Please return soon for step-by-step assembly instructions.
-3. Thanks for your patience!
-4. [Insert instructions]
+# Assembling the chassis
+Parts:
+- Boron 404X
+- Adalogger FeatherWing
+- MicroSD card
+- Short stacking header pins
+- 3D printed custom chassis + M2x0.4 screws/hex nuts
+- Cellular antenna
+- 3-pin cable
+- Solar system
+- MicroUSB connector
+
+# Assembling the PVC enclosure
+Parts:
+- 1.5” sch-40 330 psi PVC
+- Maxbotix Ultrasonic Rangefinder
+- 1.5" gripper end cap (red)
+- 3D printed end cap
+- Solar system
+- Epoxy
+- Assembled chassis with electronics
+
+
+`INSTRUCTIONS BELOW NEED TO BE UPDATED FOR ACCURACY`
+
 
 # Instructions: Rough Draft
 - [ ] Chop 1.5” sch-40 PVC into 8” sections

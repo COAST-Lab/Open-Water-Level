@@ -1,4 +1,4 @@
-We're working on this page! Come back soon for step-by-step assembly instructions.
+We're working on this page! Come back soon for complete step-by-step assembly instructions.
 
 # How to assemble a DIY Open Water Level Sensor with a Polycase enclosure
 
