@@ -2,9 +2,14 @@ We're working on this page! Come back soon for complete step-by-step assembly in
 
 # How to assemble a DIY Open Water Level Sensor with a Polycase enclosure
 
+See:
+- BOM, for bills of materials / lists of parts
+- Datasheets, for manufacturer datasheets
+- Enclosure and Assembly, for 3D print files
+
 Please note: Included in this directory are the CAD files for the cellular antenna frame and chassis separately, as well as the combined model. Our instructions reference the combined model to reduce the number of separate components, but should you choose to print the components separately, an M2.5 screw can attach the frame to the chassis!
 
-# Assembling the chassis
+## Assembling the chassis
 Parts:
 - Boron 404X
 - Adalogger FeatherWing
@@ -38,7 +43,7 @@ Parts:
 `INSERT PICTURE`
 
 
-# Assembling the Polycase enclosure
+## Assembling the Polycase enclosure
 Parts:
 - Polycase ML-24K + screws (included)
 - Hi-Lo #4-24 screws

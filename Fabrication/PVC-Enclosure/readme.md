@@ -6,7 +6,7 @@ See:
 - Datasheets, for manufacturer datasheets
 - Enclosure and Assembly, for 3D print files
 
-# Assembling the chassis
+## Assembling the chassis
 Parts:
 - Boron 404X
 - Adalogger FeatherWing
@@ -18,7 +18,7 @@ Parts:
 - Solar system
 - MicroUSB connector
 
-# Assembling the PVC enclosure
+## Assembling the PVC enclosure
 Parts:
 - 1.5” sch-40 330 psi PVC
 - Maxbotix Ultrasonic Rangefinder
