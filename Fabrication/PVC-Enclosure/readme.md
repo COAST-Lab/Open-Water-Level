@@ -18,6 +18,19 @@ Parts:
 - Solar system
 - MicroUSB connector
 
+1. Solder microUSB connector to solar cable with shrink tubing over the bare wire.
+2. Stack short stacking header pins onto Adalogger FeatherWing; solder.
+3. Update Boron 404X system firmware to match current firmware as shown in the Firmware/target directory.
+4. Insert microSD card into FeatherWing microSD port. (microSD card may need to be manually formatted by inserting it into your computer first.)
+5. Stack Boron 404X on FeatherWing.
+6. Attach cellular antenna cable to Boron 404X.
+7. Solder 3-pin cable with female receptacle onto FeatherWing spare pins corresponding to the power, ground, and analog inputs.
+8. Solder 3-pin cable with male block onto ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
+9. CONT'D ... NEEDS UPDATING
+
+`INSERT PHOTOS ... MAY BE SAME PICS AS POLYCASE FABRICATION INSTRUCTIONS`
+
+
 ## Assembling the PVC enclosure
 Parts:
 - 1.5” sch-40 330 psi PVC
@@ -27,9 +40,22 @@ Parts:
 - Solar system
 - Epoxy
 - Assembled chassis with electronics
+- Pipe tape (?)
 
-
-`INSTRUCTIONS BELOW NEED TO BE UPDATED FOR ACCURACY`
+1. Chop 1.5" sch-40 PVC into 8" sections.
+2. Drill a 9/64" hole 5cm from top of an 8" PVC section (this hole will be for solar panel cable).
+3. 3D print bottom end cap; sand.
+4. Carefully re-tap NPT threads in bottom end cap (take care not to use too much force, as this can crack the brittle 3D printed cap)
+5. Cut the solar panel cable terminator.
+6. Pass solar cable (red cable) through 9/64" hole drilled in step 2. Take care to give enough slack inside to make the connection/solder to microUSB connector, and enough outside to be able to maneuver the solar panel cable terminator.
+7. Seal solar cable entry with epoxy; let dry/cure fully.
+    `INSERT PHOTO`
+8. Slide end caps onto PVC fully; seal in place with epoxy; let dry/cure fully.
+    `INSERT PHOTO`
+9. Thread ultrasonic distance into bottom end cap, wrapping pipe tape around sensor threads (3 wraps in proper direction).
+    `CLARIFY PROPER DIRECTION?`
+    `INSERT PHOTO`
+10. CONT'D ... NEEDS UPDATING
 
 
 # Instructions: Rough Draft
