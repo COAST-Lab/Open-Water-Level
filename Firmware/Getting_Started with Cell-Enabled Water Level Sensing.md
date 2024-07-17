@@ -134,33 +134,31 @@ This section will allow you to practice using water level sensor code and workin
 
 <img src="Photos/6_BAdaFull.jpg" width="400">
 
-15. Using the command+f or control+f function, find all `Serial.print` statements; there should be 13 in total. Replace each `Serial.print` or `Serial.println` with `Log.info` and replace line 255 with `Log.info("Sleeping for %i", seconds_to_sleep);`.
-
-16. Compile and flash code to the Boron device.
+15. Compile and flash code to the Boron device.
 	- If your device is not responding or the flash is unsuccessful, try unplugging/replugging the cord or putting the Boron in DFU mode.
-17. Quickly open the serial monitor: Command Palette -> 'Particle: Serial Monitor'
-18. It may take a moment, but the terminal should look something like the picture below. The serial monitor should say `serial connection closed. Attempting to reconnect…`
+16. Quickly open the serial monitor: Command Palette -> 'Particle: Serial Monitor'
+17. It may take a moment, but the terminal should look something like the picture below. The serial monitor should say `serial connection closed. Attempting to reconnect…`
 	- If it still doesn't work, try the problem-solving methods from Step 16 again or visit 'Useful features' and 'Common problems.'
 
 <img src="Photos/7_BAdaFull.jpg" width="400">
 
-19. The numbers produced under `Serial monitor opened successfully:` represent four useful data values, listed as follows: Unix timestamp, distance measured by the sensor (cm), battery voltage (volts), battery level (%)
+18. The numbers produced under `Serial monitor opened successfully:` represent four useful data values, listed as follows: Unix timestamp, distance measured by the sensor (cm), battery voltage (volts), battery level (%)
 	- Lines 134-138 (pictured) show how these values are printed from the code!
 	- Please note that Unix timestamps represent seconds since 1 Jan 1970. However, the Unix timestamps during our non-cellular test trials will represent seconds from 1 Jan 2000 each time the Boron is restarted. Once cellular connection is applied for field deployment of the device, we'll have real time stamps (i.e. since 1970).
 	- Please note that the battery voltage and battery level may show values of zero because these measures are related to an external rechargeable battery that we did not connect for these test trials; instead, we powered the device from a laptop / computer.
 
 <img src="Photos/8_BAdaFull.jpg" width="600">
 
-20. To finish collecting data, unplug the Boron to stop the code from running.
+19. To finish collecting data, unplug the Boron to stop the code from running.
 	- Don't forget to save your project.
 
-21. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
-22. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.csv`. You should see a table with values like below!
+20. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
+21. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.csv`. You should see a table with values like below!
 	- On Mac, access this file via Finder -> Locations (Untitled) -> `distance.csv`
 
 <img src="Photos/9_BAdaFull.jpeg" width="300">
 
-23. Unix timestamps are listed in the leftmost column, then distance (cm), then battery voltage (volts), and battery level (%) in the rightmost column.
+22. Unix timestamps are listed in the leftmost column, then distance (cm), then battery voltage (volts), and battery level (%) in the rightmost column.
 	- If you want to save the data from the micro SD card, press ctrl+s (Windows) or command+s (Mac) to save the data file on your computer.
 
 All done! Now, you're more familiar with powerful tools like the Boron and Adalogger devices and VS Code, and you've learned how to collect and store the distance data. Great work!
