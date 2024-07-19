@@ -12,7 +12,9 @@ Parts:
 - Adalogger FeatherWing
 - MicroSD card
 - Short stacking header pins
-- 3D printed custom chassis + M2x0.4 screws/hex nuts
+- 3D printed custom chassis
+- M2x0.4mm threaded 16mm screws
+- M2x0.4mm 1.6mm hex nuts
 - Cellular antenna
 - 3-pin cable
 - Solar system
@@ -22,6 +24,8 @@ Parts:
 2. Stack short stacking header pins onto Adalogger FeatherWing; solder.
 3. Update Boron 404X system firmware to match current firmware as shown in the Firmware/target directory.
 4. Insert microSD card into FeatherWing microSD port. (microSD card may need to be manually formatted by inserting it into your computer first.)
+    <img src="Photos/Install_SD.jpg" width="300">
+
 5. Stack Boron 404X on FeatherWing.
 6. Attach cellular antenna cable to Boron 404X.
 7. Solder 3-pin cable with female receptacle onto FeatherWing spare pins corresponding to the power, ground, and analog inputs.
