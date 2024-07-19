@@ -20,20 +20,42 @@ Parts:
 - Solar system
 - MicroUSB connector
 
-1. Solder microUSB connector to solar cable with shrink tubing over the bare wire.
-2. Stack short stacking header pins onto Adalogger FeatherWing; solder.
-3. Update Boron 404X system firmware to match current firmware as shown in the Firmware/target directory.
-4. Insert microSD card into FeatherWing microSD port. (microSD card may need to be manually formatted by inserting it into your computer first.)
-    <img src="Install_SD.jpg" width="300">
+Using epoxy, carefully glue four M2x0.4mm 1.6mm length hex nuts in the four hexagonal holes of the chassis. Let dry / cure fully.
+    <img src="Photos/PVC_Chassis_Screws_Nuts.jpg" width="400">
 
-5. Stack Boron 404X on FeatherWing.
-6. Attach cellular antenna cable to Boron 404X.
-7. Solder 3-pin cable with female receptacle onto FeatherWing spare pins corresponding to the power, ground, and analog inputs.
-8. Solder 3-pin cable with male block onto ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
-9. CONT'D ... NEEDS UPDATING
+Solder microUSB connector to solar cable with shrink tubing over the bare wire.
 
-`INSERT PHOTOS ... MAY BE SAME PICS AS POLYCASE FABRICATION INSTRUCTIONS`
+Stack short stacking header pins onto Adalogger FeatherWing; solder.
+    <img src="Photos/AdaFeather_Pins.jpeg" width="400">
 
+Update Boron 404X system firmware to match current firmware as shown in the Firmware/target directory.
+    <img src="Photos/BRN404X.jpeg" width="400">
+
+Insert microSD card into FeatherWing microSD port. (microSD card may need to be manually formatted by inserting it into your computer first.)
+    <img src="Photos/Install_SD.jpeg" width="400">
+
+Stack Boron 404X on FeatherWing; solder.
+    `INSERT PHOTO?`
+
+Place the Boron/FeatherWing/pins device atop the chassis so that the ...
+- ... pins sit in the rectangular slots without touching anything
+- ... screw holes in the Boron and FeatherWing line up with the four screw holes in the chassis
+    <img src="Photos/PVC_Chassis.jpeg" width="300"> <img src="Photos/PVC_Chassis2.jpeg" width="300">
+    <img src="Photos/" width="400">
+
+Attach cellular antenna cable to Boron 404X.
+    <img src="Photos/PVC_Chassis_Boron_Antenna.jpg" width="400">
+
+Peel off sticker backing on cellular antenna cable and gently stick to flat underside of chassis.
+    <img src="Photos/PVC_Chassis_Antenna.jpg" width="400">
+
+Solder 3-pin cable with female receptacle onto FeatherWing spare pins corresponding to the power, ground, and analog inputs.
+    `INSERT PHOTO?`
+
+Solder 3-pin cable with male block onto ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
+    `INSERT PHOTO?`
+
+`CONT'D ... NEEDS UPDATING`
 
 ## Assembling the PVC enclosure
 Parts:
@@ -52,8 +74,10 @@ Parts:
 4. Carefully re-tap NPT threads in bottom end cap (take care not to use too much force, as this can crack the brittle 3D printed cap)
 5. Cut the solar panel cable terminator.
 6. Pass solar cable (red cable) through 9/64" hole drilled in step 2. Take care to give enough slack inside to make the connection/solder to microUSB connector, and enough outside to be able to maneuver the solar panel cable terminator.
+7. Attach solar cable to Boron; slide chassis and electronics into PVC pipe.
+<img src="Photos/PVC_Chassis_Boron_SolarCable.jpg" width="400">
+
 7. Seal solar cable entry with epoxy; let dry/cure fully.
-    `INSERT PHOTO`
 8. Slide end caps onto PVC fully; seal in place with epoxy; let dry/cure fully.
     `INSERT PHOTO`
 9. Thread ultrasonic distance into bottom end cap, wrapping pipe tape around sensor threads (3 wraps in proper direction).
