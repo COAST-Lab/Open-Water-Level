@@ -44,7 +44,7 @@ Make sure the microUSB port and 3-pin cable of the BAda are facing the end of th
 - Be cautious not to move too quickly or harshly, as you can strip the screw / hex nut, or crack the chassis!
 
 <img src="Photos/PolycaseChassis_Screws_Nuts.jpg" width="200">
-<img src="Photos/PolycaseChassis_Boron_Attached.HEIC" width="200">
+<img src="Photos/PolycaseChassis_Boron_Attached.jpeg" width="200">
 <img src="Photos/PolycaseChassis_Nuts_Under.jpg" width="200">
 
 
