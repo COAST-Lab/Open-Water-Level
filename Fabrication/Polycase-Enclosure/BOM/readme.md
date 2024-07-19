@@ -19,7 +19,7 @@ SD/MicroSD Memory Card (8 GB SDHC) | Data storage | $9.95 | https://www.adafruit
 USB DIY Slim Connector Shell - MicroB Plug | Splice to solar panel power for Boron USB connection | $0.95 | https://www.adafruit.com/product/1826
 3-pin cable | Power, ground, and analog signal to/from sonar | $0.95 | https://www.adafruit.com/product/4721
 5 Watt 5 Volt 35Wh Solar System | Solar charging | $99.00 | https://voltaicsystems.com/5-watt-5-volt-35wh-solar-system/
-Cable gland for 0.08""-0.24"" Cord OD | Waterproof cable entry | $2.45 | https://www.digikey.com/en/products/detail/lapp/S2209/11200603
+Cable gland for 0.08"-0.24" Cord OD | Waterproof cable entry | $2.45 | https://www.digikey.com/en/products/detail/lapp/S2209/11200603
 Loctite Epoxy Marine | Glue hex nuts to chassis, seal holes | $5.88 per 25 mL | https://www.loctiteproducts.com/products/central-pdp.html/loctite-epoxy-marine/SAP_0201OIL029V5.html
 FormLabs Clear Resin V4 | Chassis to secure internal parts using | $150 per L | https://formlabs.com/store/materials/clear-resin-v4/
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
