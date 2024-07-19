@@ -84,14 +84,10 @@ Parts:
 <img src="Photos/PVC_Chassis_Boron_SolarCable.jpg" width="300">
 
 7. Seal solar cable entry with epoxy; let dry/cure fully.
-8. Slide end caps onto PVC fully; seal in place with epoxy; let dry/cure fully.
-    `INSERT PHOTO`
+8. Slide pipe bushing onto PVC pipe; screw ultrasonic distance center into bushing.
+9. Seal other end of PVC pipe with red gripper.
 
-9. Thread ultrasonic distance into bottom end cap, wrapping pipe tape around sensor threads (3 wraps in proper direction).
-    `CLARIFY PROPER DIRECTION?`
-    `INSERT PHOTO`
-
-10. CONT'D ... NEEDS UPDATING
+10. `CONT'D ... NEEDS UPDATING`
 
 
 # Instructions: Rough Draft
