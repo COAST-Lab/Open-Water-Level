@@ -81,7 +81,7 @@ Parts:
 5. Pass solar cable (red cable) through 9/64" hole drilled in step 2. Take care to give enough slack inside to make the connection/solder to microUSB connector, and enough outside to be able to maneuver the solar panel cable terminator.
 6. Attach solar cable to Boron; slide chassis and electronics into PVC pipe.
 
-<img src="Photos/PVC_Chassis_Boron_SolarCable.jpg" width="300">
+<img src="Photos/PVC_Chassis_Boron_SolarCable.jpg" width="200">
 
 7. Seal solar cable entry with epoxy; let dry/cure fully.
 8. Slide pipe bushing onto PVC pipe; screw ultrasonic distance center into bushing.
