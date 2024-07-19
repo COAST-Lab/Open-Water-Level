@@ -68,7 +68,7 @@ void setup(void) {
   // delay(5000); // to see response from begin command
 
   Serial.begin(9600);
-  Log.info("Maxbotix Test");
+  Serial.println("Maxbotix Test");
 
 }
 
@@ -125,19 +125,19 @@ void loop(void) {
     );
 
     // Print out data buffer
-    Log.info(data);
+    Serial.println(data);
 
     // Start SD stuff
     File myFile;
 
     // Initialize the library
     if (!sd.begin(SD_CHIP_SELECT, SPI_FULL_SPEED)) {
-      Log.info("failed to open card");
+      Serial.println("failed to open card");
     }
 
     // open the file for write at end like the "Native SD library"
     if (!myFile.open("distance.csv", O_RDWR | O_CREAT | O_AT_END)) {
-      Log.info("opening distance.csv for write failed");
+      Serial.println("opening distance.csv for write failed");
     }
     else{ // if file does open, save to SD; otherwise, proceed to publish
       // Save to SD card
@@ -173,17 +173,17 @@ void loop(void) {
       //connect particle to the cloud
       if (Particle.connected() == false) {
         Particle.connect();
-        Log.info("Trying to connect");
+        Serial.print("Trying to connect");
       }
 
       // If connected, publish data buffer
       if (Particle.connected()) {
 
-        Log.info("publishing data");
+        Serial.println("publishing data");
 
         // bool (or Future) below requires acknowledgment to proceed
         bool success = Particle.publish(eventName, data, 60, PRIVATE, WITH_ACK);
-        Log.info("publish result %d", success); 
+        Serial.printlnf("publish result %d", success); 
 
         isMaxTime = true;
         state = SLEEP_STATE;
@@ -194,9 +194,9 @@ void loop(void) {
         if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS) {
           isMaxTime = true;
           state = SLEEP_STATE;
-          Log.info("max time for publishing reached without success; go to sleep");
+          Serial.println("max time for publishing reached without success; go to sleep");
         }
-        Log.info("Not max time, try again to connect and publish");
+        Serial.println("Not max time, try again to connect and publish");
         delay(500);
       }
     }
@@ -208,7 +208,7 @@ void loop(void) {
   /*** Get here from PUBLISH_STATE after attempted publish or DATALOG_STATE if PUBLISHING==0
   ***/
   case SLEEP_STATE: {
-    Log.info("going to sleep");
+    Serial.println("going to sleep");
     delay(500);
 
     // Sleep time determination and configuration
@@ -223,7 +223,7 @@ void loop(void) {
     SystemSleepResult result = System.sleep(config); // Device sleeps here
 
     // It'll only make it here if the sleep call doesn't work for some reason (UPDATE: only true for hibernate. ULP will wake here.)
-    Log.info("Feeling restless");
+    Serial.print("Feeling restless");
     stateTime = millis();
     state = DATALOG_STATE;
   }
@@ -236,8 +236,8 @@ int secondsUntilNextEvent() {
   int current_seconds = Time.now();
   int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - (current_seconds % SECONDS_BETWEEN_MEASUREMENTS);
 
-  Log.info("Sleeping for ");
-  Log.info("Sleeping for %i", seconds_to_sleep);
+  Serial.print("Sleeping for ");
+  Serial.println(seconds_to_sleep);
 
   return seconds_to_sleep;
 }
