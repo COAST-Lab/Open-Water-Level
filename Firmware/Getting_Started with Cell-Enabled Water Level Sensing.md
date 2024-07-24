@@ -104,56 +104,55 @@ This image shows what your code should look like after you make the changes from
 This section will allow you to practice using water level sensor code and working with the Boron and Adalogger devices.
 
 1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron. Example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/MAX.jpg)
-2. On the GitHub repository, go to 'Firmware' -> 'SLR_Boron_Maxbotix_MB7092_cm' -> 'src' -> 'SLR_Boron_Maxbotix_MB7092_cm.ino' (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.ino))
-3. Copy all the code on this page.
+2. On the GitHub repository, go to 'Firmware' -> 'SLR_Boron_Maxbotix_MB7092_cm' -> 'src' -> 'SLR_Boron_Maxbotix_MB7092_cm.cpp' (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.cpp)).
+3. Copy all the code on this page after line 13 (i.e. lines 14 onward).
 4. In Particle Workbench, create a new project (I named mine BAdaFull).
- 	- See 'Useful features' and 'Practice code with Boron' if you need a refresher on how to create a new project.
+	- See 'Useful features' and 'Practice code with Boron' if you need a refresher on how to create a new project.
+	- Optionally, you can fill in the header with your info (i.e. project, your name, date)
+
 5. Open the Command Palette and type 'Particle: Install Library' 
 6. Type in 'SdFat' and press enter to install the SdFat library.
 7. Go to the .cpp file in the new project you created (it should have the same name as your project).
-8. Delete all code after line 10 and paste the new code you copied from GitHub (remember: keep `#include "Particle.h"`).
-9. Add lines before `//------------------State variables` and paste:
+8. Delete all code after line 9 (i.e. lines 10 onward) and paste the new code you copied from GitHub (remember: must have `#include "Particle.h"`). Your new header should look like this:
 
-`// function prototype` <br />
-`int secondsUntilNextEvent();`
+<img src="Photos/Header.jpeg" width="400">
 
-<img src="Photos/4_BAdaFull.jpg" width="500">
+9. In line 45, make sure the number after `#define PUBLISHING` is `0`.
+	- If it says `1`, change it to `0`
+ 	- This step is crucial! It ensures that we aren't publishing data via cellular connection, which is important since we are just completing a test run.
+	- Once a device is deployed with the intent of publishing data and using a cell connection, this binary value can be changed back to `1` ... but we aren't quite there yet, so make sure it says `0`!
 
-10. In line 45, replace the `1` after `#define PUBLISHING` with `0`
- 	- This step is very important! It ensures that publishing and cellular connection do NOT occur, which is necessary since we are just completing a test run.
-	- Once a device is deployed in the field with the intent of publishing data, this binary value can be changed (but we aren't dealing with that quite yet, so make sure you change `1` to `0`!)
-11. Make sure line 52 says `SEMI_AUTOMATIC` not `AUTOMATIC`
-12. In lines 51-52, change the comments so that 51 is uncommented (delete the double slashes in front of the line) and 52 is commented out (add double slashes in front of the line).
+10. At this point, I like to compile my code as a sort of "checkpoint" to make sure there aren't any issues. Click the check mark to compile.
+	- If met with errors, make sure you have "Boron" and "4.2.0" selected in the page's bottom ribbon, and check that you completed each step of these instructions correctly.
 
-<img src="Photos/5_BAdaFull.jpg" width="500">
-
-13. In line 62, where it says `const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000` change the `60000` to `20000`
-
-14. Compile and flash code to the Boron device.
+11. Once your code compiles properly, flash it to the Boron by clicking the lightnight bolt. 
 	- If your device is not responding or the flash is unsuccessful, make sure the device is in DFU mode, or try unplugging/replugging the cord.
-15. Quickly open the serial monitor: Command Palette -> 'Particle: Serial Monitor'
-16. It may take a moment, but the terminal should look something like the picture below. The serial monitor should say `serial connection closed. Attempting to reconnect…`
-	- If it still doesn't work, try the problem-solving methods from Step 16 again or visit 'Useful features' and 'Common problems.'
+
+12. Once flashed successfully, quickly open the serial monitor: Command Palette -> 'Particle: Serial Monitor'
+13. It may take a moment, but the terminal should look something like the picture below. The serial monitor should say `serial connection closed. Attempting to reconnect…`
 
 <img src="Photos/7_BAdaFull.jpeg" width="400">
 
-17. The numbers produced under `Serial monitor opened successfully:` represent four useful data values, listed as follows: Unix timestamp, distance measured by the sensor (cm), battery voltage (volts), battery level (%)
-	- Lines 134-138 (pictured) show how these values are printed from the code!
-	- Please note that Unix timestamps represent seconds since 1 Jan 1970. However, the Unix timestamps during our non-cellular test trials will represent seconds from 1 Jan 2000 each time the Boron is restarted. Once cellular connection is applied for field deployment of the device, we'll have real time stamps (i.e. since 1970).
-	- Please note that the battery voltage and battery level may show values of zero because these measures are related to an external rechargeable battery that we did not connect for these test trials; instead, we powered the device from a laptop / computer.
+If it still doesn't work, try the problem-solving methods from Step 16 again or visit 'Useful features' and 'Common problems.'
 
-<img src="Photos/8_BAdaFull.jpg" width="600">
+14. The numbers produced under `Serial monitor opened successfully:` represent four useful data values, listed as follows: Unix timestamp, distance measured by the sensor (cm), battery voltage (volts), battery level (%)
+	- Lines 135-139 (pictured) show how these values are printed from the code.
+	- Please note that Unix timestamps represent seconds since 1 Jan 1970. However, the Unix timestamps from our non-cellular trials represent seconds from 1 Jan 2000 each time the Boron is restarted. Once we use cellular connection when deploying the device, we'll have real time stamps (i.e. since 1970).
+	- Please note that the battery voltage and battery level may show values of zero; these measures are related to an external rechargeable battery that we did not connect for these test trials ... Instead, we powered the device from a laptop / computer.
 
-18. To finish collecting data, unplug the Boron to stop the code from running.
+<img src="Photos/Lines_135-139.jpeg" width="500">
+
+15. To finish collecting data, unplug the Boron to stop the code from running.
 	- Don't forget to save your project.
+	- If you wish to run this test trial again and recieve data results in faster time intervals, you can change the `SECONDS_BETWEEN_MEASUREMENTS` value in line 74 from `3600` to `30`. This will take readings at 30 second intervals instead of hourly intervals. Just be sure to change this value back to `3600` when you officially deploy the device!
 
-19. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
-20. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.csv`. You should see a table with values like below!
+16. To check all the collected values, take out the SD card from the Adalogger and put it into an SD card reader to then plug into your computer.
+17. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.csv`. You should see a table with values like below!
 	- On Mac, access this file via Finder -> Locations (Untitled) -> `distance.csv`
 
 <img src="Photos/9_BAdaFull.jpeg" width="300">
 
-21. Unix timestamps are listed in the leftmost column, then distance (cm), then battery voltage (volts), and battery level (%) in the rightmost column.
+18. Unix timestamps are listed in the leftmost column, then distance (cm), then battery voltage (volts), and battery level (%) in the rightmost column.
 	- If you want to save the data from the micro SD card, press ctrl+s (Windows) or command+s (Mac) to save the data file on your computer.
 
 All done! Now, you're more familiar with powerful tools like the Boron and Adalogger devices and VS Code, and you've learned how to collect and store the distance data. Great work!
