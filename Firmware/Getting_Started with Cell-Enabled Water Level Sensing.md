@@ -44,7 +44,7 @@ This section will take you through an exercise to set up your Boron device and p
 `#include "Particle.h"`
 	- Optional: Fill in lines 2-4 of the .cpp file (i.e. project name, author name, date); this info is for organizational purposes and will not affect your code if you leave it blank.
 
-<img src="Photos/1_Blink_LED.jpg" width="600">
+<img src="Photos/Blink_LED_Header.jpg" width="500">
 
 9. Open the Command Palette. Type 'Particle' and select 'Particle Launch CLI.'
 10. Configure Workbench to work with the Device OS that you confirmed you're using in the beginning of this section. Your settings should be across the bottom of the page; make sure the first setting says 'Boron' and the second says "deviceOS@[4.2.0 or your specific number]" by clicking and changing them if need be.
@@ -58,7 +58,7 @@ This section will take you through an exercise to set up your Boron device and p
 ## Practice code with Boron and Adalogger 
 This section will take you through an exercise to set up the Boron and Adalogger devices and practice using code with them.
 
-1. Stack the Boron on top of the Adalogger using female headers. You can see an example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg)
+1. Stack the Boron on top of the Adalogger using female headers. You can see an example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg) **NEED TO UPDATE PHOTO**
 2. Plug in the Boron and put it in listening mode again (by pressing and holding 'Mode' until the LED blinks blue). Type `particle identify` into the CLI again and make sure 'Boron' and the correct Device OS (e.g. 4.2.0) are selected in the bottom bar.
 3. Create a new project (I named mine RTCtest).
 	- See 'Useful features' and 'Practice code with Boron' if you need a refresher on how to create a new project.
@@ -73,7 +73,7 @@ This section will take you through an exercise to set up the Boron and Adalogger
 	- Like earlier, make sure `#include "Particle.h"` is left in the code! Otherwise, your .cpp file won't work properly.
  	- You have the option again to fill in applicable information in lines 2-4.
 
-<img src="Photos/2_RTCtest.jpg" width="500">
+<img src="Photos/RTC_Header.jpg" width="500">
 
 12. In line 36, change `#define SD_CS_PIN SS` to `#define SD_CS_PIN D5` (SS -> D5)
 13. After `File myFile;` create a new line and paste
@@ -84,7 +84,7 @@ This section will take you through an exercise to set up the Boron and Adalogger
 
 This image shows what your code should look like after you make the changes from steps 12-15.
 
-<img src="Photos/3_RTCtest.jpg" width="500">
+<img src="Photos/RTC_Code.jpg" width="500">
 
 16. Click the checkmark to compile the project (will take a minute).
 	- If you are met with errors when trying to compile, make sure you have the correct device and OS selected in the bottom banner, check that all steps were completed correctly, and/or refer back to **Common Problems**.
@@ -95,7 +95,7 @@ This image shows what your code should look like after you make the changes from
  	- Select 'yes' if prompted whether you want to 'automatically reconnect when port is closed'
 20. If the Adalogger does not work, the serial monitor may read something like the first chunk of text below. If it does work, it should read like the second chunk of text.
 
-	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/2.jpg)
+	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/2.jpg) **NEED TO UPDATE PHOTO**
 
 22. If you encounter problems, go to **Common Problems** and double check that you did each step correctly. You can also try pressing the 'Reset' button on the Boron, or unplugging and re-plugging the cord.
 23. Be sure to save your project before closing it.
@@ -103,7 +103,7 @@ This image shows what your code should look like after you make the changes from
 ## Practice water level sensor full code (Boron and Adalogger) 
 This section will allow you to practice using water level sensor code and working with the Boron and Adalogger devices.
 
-1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron. Example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/MAX.jpg) **NEED TO UPDATE PHOTO LINK**
+1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron. Example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/MAX.jpg) **NEED TO UPDATE PHOTO**
 2. On the GitHub repository, go to 'Firmware' -> 'SLR_Boron_Maxbotix_MB7092_cm' -> 'src' -> 'SLR_Boron_Maxbotix_MB7092_cm.cpp' (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.cpp)).
 3. Copy all the code on this page after line 13 (i.e. lines 14 onward).
 4. In Particle Workbench, create a new project (I named mine BAdaFull).
@@ -115,7 +115,7 @@ This section will allow you to practice using water level sensor code and workin
 7. Go to the .cpp file in the new project you created (it should have the same name as your project).
 8. Delete all code after line 9 (i.e. lines 10 onward) and paste the new code you copied from GitHub (remember: must have `#include "Particle.h"`). Your new header should look like this:
 
-<img src="Photos/Header.jpeg" width="400">
+<img src="Photos/BAdaFull_Header.jpeg" width="400">
 
 9. In line 45, make sure the number after `#define PUBLISHING` is `0`.
 	- If it says `1`, change it to `0`
@@ -131,7 +131,7 @@ This section will allow you to practice using water level sensor code and workin
 12. Once flashed successfully, quickly open the serial monitor: Command Palette -> 'Particle: Serial Monitor'
 13. It may take a moment, but the terminal should look something like the picture below. The serial monitor should say `serial connection closed. Attempting to reconnect…`
 
-<img src="Photos/7_BAdaFull.jpeg" width="400">
+<img src="Photos/BAdaFull_SerialMonitor.jpeg" width="400">
 
 If it still doesn't work, try the problem-solving methods from Step 16 again or visit 'Useful features' and 'Common problems.'
 
@@ -140,7 +140,7 @@ If it still doesn't work, try the problem-solving methods from Step 16 again or 
 	- Please note that Unix timestamps represent seconds since 1 Jan 1970. However, the Unix timestamps from our non-cellular trials represent seconds from 1 Jan 2000 each time the Boron is restarted. Once we use cellular connection when deploying the device, we'll have real time stamps (i.e. since 1970).
 	- Please note that the battery voltage and battery level may show values of zero; these measures are related to an external rechargeable battery that we did not connect for these test trials ... Instead, we powered the device from a laptop / computer.
 
-<img src="Photos/Lines_135-139.jpeg" width="500">
+<img src="Photos/BAdaFull_Lines_135-139.jpeg" width="500">
 
 15. To finish collecting data, unplug the Boron to stop the code from running.
 	- Don't forget to save your project.
@@ -150,7 +150,7 @@ If it still doesn't work, try the problem-solving methods from Step 16 again or 
 17. Navigate to 'file explorer' -> 'this PC' -> 'USB drive' -> `distance.csv`. You should see a table with values like below!
 	- On Mac, access this file via Finder -> Locations (Untitled) -> `distance.csv`
 
-<img src="Photos/9_BAdaFull.jpeg" width="300">
+<img src="Photos/BAdaFull_csv.jpeg" width="300">
 
 18. Unix timestamps are listed in the leftmost column, then distance (cm), then battery voltage (volts), and battery level (%) in the rightmost column.
 	- If you want to save the data from the micro SD card, press ctrl+s (Windows) or command+s (Mac) to save the data file on your computer.
