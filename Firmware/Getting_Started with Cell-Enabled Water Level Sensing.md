@@ -98,7 +98,8 @@ This image shows what your code should look like after you make the changes from
  	- Select 'yes' if prompted whether you want to 'automatically reconnect when port is closed'
 20. If the Adalogger does not work, the serial monitor may read something like the first chunk of text below. If it does work, it should read like the second chunk of text.
 
-	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/2.jpg) **NEED TO UPDATE PHOTO**
+**NEED TO UPDATE PHOTOS - I DO NOT HAVE THEM**
+	![](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Getting%20Started%20With%20Particle%20for%20Water%20Level%20Sensor%20Images/2.jpg)
 
 22. If you encounter problems, go to **Common Problems** and double check that you did each step correctly. You can also try pressing the 'Reset' button on the Boron, or unplugging and re-plugging the cord.
 23. Be sure to save your project before closing it.
@@ -106,7 +107,8 @@ This image shows what your code should look like after you make the changes from
 ## Practice water level sensor full code (Boron and Adalogger) 
 This section will allow you to practice using water level sensor code and working with the Boron and Adalogger devices.
 
-1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron. Example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/MAX.jpg) **NEED TO UPDATE PHOTO**
+1. Wiring Connection between Boron/Adalogger stack and water level sensor: The water level sensor's AN pin will connect to the A1 pin of the Boron. Ground the water level sensor by connecting GND to GND on the Boron and connect to power by connecting +5 to 3v3 on the Boron. Example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/MAX.jpg) **NEED TO UPDATE PHOTO LINK - I DO NOT HAVE PHOTO**
+
 2. On the GitHub repository, go to 'Firmware' -> 'SLR_Boron_Maxbotix_MB7092_cm' -> 'src' -> 'SLR_Boron_Maxbotix_MB7092_cm.cpp' (or follow [this link](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/SLR_Boron_Maxbotix_MB7092_cm/src/SLR_Boron_Maxbotix_MB7092_cm.cpp)).
 3. Copy all the code on this page after line 13 (i.e. lines 14 onward).
 4. In Particle Workbench, create a new project (I named mine BAdaFull).

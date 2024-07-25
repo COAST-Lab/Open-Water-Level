@@ -24,10 +24,9 @@ Gripper 1-1/2 in. Plastic Mechanical Test Plug | Sealing end of PVC | $5.65 | ht
 FormLabs Clear Resin V4 | Chassis to secure internal parts | $150 per L | https://formlabs.com/store/materials/clear-resin-v4/
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
 
-Total cost |  | [INSERT COST] | |
+Total cost |  |  |  |
 
 Adafruit wishlist: http://www.adafruit.com/wishlists/589193  
 Digi-Key wishlist: https://www.digikey.com/en/mylists/list/3G4W9NENB6
-McMaster-Carr wishlist: `NOT POSSIBLE?`
 
 Please note: These wishlists may need to be udpated as design changes progress.
