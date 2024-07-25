@@ -59,6 +59,7 @@ This section will take you through an exercise to set up your Boron device and p
 This section will take you through an exercise to set up the Boron and Adalogger devices and practice using code with them.
 
 1. Stack the Boron on top of the Adalogger using female headers.
+
 <img src="Photos/BAda_Separate.jpeg" width="100"> <img src="Photos/BAda_Stack.jpeg" width="100"> <img src="Photos/BAda_Stack2.jpeg" width="100"> <img src="Photos/BAda_Stack3.jpeg" width="100">
 
 2. Plug in the Boron and put it in listening mode again (by pressing and holding 'Mode' until the LED blinks blue). Type `particle identify` into the CLI again and make sure 'Boron' and the correct Device OS (e.g. 4.2.0) are selected in the bottom bar.
