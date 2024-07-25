@@ -58,7 +58,9 @@ This section will take you through an exercise to set up your Boron device and p
 ## Practice code with Boron and Adalogger 
 This section will take you through an exercise to set up the Boron and Adalogger devices and practice using code with them.
 
-1. Stack the Boron on top of the Adalogger using female headers. You can see an example [here.](https://github.com/COAST-Lab/Open-Water-Level/blob/main/Firmware/Sensor%20How-To%20Images/BorAd%20Stack.jpg) **NEED TO UPDATE PHOTO**
+1. Stack the Boron on top of the Adalogger using female headers.
+<img src="Photos/BAda_Separate.jpeg" width="100"> <img src="Photos/BAda_Stack.jpeg" width="100"> <img src="Photos/BAda_Stack2.jpeg" width="100"> <img src="Photos/BAda_Stack3.jpeg" width="100">
+
 2. Plug in the Boron and put it in listening mode again (by pressing and holding 'Mode' until the LED blinks blue). Type `particle identify` into the CLI again and make sure 'Boron' and the correct Device OS (e.g. 4.2.0) are selected in the bottom bar.
 3. Create a new project (I named mine RTCtest).
 	- See 'Useful features' and 'Practice code with Boron' if you need a refresher on how to create a new project.
