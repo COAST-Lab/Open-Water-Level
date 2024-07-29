@@ -1,5 +1,3 @@
-We're working on this page! An updated BOM will be added soon.
-
 # Bill of Materials for PVC Design
 Please note: Prices are listed in USD and are subject to change based on market value and availability.
 
