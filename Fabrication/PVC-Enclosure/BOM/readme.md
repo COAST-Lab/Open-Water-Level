@@ -12,6 +12,8 @@ MB7092 XL-MaxSonar-WRMA1 | Distance sensor | $99.95 | https://www.adafruit.com/p
 Adalogger FeatherWing - RTC + SD Add-on For All Feather Boards | Data storage board | $8.95 | https://www.adafruit.com/product/2922
 Stacking header pins for FeatherWing | Stack Boron on FeatherWing | $1.95 | https://www.adafruit.com/product/2940
 PVC Pipe 1-1/2 in. x 10 ft. 330 psi Schedule 40 DWV | Enclosure | $1.28 per ft; $10.24 | https://www.homedepot.com/p/1-1-2-in-x-10-ft-330-psi-White-PVC-Schedule-40-DWV-Plain-End-Pipe-531111/100135041
+PVC Pipe Fitting for Water, Bushing Reducer, 1-1/2 Socket Male x 3/4 NPT Female | Connect ultrasonic distance sensor to PVC pipe | $2.63 | https://www.mcmaster.com/4880K208/
+PVC Pipe Fitting for Water, Straight Connector 1-1/2 Socket-Connect Female | Connect pipe bushing to PVC | $1.27 | https://www.mcmaster.com/4880K75/
 Super-Corrosion-Resistant 316 Stainless Steel Socket Head Screw M2x0.4mm Thread, 16mm long | Secure Boron and FeatherWing to chassis | $13.32 per 50; $1.0656 for 4 | https://www.mcmaster.com/92290A746/
 Super-Corrosion-Resistant 316 Stainless Steel Hex Nut M2x0.4mm Thread 1.6mm height | Receive 16mm screws | $5.88 per 50; $0.4704 for 4 | https://www.mcmaster.com/94150A305/
 SD/MicroSD Memory Card (8 GB SDHC) | Data storage | $9.95 | https://www.adafruit.com/product/1294
