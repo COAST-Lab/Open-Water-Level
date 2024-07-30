@@ -36,14 +36,14 @@ Update the Boron's system firmware using the steps listed in the `Firmware` dire
 
 # Fabrication of Electronics and Enclosure
 
-*Note: You may want to start with taking the Boron off of the Adalogger FeatherWing for ease.*
+*Note: Start by taking the Boron off the Adalogger FeatherWing for ease.*
 
 Twist the 3-pin cables (insert into a drill bit and spin slowly).
 Use shrink tubing to cover the cables.
 
 Solder the 3-pin cable female receptacle onto the FeatherWing spare pins corresponding to the power, ground, and analog inputs.
 
-<img src="Photos/Solder_3pin_FeatherWing.jpeg" width="200">
+<img src="Photos/Solder_3pin_FeatherWing.jpg" width="200">
 
 Solder the 3-pin cable male block onto the ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
 
