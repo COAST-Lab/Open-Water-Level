@@ -24,7 +24,7 @@ Cable gland for 0.08"-0.24" Cord OD | Waterproof cable entry | $2.45 | https://w
 1/2" x 520" PTFE pipe tape | Tape threads on distance sensor | $1.68 per roll | https://www.homedepot.com/p/William-H-Harvey-Company-1-2-in-x-520-in-White-PTFE-Tape-177333/100025685
 Loctite Epoxy Marine | Glue hex nuts to chassis, seal holes | $5.88 per 25 mL | https://www.loctiteproducts.com/products/central-pdp.html/loctite-epoxy-marine/SAP_0201OIL029V5.html
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
-Approximate cost per sensor unit | | ~312 USD |
+Approx. cost per sensor unit | | ~312 USD |
 
 Adafruit wishlist: http://www.adafruit.com/wishlists/589193
 Digi-Key wishlist: https://www.digikey.com/en/mylists/list/3G4W9NENB6
