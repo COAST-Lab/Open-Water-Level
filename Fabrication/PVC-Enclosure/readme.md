@@ -33,7 +33,7 @@ Place the stacking header pins through the pin holes of the Adalogger FeatherWin
 
 <img src="Photos/AdaFeather_Pins.jpeg" width="200">
 
-Place the Boron 404X atop the Adalogger FeatherWing so the Boron pins fit into the stacking header holes.
+Place the Boron 404X atop the Adalogger FeatherWing so the Boron pins fit into the stacking header holes. (The assembled Boron 404X, Adalogger FeatherWing, and stacking header pins will hereby referred to as the BAda.)
 
 <img src="Photos/BAda_Separate.jpeg" width="200"> <img src="Photos/BRN404X.jpeg" width="200"> <img src="Photos/BAda_Stack.jpeg" width="200">
 
