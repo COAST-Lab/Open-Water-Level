@@ -60,7 +60,7 @@ Cut a 1" hole 1-1/4" into the Polycase lid. Tap 3/4 NPT threads
 
 Wrap the ultrasonic distance sensor's threads with pipe tape; gently screw the distance sensor into the lid's hole. Use marine epoxy to create a waterproof connection here.
 
-<img src="Photos/Sensor_Lide_Cables.jpeg" width="200">
+<img src="Photos/Sensor_Lid_Cables.jpeg" width="200">
 
 Cut the female 5V 2A connector of of the solar cable and strip the end. Cut the USB A connector of the USB A to Micro-B cable and strip the end. Solder the +5V wires together and the GND wires together. (Can use shrink tubing to keep red and black internal wires separate.) Cover this connection with shrink tubing / electrical tape / your preference.
 
