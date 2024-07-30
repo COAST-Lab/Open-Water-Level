@@ -26,15 +26,15 @@ Parts:
 
 1. Place the stacking header pins through the pin holes of the Adalogger FeatherWing; solder.
 
-<img src="Photos/AdaFeather_Pins.jpeg" width="200">
+<img src="Photos/AdaFeather_Pins.jpeg" width="300">
 
 2. Place the Boron 404X atop the Adalogger FeatherWing so the Boron pins fit into the stacking header holes.
 
-<img src="Photos/BAda_Separate.jpeg" width="200"> <img src="Photos/BRN404X.jpeg" width="200"> <img src="Photos/BAda_Stack.jpeg" width="200">
+<img src="Photos/BAda_Separate.jpeg" width="200"> <img src="Photos/BRN404X.jpeg" width="200"> <img src="Photos/BAda_Stack.jpeg" width="150">
 
 3. Gently press the microSD card into the Adalogger FeatherWing until it clicks into place.
 
-<img src="Photos/Install_SD.jpeg" width="200">
+<img src="Photos/Install_SD.jpeg" width="300">
 
 4. Using the USB A to Micro-B cable and your computer, udate the Boron's system firmware using the steps listed in the `Firmware` directory.
 
@@ -46,21 +46,21 @@ Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use 
 
 1. Solder the 3-pin cable female receptacle onto the FeatherWing spare pins corresponding to the power, ground, and analog inputs.
 
-<img src="Photos/Solder_3pin_FeatherWing.jpg" width="200">
+<img src="Photos/Solder_3pin_FeatherWing.jpg" width="300">
 
 2. Solder the 3-pin cable male block onto the ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
 
-<img src="Photos/Soldering_3pin_Sensor.jpeg" width="200">
+<img src="Photos/Soldering_3pin_Sensor.jpeg" width="400">
 
 3. Using a 5/8" spade bit, drill a hole in one of the Polycase's short ends 3/4" from the inner lip and centered horizontally.
 
 4. Cut a 1" hole 1-1/4" into the Polycase lid. Tap 3/4 NPT threads
 
-<img src="Photos/Polycase_Holes.jpg" width="200"> <img src="Photos/Tapping_Lid.jpeg" width="200">
+<img src="Photos/Polycase_Holes.jpg" width="200"> <img src="Photos/Tapping_Lid.jpeg" width="300">
 
 5. Wrap the ultrasonic distance sensor's threads with pipe tape; gently screw the distance sensor into the lid's hole. Use marine epoxy to create a waterproof connection here.
 
-<img src="Photos/Sensor_Lid_Cables.jpeg" width="200">
+<img src="Photos/Sensor_Lid_Cables.jpeg" width="300">
 
 6. Cut the female 5V 2A connector of of the solar cable and strip the end. Cut the USB A connector of the USB A to Micro-B cable and strip the end. Solder the +5V wires together and the GND wires together. (Can use shrink tubing to keep red and black internal wires separate.) Cover this connection with shrink tubing / electrical tape / your preference.
 
@@ -79,11 +79,12 @@ Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use 
 2. Screw the BAda to the chassis using the M2x0.45 18mm screws. Screw M2.5x0.45mm threaded 2mm length hex nuts to the screws on the underside of the chassis.
 - Be cautious not to move too quickly or harshly, as you can strip the screw / hex nut, or crack the chassis!
 
-<img src="Photos/PolycaseChassis_Simplified.jpeg" width="200"> <img src="Photos/PolycaseChassis_Screws_Nuts.jpg" width="200"> <img src="Photos/PolycaseChassis_Boron_Attached.jpeg" width="200"> <img src="Photos/PolycaseChassis_Nuts_Under.jpg" width="200">
+<img src="Photos/PolycaseChassis_Simplified.jpeg" width="300"> <img src="Photos/PolycaseChassis_Screws_Nuts.jpg" width="300">
+<img src="Photos/PolycaseChassis_Boron_Attached.jpeg" width="200"> <img src="Photos/PolycaseChassis_Nuts_Under.jpg" width="150">
 
 3. Carefully peel the sticker backing off of the cellular antenna and gently stick to the outside of the antenna frame on the chassis. Attach the antenna cable to the BAda.
 
-<img src="Photos/PolycaseChassis_Boron_Antenna.jpg" width="200">
+<img src="Photos/PolycaseChassis_Boron_Antenna.jpg" width="250">
 
 4. Lay the chassis and electronics inside the Polycase so the BAda's microUSB port faces the side with the solar cable entry / cable gland.
 
@@ -100,4 +101,4 @@ Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use 
 
 9. Place the Polycase lid on the enclosure, screwing it on with the included screws.
 
-<img src="Photos/Polycase_EnclosureScrews.jpg" width="200"><img src="Photos/Polycase_EnclosureScrews2.jpeg" width="200">
+<img src="Photos/Polycase_EnclosureScrews.jpg" width="200"> <img src="Photos/Polycase_EnclosureScrews2.jpeg" width="200">
