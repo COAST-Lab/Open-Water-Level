@@ -65,9 +65,7 @@ Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use 
 - ... the soldered header pins rest in the rectangular slots without touching anything
 - ... the screw holes in the Boron and FeatherWing line up with the four hex nuts in the chassis
 
-<img src="Photos/PVC_Chassis.jpeg" width="300">
-
-<img src="Photos/PVC_Chassis_Attached.jpg" width="300">
+<img src="Photos/PVC_Chassis.jpeg" width="300"> <img src="Photos/PVC_Chassis_Attached.jpg" width="300">
 
 5. Attach cellular antenna cable to Boron 404X.
 

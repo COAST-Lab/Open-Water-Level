@@ -56,8 +56,7 @@ Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use 
 
 4. Cut a 1" hole 1-1/4" into the Polycase lid. Tap 3/4 NPT threads
 
-<img src="Photos/Polycase_Holes.jpg" width="200">
-<img src="Photos/Tapping_Lid.jpeg" width="200">
+<img src="Photos/Polycase_Holes.jpg" width="200"> <img src="Photos/Tapping_Lid.jpeg" width="200">
 
 5. Wrap the ultrasonic distance sensor's threads with pipe tape; gently screw the distance sensor into the lid's hole. Use marine epoxy to create a waterproof connection here.
 
@@ -80,10 +79,7 @@ Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use 
 2. Screw the BAda to the chassis using the M2x0.45 18mm screws. Screw M2.5x0.45mm threaded 2mm length hex nuts to the screws on the underside of the chassis.
 - Be cautious not to move too quickly or harshly, as you can strip the screw / hex nut, or crack the chassis!
 
-<img src="Photos/PolycaseChassis_Simplified.jpeg" width="200">
-<img src="Photos/PolycaseChassis_Screws_Nuts.jpg" width="200">
-<img src="Photos/PolycaseChassis_Boron_Attached.jpeg" width="200">
-<img src="Photos/PolycaseChassis_Nuts_Under.jpg" width="200">
+<img src="Photos/PolycaseChassis_Simplified.jpeg" width="200"> <img src="Photos/PolycaseChassis_Screws_Nuts.jpg" width="200"> <img src="Photos/PolycaseChassis_Boron_Attached.jpeg" width="200"> <img src="Photos/PolycaseChassis_Nuts_Under.jpg" width="200">
 
 3. Carefully peel the sticker backing off of the cellular antenna and gently stick to the outside of the antenna frame on the chassis. Attach the antenna cable to the BAda.
 
@@ -104,5 +100,4 @@ Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use 
 
 9. Place the Polycase lid on the enclosure, screwing it on with the included screws.
 
-<img src="Photos/Polycase_EnclosureScrews.jpg" width="200">
-<img src="Photos/Polycase_EnclosureScrews2.jpeg" width="200">
+<img src="Photos/Polycase_EnclosureScrews.jpg" width="200"><img src="Photos/Polycase_EnclosureScrews2.jpeg" width="200">
