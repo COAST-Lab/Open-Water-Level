@@ -16,30 +16,32 @@ Parts:
 - Polycase ML-24K + screws (included)
 - Hi-Lo #4-24 screws
 - Maxbotix Ultrasonic Rangefinder
-- USB cord
-- Solar system
 - 3-pin cable
+- Solar system
+- USB A to Micro-B cable
+- Pipe tape
 - Epoxy
 
-# Fabrication Steps to Prep Firmware
+# Fabricating electronics to prepare for firmware update
 Place the stacking header pins through the pin holes of the Adalogger FeatherWing; solder.
 
 <img src="Photos/AdaFeather_Pins.jpeg" width="200">
 
 Place the Boron 404X atop the Adalogger FeatherWing so the Boron pins fit into the stacking header holes.
 
+<img src="Photos/BAda_Separate.jpeg" width="200"> <img src="Photos/BRN404X.jpeg" width="200"> <img src="Photos/BAda_Stack.jpeg" width="200">
+
 Gently press the microSD card into the Adalogger FeatherWing until it clicks into place.
 
 <img src="Photos/Install_SD.jpeg" width="200">
 
-Update the Boron's system firmware using the steps listed in the `Firmware` directory.
+Using the USB A to Micro-B cable and your computer, udate the Boron's system firmware using the steps listed in the `Firmware` directory.
 
-# Fabrication of Electronics and Enclosure
+# Fabrication of electronics with enclosure
 
 *Note: Start by taking the Boron off the Adalogger FeatherWing for ease.*
 
-Twist the 3-pin cables (insert into a drill bit and spin slowly).
-Use shrink tubing to cover the cables.
+Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use shrink tubing to cover the cables.
 
 Solder the 3-pin cable female receptacle onto the FeatherWing spare pins corresponding to the power, ground, and analog inputs.
 
@@ -58,9 +60,11 @@ Cut a 1" hole 1-1/4" into the Polycase lid. Tap 3/4 NPT threads
 
 Wrap the ultrasonic distance sensor's threads with pipe tape; gently screw the distance sensor into the lid's hole. Use marine epoxy to create a waterproof connection here.
 
-Cut the female 5V 2A connector of the solar cable and strip the end. Cut the USB A connector of the USB A to Micro-B cable and strip the end. Can use shrink tubing to keep internal wires separate; solder the +5V wires together and the GND wires together. Cover this connection with shrink tubing / electrical tape / your preference.
+<img src="Photos/Sensor_Lide_Cables.jpeg" width="200">
 
-Thread the upper two components of the cable gland onto the solar cable; thread the solar cable through the 5/8" hole; thread the bottom component of the cable gland onto the solar cable from inside the enclosure; tighten cable gland.
+Cut the female 5V 2A connector of of the solar cable and strip the end. Cut the USB A connector of the USB A to Micro-B cable and strip the end. Solder the +5V wires together and the GND wires together. (Can use shrink tubing to keep red and black internal wires separate.) Cover this connection with shrink tubing / electrical tape / your preference.
+
+Thread the upper two components of the cable gland onto the solar cable. Thread the solar cable through the 5/8" hole. Thread the bottom component of the cable gland onto the solar cable from inside the enclosure. Tighten cable gland.
 
 <img src="Photos/Solar_CableGland.jpeg" width="200">
 
