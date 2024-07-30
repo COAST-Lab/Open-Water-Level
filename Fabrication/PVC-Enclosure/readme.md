@@ -31,15 +31,15 @@ Parts:
 # Fabricating electronics to prepare for firmware update
 1. Place the stacking header pins through the pin holes of the Adalogger FeatherWing; solder.
 
-<img src="Photos/AdaFeather_Pins.jpeg" width="200">
+<img src="Photos/AdaFeather_Pins.jpeg" width="300">
 
 2. Place the Boron 404X atop the Adalogger FeatherWing so the Boron pins fit into the stacking header holes. (The assembled Boron 404X, Adalogger FeatherWing, and stacking header pins will hereby referred to as the BAda.)
 
-<img src="Photos/BAda_Separate.jpeg" width="200"> <img src="Photos/BRN404X.jpeg" width="200"> <img src="Photos/BAda_Stack.jpeg" width="200">
+<img src="Photos/BAda_Separate.jpeg" width="200"> <img src="Photos/BRN404X.jpeg" width="200"> <img src="Photos/BAda_Stack.jpeg" width="150">
 
 3. Gently press the microSD card into the Adalogger FeatherWing until it clicks into place.
 
-<img src="Photos/Install_SD.jpeg" width="200">
+<img src="Photos/Install_SD.jpeg" width="300">
 
 4. Using the USB A to Micro-B cable and your computer, udate the Boron's system firmware using the steps listed in the `Firmware` directory.
 
@@ -49,27 +49,27 @@ Parts:
 
 1. Using epoxy, carefully glue four M2x0.4mm 1.6mm length hex nuts in the four hexagonal holes of the chassis. Let dry / cure fully.
 
-<img src="Photos/PVC_Chassis_Screws_Nuts.jpg" width="200">
+<img src="Photos/PVC_Chassis_Screws_Nuts.jpg" width="300">
 
 Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use shrink tubing to cover the cables.
 
 2. Solder the 3-pin cable female receptacle onto the FeatherWing spare pins corresponding to the power, ground, and analog inputs.
 
-<img src="Photos/Solder_3pin_FeatherWing.jpg" width="200">
+<img src="Photos/Solder_3pin_FeatherWing.jpg" width="300">
 
 3. Solder the 3-pin cable male block onto the ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
 
-<img src="Photos/Soldering_3pin_Sensor.jpeg" width="200">
+<img src="Photos/Soldering_3pin_Sensor.jpeg" width="400">
 
 4. Using M2x0.4mm screws, attach the BAda atop the chassis so that ...
 - ... the soldered header pins rest in the rectangular slots without touching anything
 - ... the screw holes in the Boron and FeatherWing line up with the four hex nuts in the chassis
 
-<img src="Photos/PVC_Chassis.jpeg" width="300"> <img src="Photos/PVC_Chassis_Attached.jpg" width="300">
+<img src="Photos/PVC_Chassis.jpeg" width="300"> <img src="Photos/PVC_Chassis_Attached.jpg" width="200">
 
 5. Attach cellular antenna cable to Boron 404X.
 
-<img src="Photos/PVC_Chassis_Boron_Antenna.jpg" width="100">
+<img src="Photos/PVC_Chassis_Boron_Antenna.jpg" width="200">
 
 6. Peel sticker backing off of cellular antenna and gently stick to flat underside of chassis.
 
@@ -87,7 +87,7 @@ Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use 
 
 12. Plug the Micro-B connector into the Boron's Micro-B port.
 
-<img src="Photos/PVC_Chassis_Boron_SolarCable.jpg" width="300">
+<img src="Photos/PVC_Chassis_Boron_SolarCable.jpg" width="250">
 
 13. Wrap the ultrasonic distance sensor's threads with pipe tape; gently screw the distance sensor into pipe bushing.
 
