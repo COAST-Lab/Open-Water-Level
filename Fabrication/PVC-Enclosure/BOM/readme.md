@@ -24,7 +24,6 @@ Cable gland for 0.08"-0.24" Cord OD | Waterproof cable entry | $2.45 | https://w
 1/2" x 520" PTFE pipe tape | Tape threads on distance sensor | $1.68 per roll | https://www.homedepot.com/p/William-H-Harvey-Company-1-2-in-x-520-in-White-PTFE-Tape-177333/100025685
 Gripper 1-1/2 in. Plastic Mechanical Test Plug | Sealing end of PVC | $5.65 | https://www.homedepot.com/p/Oatey-Gripper-1-1-2-in-Plastic-Mechanical-Test-Plug-33400D/100342630
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
-
 Approximate cost per sensor unit | | ~311 USD |
 
 Adafruit wishlist: http://www.adafruit.com/wishlists/589193  
