@@ -1,7 +1,7 @@
-#Testing and Deployment Notes for WL_004 and WL_005
+# Testing and Deployment Notes for WL_004 and WL_005
 
 
-##Calculations for WL_0004 
+## Calculations for WL_0004 
 
 Standard deviation of 5 values over 5 hours: 1.7073168369257 inches 
 
@@ -9,7 +9,7 @@ NOTES: There was human error on the last value that decreased the average by abo
 
  
 
-##Power/Deployment Notes for WL_004:  
+## Power/Deployment Notes for WL_004:  
 
 After testing the water level sensor measurements in the lab, I attached the solar panel on Thursday. I used marine epoxy to seal up the screws on the polycase and left the whole sensor put together in the fume hood until the day of deployment on Tuesday. This did not help with charging the battery so when we deployed WL_004 on CMS dock it had about 0.25 battery.  
 
