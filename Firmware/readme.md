@@ -3,3 +3,4 @@
 - "SLR_Boron_Maxbotix_MB7092_cm" houses code that is used in the "Getting_Started" exercises.
 - "Photos" has pictures shown in the instructions.
 - "Old" houses previous firmware and info.
+- "Other" contains firmware for other devices (Particle Argon).
