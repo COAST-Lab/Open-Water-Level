@@ -71,7 +71,7 @@ const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this 
 // If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
 // .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
 // in sleep configuration to avoid reconnection penalty
-const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 3600; // What should sampling period be?
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 1; // What should sampling period be?
 // ***** IMPORTANT!!! See note above this const.
 
 
@@ -80,7 +80,7 @@ void setup(void) {
     Particle.connect();
   }
   else{
-    Cellular.off(); // turn off cellular for prelim testing (uncomment)
+    Wifi.off(); // turn off wifi for prelim testing (uncomment)
   }
 
   // delay(5000); // to see response from begin command
