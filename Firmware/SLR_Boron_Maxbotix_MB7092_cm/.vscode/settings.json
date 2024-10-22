@@ -4,6 +4,7 @@
     "files.associations": {
         "*.ino": "cpp"
     },
-    "particle.targetPlatform": "boron",
-    "particle.firmwareVersion": "4.2.0"
+    "particle.targetPlatform": "argon",
+    "particle.firmwareVersion": "6.1.1",
+    "C_Cpp.errorSquiggles": "disabled"
 }

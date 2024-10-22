@@ -80,7 +80,8 @@ void setup(void) {
     Particle.connect();
   }
   else{
-    Wifi.off(); // turn off wifi for prelim testing (uncomment)
+   Particle.disconnect();
+   WiFi.off(); // turn off wifi for prelim testing (uncomment)
   }
 
   // delay(5000); // to see response from begin command
