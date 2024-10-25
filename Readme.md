@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/688666593.svg)](https://doi.org/10.5281/zenodo.13991877)
+
 # Open Water Level Sensor
 ## ℹ️ About this Repository
 This GitHub repository provides updated designs for a low-cost, open-source, cell-equipped water level sensor. The initial design, published in the journal Oceanography in the special section DIY (do-it-yourself) Oceanography, used a lower resolution sensor and had internal datalogging capabilities. In this repo, we describe how to use a higher-resolution sensor with a cellular modem for near-real-time water level information. 
