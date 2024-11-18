@@ -1,18 +1,14 @@
-/******************************************************/
-//       THIS IS A GENERATED FILE - DO NOT EDIT       //
-/******************************************************/
-
-/* 
- * Project myProject
- * Author: Your Name
- * Date: 
- * For comprehensive documentation and examples, please visit:
- * https://docs.particle.io/firmware/best-practices/firmware-template/
- */
-
 // Include Particle Device OS APIs
+#include "Adafruit_GFX.h"
+#include "Adafruit_SSD1306.h"
 #include "Particle.h"
 #include "SdFat.h"
+
+//#include <SPI.h>
+//#include <Wire.h>
+
+Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
+
  //------------------SD SPI Configuration Details--------------------------------
 const int SD_CHIP_SELECT = D5;
 SdFat sd;
@@ -71,7 +67,7 @@ const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this 
 // If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
 // .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
 // in sleep configuration to avoid reconnection penalty
-const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 1; // What should sampling period be?
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 10; // What should sampling period be?
 // ***** IMPORTANT!!! See note above this const.
 
 
@@ -80,15 +76,38 @@ void setup(void) {
     Particle.connect();
   }
   else{
-   Particle.disconnect();
-   WiFi.off(); // turn off wifi for prelim testing (uncomment)
+   Cellular.off();
   }
 
   // delay(5000); // to see response from begin command
 
   Serial.begin(9600);
   Log.info("Maxbotix Test");
+// SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Address 0x3C for 128x32
 
+  // Show image buffer on the display hardware.
+  // Since the buffer is intialized with an Adafruit splashscreen
+  // internally, this will display the splashscreen.
+  display.display();
+  delay(1000);
+
+  // Clear the buffer.
+  display.clearDisplay();
+  display.display();
+
+  // text display tests
+  display.setTextSize(2);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0,0);
+  
+  display.println("SEAS the");
+  display.println("  day!");
+  
+  display.setCursor(0,0);
+  display.display(); // actually display all of the above
+
+  delay(500);   //wait for everything to initialize
 }
 
 void loop(void) {
@@ -97,13 +116,14 @@ void loop(void) {
 
     //////////////////////////////////////////////////////////////////////////////
     /*** DATALOG_STATE ***/
-    /*** Get here from boot. 
+    /*** Get here from boot. s2
     If so, poll Maxbotix and save to SD card.
     Then, if PUBLISHING==1, go to PUBLISH_STATE. Else,
     go to SLEEP_STATE.
     ***/
   case DATALOG_STATE: {
     // Take multiple measurements and store in array
+    
     for (int sample = 0; sample < 200; sample++) {
       filterArray[sample] = (analogRead(A1));
       delay(50); // to avoid untrasonic interfering
@@ -127,6 +147,13 @@ void loop(void) {
 
     // Get average of the middle samples (from 10 to 190)
     distance_unconverted = sum / 180;
+
+      //The MB1200 has an output resolution of 10 Bits. This means there is 1024 available values.
+      //The output is scaled such that 1 Bit equals 1 cm. The Arduino also defaults to this
+      //same resolution, and as such the analog read is already in units of centimeters.
+      //If you use a sensor with a different scale factor, or set the arduino to a different
+      //resolution, you may need to multiply or divide this variable by that scale factor.
+      //This yields a resolution between readings of: 3.3 volts / 4096 units or, 0.0008 volts (0.8 mV) per unit.
 
     // Get all metrics which are to be reused:
     range_cm = (float) distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
@@ -165,7 +192,9 @@ void loop(void) {
       myFile.print("\n"); // put next data on new line
       myFile.close();
     }
-
+    
+      
+    
     if (PUBLISHING==1) {
       state = PUBLISH_STATE;
     }
@@ -175,7 +204,24 @@ void loop(void) {
 
   }
   break;
+    {
+  int range = analogRead(A1);    //read signal on pin A1 and assign to variable: range
+  
+  {                                   
+     //display range data on screen
+    display.clearDisplay();
+    display.setTextSize(2);
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(0,0);
+    display.println("Dist (in):");
+    display.println(range); //Counts * (V range/count range) * (Inch range/V range)
+    display.display();
 
+
+    delay(1000);           //delay: can change delay length to change measurement speed
+  }
+
+}
     //////////////////////////////////////////////////////////////////////////////
     /*** PUBLISH_STATE ***/
     /*** Get here from DATALOG_STATE if PUBLISHING==1. Ensure that we're connected to Particle Cloud.
@@ -219,7 +265,36 @@ void loop(void) {
         Log.info("Not max time, try again to connect and publish");
         delay(500);
       }
+    
     }
+
+   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
+   display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Address 0x3C for 128x32
+
+   // Show image buffer on the display hardware.
+   // Since the buffer is intialized with an Adafruit splashscreen
+   // internally, this will display the splashscreen.
+   display.display();
+   delay(1000);
+
+   // Clear the buffer.
+   display.clearDisplay();
+   display.display();
+
+   // text display tests
+   display.setTextSize(2);
+   display.setTextColor(SSD1306_WHITE);
+   display.setCursor(0,0);
+  
+   display.println("SEAS the");
+   display.println("  day!");
+  
+   display.setCursor(0,0);
+   display.display(); // actually display all of the above
+
+   delay(500);   //wait for everything to initialize
+
+  
   }
   break;
 
@@ -260,3 +335,4 @@ int secondsUntilNextEvent() {
 
   return seconds_to_sleep;
 }
+
