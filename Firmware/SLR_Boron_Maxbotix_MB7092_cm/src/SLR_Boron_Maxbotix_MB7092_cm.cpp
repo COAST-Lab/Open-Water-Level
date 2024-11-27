@@ -1,13 +1,14 @@
 // Include Particle Device OS APIs
-#include "Adafruit_GFX.h"
-#include "Adafruit_SSD1306.h"
+#include "Adafruit_GFX_RK.h"
+#include "Adafruit_SSD1306_RK.h"
 #include "Particle.h"
 #include "SdFat.h"
 
-//#include <SPI.h>
-//#include <Wire.h>
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 32
 
-Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
+
+Adafruit_SSD1306 display = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT);
 
  //------------------SD SPI Configuration Details--------------------------------
 const int SD_CHIP_SELECT = D5;
@@ -98,7 +99,7 @@ void setup(void) {
 
   // text display tests
   display.setTextSize(2);
-  display.setTextColor(SSD1306_WHITE);
+  display.setTextColor(WHITE);
   display.setCursor(0,0);
   
   display.println("SEAS the");
@@ -211,7 +212,7 @@ void loop(void) {
      //display range data on screen
     display.clearDisplay();
     display.setTextSize(2);
-    display.setTextColor(SSD1306_WHITE);
+    display.setTextColor(WHITE);
     display.setCursor(0,0);
     display.println("Dist (in):");
     display.println(range); //Counts * (V range/count range) * (Inch range/V range)
@@ -283,7 +284,7 @@ void loop(void) {
 
    // text display tests
    display.setTextSize(2);
-   display.setTextColor(SSD1306_WHITE);
+   display.setTextColor(WHITE);
    display.setCursor(0,0);
   
    display.println("SEAS the");
