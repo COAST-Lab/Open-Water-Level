@@ -53,7 +53,7 @@ void setup() {
   pinMode(led, OUTPUT);
 
   Serial.begin(9600);
-  while (!Serial); // Wait for serial connection (debugging)
+  //while (!Serial); // Wait for serial connection (debugging)
   Serial.println("Maxbotix Test");
 
   // Initialize SD card
