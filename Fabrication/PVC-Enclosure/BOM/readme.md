@@ -20,8 +20,8 @@ USB DIY Slim Connector Shell - MicroB Plug | Splice to solar panel power for Bor
 3-pin cable | Power, ground, and analog signal to/from sonar | $0.95 | https://www.adafruit.com/product/4721
 5 Watt 5 Volt 35Wh Solar System | Solar charging | $99.00 | https://voltaicsystems.com/5-watt-5-volt-35wh-solar-system/
 Cable gland for 0.08"-0.24" Cord OD | Waterproof cable entry | $2.45 | https://www.digikey.com/en/products/detail/lapp/S2209/11200603
-Gripper 1-1/2 in. Plastic Mechanical Test Plug | Sealing end of PVC | $5.65 | https://www.homedepot.com/p/Oatey-Gripper-1-1-2-in-Plastic-Mechanical-Test-Plug-33400D/100342630
 FormLabs Clear Resin V4 | Chassis to secure internal parts | $150 per L | https://formlabs.com/store/materials/clear-resin-v4/
+FormLabs Tough Resin 2000 | Resin for PVC Top | $149.00 | https://formlabs.com/store/materials/tough-2000-resin/?srsltid=AfmBOorkt99qw9h7vVncmEmw7h-OcrGHFd6vqJ1ja2KF9Ixz_PjKSQUT
 O-rings | Seal on PVC end cap | $7.81 | https://www.mcmaster.com/9464K291/
 Lithium Ion Battery Pack - 3.7V 4400mAh | Adjacent battery | $19.95 | https://www.adafruit.com/product/354
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
