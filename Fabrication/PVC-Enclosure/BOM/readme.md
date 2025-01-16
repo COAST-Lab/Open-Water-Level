@@ -24,6 +24,7 @@ FormLabs Clear Resin V4 | Chassis to secure internal parts | $150 per L | https:
 FormLabs Tough Resin 2000 | Resin for PVC Top | $149.00 | https://formlabs.com/store/materials/tough-2000-resin/?srsltid=AfmBOorkt99qw9h7vVncmEmw7h-OcrGHFd6vqJ1ja2KF9Ixz_PjKSQUT
 O-rings | Seal on PVC end cap | $7.81 | https://www.mcmaster.com/9464K291/
 Lithium Ion Battery Pack - 3.7V 4400mAh | Adjacent battery | $19.95 | https://www.adafruit.com/product/354
+PVC Coupler |Attachment between Maxsonar and PVC pipe | |
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
 
 Total cost |  | [INSERT COST] | |
