@@ -20,8 +20,14 @@ USB DIY Slim Connector Shell - MicroB Plug | Splice to solar panel power for Bor
 3-pin cable | Power, ground, and analog signal to/from sonar | $0.95 | https://www.adafruit.com/product/4721
 5 Watt 5 Volt 35Wh Solar System | Solar charging | $99.00 | https://voltaicsystems.com/5-watt-5-volt-35wh-solar-system/
 Cable gland for 0.08"-0.24" Cord OD | Waterproof cable entry | $2.45 | https://www.digikey.com/en/products/detail/lapp/S2209/11200603
-Gripper 1-1/2 in. Plastic Mechanical Test Plug | Sealing end of PVC | $5.65 | https://www.homedepot.com/p/Oatey-Gripper-1-1-2-in-Plastic-Mechanical-Test-Plug-33400D/100342630
 FormLabs Clear Resin V4 | Chassis to secure internal parts | $150 per L | https://formlabs.com/store/materials/clear-resin-v4/
+FormLabs Tough Resin 2000 | Resin for PVC Top | $149.00 | https://formlabs.com/store/materials/tough-2000-resin/?srsltid=AfmBOorkt99qw9h7vVncmEmw7h-OcrGHFd6vqJ1ja2KF9Ixz_PjKSQUT
+O-rings | Seal on PVC end cap | $7.81 | https://www.mcmaster.com/9464K291/
+Lithium Ion Battery Pack - 3.7V 4400mAh | Adjacent battery | $19.95 | https://www.adafruit.com/product/354
+PVC Coupler | Attachment between Maxsonar and PVC pipe | |
+Silicon Grease |O-ring effectiveness and ease with PVC top removal| $24.92 | https://www.grainger.com/product/436P94?gucid=N:N:PS:Paid:GGL:CSM-2295:K2UWC0:20500801:APZ_1&gad_source=1&gclid=Cj0KCQiA-aK8BhCDARIsAL_-H9lGeGJrAgCMYWdaPIc-te_NynTyEhgj8vuTOhYAVrNwVm1O_JPmVkcaAjm7EALw_wcB&gclsrc=aw.ds
+Silicon Sealant |Water and air protection| $11.32 |https://www.grainger.com/product/3LA50?gucid=N:N:PS:Paid:GGL:CSM-2295:6VHHZD:20500801:APZ_1&gad_source=1&gclid=Cj0KCQiA-aK8BhCDARIsAL_-H9nZwT613IVDqD3ArI-Of2iL5bf-vZg4lTgejgzGpeJ1gSOlGSGaHfQaAk5pEALw_wcB&gclsrc=aw.ds
+PVC Cement | Water and air protection| | 
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
 
 Total cost |  | [INSERT COST] | |
