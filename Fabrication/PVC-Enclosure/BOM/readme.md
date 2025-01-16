@@ -24,7 +24,10 @@ FormLabs Clear Resin V4 | Chassis to secure internal parts | $150 per L | https:
 FormLabs Tough Resin 2000 | Resin for PVC Top | $149.00 | https://formlabs.com/store/materials/tough-2000-resin/?srsltid=AfmBOorkt99qw9h7vVncmEmw7h-OcrGHFd6vqJ1ja2KF9Ixz_PjKSQUT
 O-rings | Seal on PVC end cap | $7.81 | https://www.mcmaster.com/9464K291/
 Lithium Ion Battery Pack - 3.7V 4400mAh | Adjacent battery | $19.95 | https://www.adafruit.com/product/354
-PVC Coupler |Attachment between Maxsonar and PVC pipe | |
+PVC Coupler | Attachment between Maxsonar and PVC pipe | |
+Silicon Grease |O-ring effectiveness and ease with PVC top removal| $24.92 | https://www.grainger.com/product/436P94?gucid=N:N:PS:Paid:GGL:CSM-2295:K2UWC0:20500801:APZ_1&gad_source=1&gclid=Cj0KCQiA-aK8BhCDARIsAL_-H9lGeGJrAgCMYWdaPIc-te_NynTyEhgj8vuTOhYAVrNwVm1O_JPmVkcaAjm7EALw_wcB&gclsrc=aw.ds
+Silicon Sealant |Water and air protection| $11.32 |https://www.grainger.com/product/3LA50?gucid=N:N:PS:Paid:GGL:CSM-2295:6VHHZD:20500801:APZ_1&gad_source=1&gclid=Cj0KCQiA-aK8BhCDARIsAL_-H9nZwT613IVDqD3ArI-Of2iL5bf-vZg4lTgejgzGpeJ1gSOlGSGaHfQaAk5pEALw_wcB&gclsrc=aw.ds
+PVC Cement | Water and air protection| | 
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
 
 Total cost |  | [INSERT COST] | |
