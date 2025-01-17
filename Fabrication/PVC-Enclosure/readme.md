@@ -80,16 +80,28 @@ Parts:
 1. Chop 1.5" sch-40 PVC into 8" sections.
 2. Designate one side for the solar cable connection and one for the coupler and MaxSonar
 3. The side you have designated for the solar cable connection slightly shave down the internal edge. 
-4. On the PVC printed end cap attache the cable gland. Run the spliced solar cable through this cable gland.
+4. On the PVC printed end cap attach the cable gland. Run the spliced solar cable through this cable gland.
 5. Using silicon grease carefully place O-rings onto designated grooves on end cap. Be sure to wipe the o-rings and grooves with a Kim wipe to remove any particles or lint.
-6. On the other end attach the coupler and MaxSonar
-7. Attach solar cable to Boron; Attach 3 pin on stack to Maxsonar 3-pin; slide chassis and electronics into PVC pipe.
+6. Place cap, with o-rings and cable gland, onto desginated end.
+
+  <img src="Photos/3dPVCcap.jpeg.jpeg" width="200">
+8. Put coupler and PVC Reducer Bushing together
+   
+<img src="Photos/CouplerReducer.jpeg" width="200">
+   
+8. Wrap Maxsonar threads with PVC pipe tape (only usable for one entry and removal). Attach coupler/reducer part with MaxSonar.
+
+<img src="Photos/MaxSonarEndCapSide.jpeg" width="200">
+    
+9. Attach solar cable to Boron; Attach 3 pin on stack to Maxsonar 3-pin; slide chassis and electronics into PVC pipe.
 
 <img src="Photos/SolarCable.jpeg" width="200">
 
-8. Once everything is inside of the PVC pipe and you are ready for deployment, grab the silicon sealant and PVC cement.
-9. Seal where the PVC cap directly meets PVC pipe, seal around the cable gland o-ring.
-10. Lastly, using PVC cement, seal the space between the coupler and PVC pipe.
+10. Once everything is inside of the PVC pipe and you are ready for deployment, grab the silicon sealant and PVC cement.
+    
+11. Seal where the PVC cap directly meets PVC pipe, seal around the cable gland o-ring.
+
+13. Lastly, using PVC cement, seal the space between the coupler and PVC pipe. 
 
 
 
