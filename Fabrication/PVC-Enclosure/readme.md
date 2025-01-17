@@ -48,21 +48,20 @@ Parts:
 - ... pins sit in the rectangular slots without touching anything
 - ... screw holes in the Boron and FeatherWing line up with the four screw holes in the chassis
 
-<img src="" width="300">
-
-<img src="" width="300">
+<img src="Photos/StackOnChasis.jpeg" width="300">
 
 10. Attach cellular antenna cable to Boron 404X.
 
 <img src="Photos/PVC_Chassis_Boron_Antenna.jpg" width="100">
 
-11. Attach the lithium battery to the slot under the Boron/FeatherWing stack.
-
-12. Peel off sticker backing on cellular antenna cable and gently stick to flat underside of chassis.
+11. Peel off sticker backing on cellular antenna cable and gently stick to flat underside of chassis.
 
 <img src="Photos/PVC_Chassis_Antenna.jpg" width="300">
+12. Attach the lithium battery to the slot under the Boron/FeatherWing stack.
 
-13. Attach a zip tie to designated hook on the chasis. This will help with electronic removal from within the PVC pipe. 
+13. Attach a zip tie to designated hook on the chasis. This will help with electronic removal from within the PVC pipe.
+
+<img src="Photos/WholeElectronic.jpeg" width="300">
 
 
 
@@ -86,7 +85,7 @@ Parts:
 6. On the other end attach the coupler and MaxSonar
 7. Attach solar cable to Boron; Attach 3 pin on stack to Maxsonar 3-pin; slide chassis and electronics into PVC pipe.
 
-<img src="Photos/PVC_Chassis_Boron_SolarCable.jpg" width="200">
+<img src="Photos/SolarCable.jpeg" width="200">
 
 8. Once everything is inside of the PVC pipe and you are ready for deployment, grab the silicon sealant and PVC cement.
 9. Seal where the PVC cap directly meets PVC pipe, seal around the cable gland o-ring.
