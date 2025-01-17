@@ -83,7 +83,7 @@ Parts:
 2. Designate one side for the solar cable connection and one for the coupler and MaxSonar
 3. The side you have designated for the solar cable connection slightly shave down the internal edge. 
 4. On the PVC printed end cap attach the cable gland. Run the spliced solar cable through this cable gland.
-5. Using silicon grease carefully place O-rings onto designated grooves on end cap. Be sure to wipe the o-rings and grooves with a Kim wipe to remove any particles or lint.
+5. Using silicon grease carefully place O-rings onto designated grooves on end cap. Be sure to wipe the o-rings and grooves with a Kim wipe to remove any particles or lint before adding grease.
 6. Place cap, with o-rings and cable gland, onto desginated end.
 
   <img src="Photos/3dPVCcap.jpeg.jpeg" width="200">
@@ -101,7 +101,7 @@ Parts:
 
 10. Once everything is inside of the PVC pipe and you are ready for deployment, grab the silicon sealant and PVC cement.
     
-11. Using silicon sealant, seal where the PVC cap directly meets PVC pipe, seal around the cable gland o-ring.
+11. Using silicon sealant, seal where the PVC 3D cap directly meets PVC pipe, seal around the cable gland o-ring too.
 
 13. Lastly, using PVC cement, seal the space between the coupler and PVC pipe. 
 
