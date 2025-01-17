@@ -69,11 +69,13 @@ Parts:
 Parts:
 - 1.5” sch-40 330 psi PVC
 - PVC coupler
+- PVC reducer
 - Maxbotix Ultrasonic Rangefinder
 - Solar system
 - Silicon grease
 - Silicon sealant
 - PVC cement
+- PVC pipe tape
 - Assembled chassis with electronics
 - 3D printed PVC Cap
 
@@ -93,13 +95,13 @@ Parts:
 
 <img src="Photos/MaxSonarEndCapSide.jpeg" width="200">
     
-9. Attach solar cable to Boron; Attach 3 pin on stack to Maxsonar 3-pin; slide chassis and electronics into PVC pipe.
+9. Attach solar cable to Boron; Attach 3 pin on stack to Maxsonar 3-pin. Connect 3-pin wire between Boron stack and Maxsonar; slide chassis and electronics into PVC pipe. 
 
 <img src="Photos/SolarCable.jpeg" width="200">
 
 10. Once everything is inside of the PVC pipe and you are ready for deployment, grab the silicon sealant and PVC cement.
     
-11. Seal where the PVC cap directly meets PVC pipe, seal around the cable gland o-ring.
+11. Using silicon sealant, seal where the PVC cap directly meets PVC pipe, seal around the cable gland o-ring.
 
 13. Lastly, using PVC cement, seal the space between the coupler and PVC pipe. 
 
