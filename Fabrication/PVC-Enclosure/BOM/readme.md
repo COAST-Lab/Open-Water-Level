@@ -27,8 +27,9 @@ Lithium Ion Battery Pack - 3.7V 4400mAh | Adjacent battery | $19.95 | https://ww
 PVC Coupler | Attachment between Maxsonar and PVC pipe | $5.79 | https://www.amazon.com/LASCO-FITTINGS-429-015-SLIP-COUPLING/dp/B004VU99S4
 Silicon Grease |O-ring effectiveness and ease with PVC top removal| $24.92 | https://www.grainger.com/product/436P94?gucid=N:N:PS:Paid:GGL:CSM-2295:K2UWC0:20500801:APZ_1&gad_source=1&gclid=Cj0KCQiA-aK8BhCDARIsAL_-H9lGeGJrAgCMYWdaPIc-te_NynTyEhgj8vuTOhYAVrNwVm1O_JPmVkcaAjm7EALw_wcB&gclsrc=aw.ds
 Silicon Sealant |Water and air protection| $11.32 |https://www.grainger.com/product/3LA50?gucid=N:N:PS:Paid:GGL:CSM-2295:6VHHZD:20500801:APZ_1&gad_source=1&gclid=Cj0KCQiA-aK8BhCDARIsAL_-H9nZwT613IVDqD3ArI-Of2iL5bf-vZg4lTgejgzGpeJ1gSOlGSGaHfQaAk5pEALw_wcB&gclsrc=aw.ds
-PVC Cement | Water and air protection| |
+PVC Cement | Water and air protection| Dependent on type |https://www.grainger.com/category/adhesives-sealants-and-tape/caulks-sealants-gasket-makers/pipe-sealants/pipe-cement?tv_optin=true&searchQuery=pvc+cement&searchBar=true
 1-1/2" x 3/4" Schedule 40 PVC Reducer Bushing| Connector between PVC and Maxsonar|$1.73|https://www.pvcfittingsonline.com/438-210-1-1-2-x-3-4-schedule-40-pvc-reducer-bushing-flush-style.html?country=US&matchtype=&network=x&device=c&adposition=&keyword=&gad_source=1&gclid=CjwKCAiAnKi8BhB0EiwA58DA4W6jwtDM3u2F32lZRGudU6JqeTiuFAWzLXE53mCkrUW6B9-Unr_6sxoCcgsQAvD_BwE
+PVC Pipe Tape |Tape around Maxsonar threads | $1.07| https://www.grainger.com/product/3PDL5?gucid=N:N:PS:Paid:GGL:CSM-2295:7BE6NS:20500801:APZ_1&gad_source=1&gclid=CjwKCAiAnKi8BhB0EiwA58DA4WkWZi9g1jeW-UF6ImAPjWiaxpRjb5_uNzZ7ZogUhmdnnaMSSFOcERoCVdwQAvD_BwE&gclsrc=aw.ds
 Cell plan (for now: Particle's Free Plan) | Cloud data management | $0.00 | [INSERT LINK]
 
 Total cost |  | [INSERT COST] | |
