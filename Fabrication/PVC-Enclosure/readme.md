@@ -22,19 +22,17 @@ Parts:
 - O-rings
 - Lithium Ion Battery Pack - 3.7V 4400mAh
 
-1. Using epoxy, carefully glue four M2x0.4mm 1.6mm length hex nuts in the four hexagonal holes of the chassis. Let dry / cure fully.
-
-<img src="Photos/PVC_Chassis_Screws_Nuts.jpg" width="200">
-
-2. Solder microUSB connector to solar cable with shrink tubing over the bare wire.
-
-3. Stack short stacking header pins onto Adalogger FeatherWing; solder.
-
-<img src="Photos/AdaFeather_Pins.jpeg" width="300">
-
-4. Update Boron 404X system firmware to match current firmware as shown in the Firmware/target directory.
+1. Update Boron 404X system firmware to match current firmware as shown in the Firmware/target directory.
 
 <img src="Photos/BRN404X.jpeg" width="200">
+
+2. Using epoxy, carefully glue four M2x0.4mm 1.6mm length hex nuts in the four hexagonal holes of the chassis. Let dry / cure fully.
+
+3. Solder microUSB connector to solar cable with shrink tubing over the bare wire.
+
+4. Stack short stacking header pins onto Adalogger FeatherWing; solder.
+
+<img src="Photos/AdaFeather_Pins.jpeg" width="300">
 
 5. Insert microSD card into FeatherWing microSD port. (microSD card may need to be manually formatted by inserting it into your computer first.)
 
@@ -45,15 +43,14 @@ Parts:
 7. Solder 3-pin cable with male block onto ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
 
 8. Stack Boron 404X on FeatherWing; solder.
-    `INSERT PHOTO?`
 
 9. Place the soldered Boron/FeatherWing/pins atop the chassis so that the ...
 - ... pins sit in the rectangular slots without touching anything
 - ... screw holes in the Boron and FeatherWing line up with the four screw holes in the chassis
 
-<img src="Photos/PVC_Chassis.jpeg" width="300">
+<img src="" width="300">
 
-<img src="Photos/PVC_Chassis_Attached.jpg" width="300">
+<img src="" width="300">
 
 10. Attach cellular antenna cable to Boron 404X.
 
@@ -64,6 +61,8 @@ Parts:
 12. Peel off sticker backing on cellular antenna cable and gently stick to flat underside of chassis.
 
 <img src="Photos/PVC_Chassis_Antenna.jpg" width="300">
+
+13. Attach a zip tie to designated hook on the chasis. This will help with electronic removal from within the PVC pipe. 
 
 
 
@@ -93,6 +92,6 @@ Parts:
 9. Seal where the PVC cap directly meets PVC pipe, seal around the cable gland o-ring.
 10. Lastly, using PVC cement, seal the space between the coupler and PVC pipe.
 
-10. `CONT'D ... NEEDS UPDATING`
+
 
 
