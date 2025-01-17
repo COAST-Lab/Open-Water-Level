@@ -86,8 +86,8 @@ Parts:
 5. Using silicon grease carefully place O-rings onto designated grooves on end cap. Be sure to wipe the o-rings and grooves with a Kim wipe to remove any particles or lint before adding grease.
 6. Place cap, with o-rings and cable gland, onto desginated end.
 
-  <img src="Photos/3dPVCcap.jpeg.jpeg" width="200">
-8. Put coupler and PVC Reducer Bushing together
+<img src="Photos/3dPVCcap.jpeg.jpeg" width="200">
+7. Put coupler and PVC Reducer Bushing together
    
 <img src="Photos/CouplerReducer.jpeg" width="200">
    
@@ -103,7 +103,7 @@ Parts:
     
 11. Using silicon sealant, seal where the PVC 3D cap directly meets PVC pipe, seal around the cable gland o-ring too.
 
-13. Lastly, using PVC cement, seal the space between the coupler and PVC pipe. 
+12. Lastly, using PVC cement, seal the space between the coupler and PVC pipe. 
 
 
 
