@@ -58,7 +58,6 @@ Parts:
 
 <img src="Photos/PVC_Chassis_Antenna.jpg" width="300">
 12. Attach the lithium battery to the slot under the Boron/FeatherWing stack.
-
 13. Attach a zip tie to designated hook on the chasis. This will help with electronic removal from within the PVC pipe.
 
 <img src="Photos/WholeElectronic.jpeg" width="300">
