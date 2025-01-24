@@ -13,6 +13,7 @@
 // Include Particle Device OS APIs
 #include "Particle.h"
 #include "SdFat.h"
+
  //------------------SD SPI Configuration Details--------------------------------
 const int SD_CHIP_SELECT = D5;
 SdFat sd;
@@ -32,6 +33,7 @@ int millis_now;
 
 float filterArray[200]; // array to store data samples from sensor
 float distance_unconverted; // store the distance from sensor
+
 
 // function prototype` <br />
 int secondsUntilNextEvent();
@@ -65,18 +67,18 @@ SystemSleepConfiguration config;
 
 // Various timing constants
 const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this time trying to connect to the cloud and publish
-// const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
+const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 
 // ***** IMPORTANT!!!
-// If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
-// .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
+ //If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
+ //.network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
 // in sleep configuration to avoid reconnection penalty
-const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 3600; // What should sampling period be?
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 360; // What should sampling period be?
 // ***** IMPORTANT!!! See note above this const.
 
 
 void setup(void) {
-  if (PUBLISHING==1) {
+  if (PUBLISHING==0) {
     Particle.connect();
   }
   else{
@@ -110,13 +112,14 @@ void loop(void) {
     // Sort; TODO: this looks inefficient. Investigate options to improve (or reject) sorting
     for (int i = 0; i < 199; i++) {
       for (int j = i + 1; j < 200; j++) {
-        if (filterArray[i] > filterArray[j]) {
+        if (filterArray[i] > filterArray[j]) { //takes highest value
           float swap = filterArray[i];
           filterArray[i] = filterArray[j];
-          filterArray[j] = swap;
+          filterArray[j] = swap; //puts highest number on top
         }
       }
     }
+    
 
     // Filter noise by excluding 10 smallest and 10 largest samples 
     double sum = 0;
