@@ -1,2 +1,12 @@
 *.ipynb_checkpoints
 .DS_Store
+
+# Compiled files
+**/target/
+*.bin
+*.bin.crc_block
+*.bin.crc_block.no_crc
+*.elf
+*.hex
+*.lst
+*.map
