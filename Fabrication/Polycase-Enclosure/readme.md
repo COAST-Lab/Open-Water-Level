@@ -1,83 +1,104 @@
-We're working on this page! Come back soon for complete step-by-step assembly instructions.
-
 # How to assemble a DIY Open Water Level Sensor with a Polycase enclosure
 
 See:
-- BOM, for bills of materials / lists of parts
+- BOM, for full bill of materials
 - Datasheets, for manufacturer datasheets
 - Enclosure and Assembly, for 3D print files
 
-## Assembling the chassis
 Parts:
 - Boron 404X
 - Adalogger FeatherWing
 - MicroSD card
 - Short stacking header pins
-- 3D printed custom chassis + M2.5x0.45 screws/hex nuts
+- 3D printed custom chassis
+- M2.5x0.45 screws/hex nuts
 - Cellular antenna
-- 3-pin cable
-- Solar system
-- MicroUSB connector
-
-1. Solder the 3-pin cable female receptacle onto the FeatherWing spare pins corresponding to the power, ground, and analog inputs.
-`INSERT PHOTOS`
-
-2. Place the stacking header pins through the pin holes of the Adalogger FeatherWing (make sure the short and long pins and pin holes are aligned); solder.
-
-<img src="Photos/AdaFeather_Pins.jpeg" width="200">
-
-3. Place the Boron 404X atop the Adalogger FeatherWing so the Boron pins fit into the stacking header holes; solder.
-4. Gently press the microSD card into the Adalogger FeatherWing until it clicks into place.
-
-<img src="Photos/Install_SD.jpeg" width="200">
-
-5. Lay the soldered Boron 404X, Adalogger FeatherWing, and header pin device (hereby referred to as the BAda) atop the chassis so that the ...
-- pins fit in the rectangular slots
-- four holes in the BAda corners align with the four small holes in the chassis
-Make sure the microUSB port and 3-pin cable of the BAda are facing the end of the chassis with more lengthwise space; this is to ensure that cables aren't bent too much within the enclosure.
-
-<img src="Photos/PolycaseChassis_Simplified.jpeg" width="200">
-
-- Make sure the microUSB port and 3-pin cable of the BAda are facing the end of the chassis with more lengthwise space; this is to ensure that cables aren't bent too much within the enclosure.
-
-6. Screw the BAda to the chassis using the M2x0.45 18mm screws. Screw M2.5x0.45mm threaded 2mm length hex nuts to the screws on the underside of the chassis.
-- Be cautious not to move too quickly or harshly, as you can strip the screw / hex nut, or crack the chassis!
-
-<img src="Photos/PolycaseChassis_Screws_Nuts.jpg" width="200">
-<img src="Photos/PolycaseChassis_Boron_Attached.jpeg" width="200">
-<img src="Photos/PolycaseChassis_Nuts_Under.jpg" width="200">
-
-
-7. Carefully peel the sticker backing off of the cellular antenna and gently stick the antenna to the outside of the antenna frame on the chassis.
-8. Attach the antenna to the BAda.
-
-<img src="Photos/PolycaseChassis_Boron_Antenna.jpg" width="200">
-
-9. Solder the to microUSB connector to the red solar cable.
-10. Plug the solar cable into the microUSB port on the Boron 404X.
-
-<img src="Photos/PolycaseChassis_Boron_SolarCable.jpg" width="200">
-
-
-## Assembling the Polycase enclosure
-Parts:
 - Polycase ML-24K + screws (included)
 - Hi-Lo #4-24 screws
 - Maxbotix Ultrasonic Rangefinder
+- 3-pin cable
 - Solar system
+- USB A to Micro-B cable
+- Pipe tape
 - Epoxy
-- Assembled chassis with electronics
 
-1. Cut a hole into of the Polycase lid.
-2. Thread the 3-pin cable through the hole in the Polycase lid.
-3. Solder the 3-pin cable male block onto the ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
-4. Drill a 9/64” hole `INSERT LOCATION` in Polycase for the solar panel cable (red cable); thread the solar cable through this hole.
-5. Screw the chassis with attached electronics into the Polycase using the Hi-Lo screws.
-6. Screw the ultrasonic distance sensor into the Polycase lid hole.
-7. Carefully fit all cords into the Polycase enclosure.
-8. Use marine epoxy to seal the solar cable in place.
-    - Note: Practice caution when using marine epoxy and let it rest for at least 2 hours to cure.
-9. Place the Polycase lid on the enclosure and use the included screws to assemble the enclosure.
+# Fabricating electronics to prepare for firmware update
 
-<img src="Photos/Polycase_EnclosureScrews.jpg" width="200">
-<img src="Photos/Polycase_EnclosureScrews2.jpeg" width="200">
+1. Place the stacking header pins through the pin holes of the Adalogger FeatherWing; solder.
+
+<img src="Photos/AdaFeather_Pins.jpeg" width="300">
+
+2. Place the Boron 404X atop the Adalogger FeatherWing so the Boron pins fit into the stacking header holes.
+
+<img src="Photos/BAda_Separate.jpeg" width="200"> <img src="Photos/BRN404X.jpeg" width="200"> <img src="Photos/BAda_Stack.jpeg" width="150">
+
+3. Gently press the microSD card into the Adalogger FeatherWing until it clicks into place.
+
+<img src="Photos/Install_SD.jpeg" width="300">
+
+4. Using the USB A to Micro-B cable and your computer, udate the Boron's system firmware using the steps listed in the `Firmware` directory.
+
+# Fabrication of electronics with enclosure
+
+*Note: Start by taking the Boron off the Adalogger FeatherWing for ease.*
+
+Optional: Twist the 3-pin cables (insert into a drill bit and spin slowly). Use shrink tubing to cover the cables.
+
+1. Solder the 3-pin cable female receptacle onto the FeatherWing spare pins corresponding to the power, ground, and analog inputs.
+
+<img src="Photos/Solder_3pin_FeatherWing.jpg" width="300">
+
+2. Solder the 3-pin cable male block onto the ultrasonic distance sensor on pins corresponding to the power, ground, and analog outputs.
+
+<img src="Photos/Soldering_3pin_Sensor.jpeg" width="400">
+
+3. Using a 5/8" spade bit, drill a hole in one of the Polycase's short ends 3/4" from the inner lip and centered horizontally.
+
+4. Cut a 1" hole 1-1/4" into the Polycase lid. Tap 3/4 NPT threads
+
+<img src="Photos/Polycase_Holes.jpg" width="200"> <img src="Photos/Tapping_Lid.jpeg" width="300">
+
+5. Wrap the ultrasonic distance sensor's threads with pipe tape; gently screw the distance sensor into the lid's hole. Use marine epoxy to create a waterproof connection here.
+
+<img src="Photos/Sensor_Lid_Cables.jpeg" width="300">
+
+6. Cut the female 5V 2A connector of of the solar cable and strip the end. Cut the USB A connector of the USB A to Micro-B cable and strip the end. Solder the +5V wires together and the GND wires together. (Can use shrink tubing to keep red and black internal wires separate.) Cover this connection with shrink tubing / electrical tape / your preference.
+
+7. Thread the upper two components of the cable gland onto the solar cable. Thread the solar cable through the 5/8" hole. Thread the bottom component of the cable gland onto the solar cable from inside the enclosure. Tighten cable gland.
+
+<img src="Photos/Solar_CableGland.jpeg" width="200">
+
+
+# Assembling the Chassis
+
+1. Lay the Boron 404X and Adalogger FeatherWing with soldered header pins (hereby referred to as the BAda) atop the chassis so that the ...
+- pins fit in the rectangular slots
+- four holes in the BAda corners align with the four small holes in the chassis
+- the microUSB port and 3-pin cable of the BAda are facing the end of the chassis with more lengthwise space
+
+2. Screw the BAda to the chassis using the M2x0.45 18mm screws. Screw M2.5x0.45mm threaded 2mm length hex nuts to the screws on the underside of the chassis.
+- Be cautious not to move too quickly or harshly, as you can strip the screw / hex nut, or crack the chassis!
+
+<img src="Photos/PolycaseChassis_Simplified.jpeg" width="300"> <img src="Photos/PolycaseChassis_Screws_Nuts.jpg" width="300">
+<img src="Photos/PolycaseChassis_Boron_Attached.jpeg" width="200"> <img src="Photos/PolycaseChassis_Nuts_Under.jpg" width="150">
+
+3. Carefully peel the sticker backing off of the cellular antenna and gently stick to the outside of the antenna frame on the chassis. Attach the antenna cable to the BAda.
+
+<img src="Photos/PolycaseChassis_Boron_Antenna.jpg" width="250">
+
+4. Lay the chassis and electronics inside the Polycase so the BAda's microUSB port faces the side with the solar cable entry / cable gland.
+
+5. Plug the microUSB solar cable into the port.
+
+<img src="Photos/PolycaseChassis_Boron_SolarCable.jpg" width="200">
+
+6. Screw the chassis with attached electronics into the Polycase using the Hi-Lo screws.
+- Move with caution so as not to cause stripping!
+
+7. Connect the white cap ends of the 3-pin cables.
+
+8. Carefully fit all cords into the Polycase enclosure.
+
+9. Place the Polycase lid on the enclosure, screwing it on with the included screws.
+
+<img src="Photos/Polycase_EnclosureScrews.jpg" width="200"> <img src="Photos/Polycase_EnclosureScrews2.jpeg" width="200">

@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/243609204.svg)](https://zenodo.org/badge/latestdoi/243609204)
+[![DOI](https://zenodo.org/badge/688666593.svg)](https://doi.org/10.5281/zenodo.13991877)
 
 # Open Water Level Sensor
 ## ℹ️ About this Repository
