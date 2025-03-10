@@ -1,0 +1,10 @@
+Once you have successfully fabricated the PVC Model based these [steps](https://github.com/COAST-Lab/Open-Water-Level/tree/ac8e949a22b2f5b2a5e1ccd7503b6fde46d579b2/Fabrication/PVC-Enclosure), follow this guide for deployment. Extra supplies needed for these steps are PVC cement, Silicon Sealant, Low Density PTFE seal tape, and O-Ring Silicon Grease.
+1. Ensure that the extra LiPo batteries and Solar system batteries are fully charged. 
+2. Use PVC cement to attach the 1-1/2" x 3/4" Schedule 40 PVC Reducer Bushing, PVC Coupler, and PVC Pipe together. **Note** When using PVC Cement we recommend doing so outside and with globes. After cementing, place the product in a fume hood to reduce risk of fumes.
+3. O-ring grease on the PVC end cap o-rings and cable gland o-ring. **Note** When greasing the O-rings it is necessary to keep any particles off the rings and grooves. We recommend using Kim wipes and gloves to wipe the rings and grooves before greasing them and also lay the wipes on whatever surface you are working on.
+4. Wrap the PTFE seal tape around the threads of the Maxsonar. **Note** Try to set in the tape in a direction that when it is tighten into the PVC Bushing it does not unpeel. (REWORD)
+5. Once fully charged, place the lipo battery back on the chassis, attach the 3-pin wires together, and slide the chassis into the PVC pipe. 
+6. Attach the solar cable gland to the PVC end cap. **Note** Once the Lipo battery or solar panel cable is plugged into the Boron it will begin the data collection loop. 
+7. Once you have everything inside, secured, and plugged in in the pipe, place the PVC Cap on the pipe. Use silicon sealant to seal the space between the PVC end cap to the pipe and the space between the solar cable gland and PVC top. 
+
+ADD IMAGES. 
