@@ -48,7 +48,7 @@ enum State {
 State state = DATALOG_STATE;
 
 // Define whether (1) or not (0) to publish
-#define PUBLISHING 0
+#define PUBLISHING 1
 
 unsigned long stateTime = 0;
 char data[120];
