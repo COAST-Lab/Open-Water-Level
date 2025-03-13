@@ -137,6 +137,8 @@ Parts:
 7. Put coupler and PVC Reducer Bushing together
    
 <img src="Photos/CouplerReducer.jpeg" width="200">
+
+**Deployment (more details found in Deployment Folder)**
    
 8. Wrap Maxsonar threads with PVC pipe tape (only usable for one entry and removal). Attach coupler/reducer part with MaxSonar.
 
@@ -160,4 +162,4 @@ Parts:
 
 15. Seal the opposite PVC end with the 1.5" gripper.
 
-16. Seal the solar cable entry hole with marine epoxy to prevent water damage.
+16. Seal the solar cable entry hole with silicon sealant to prevent water damage.
