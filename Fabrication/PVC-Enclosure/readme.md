@@ -148,18 +148,20 @@ Parts:
 
 <img src="Photos/SolarCable.jpeg" width="200">
 
-10. Once everything is inside of the PVC pipe and you are ready for deployment, grab the silicon sealant and PVC cement.
+10. We recommend including electrical tape to secure the antenna and 3 pin wires to the side of the chassis. This will help decrease any noise and movement within the PVC during deployment. 
+
+11. Once everything is inside of the PVC pipe and you are ready for deployment, grab the silicon sealant and PVC cement.
     
-11. Using silicon sealant, seal where the PVC 3D cap directly meets PVC pipe, seal around the cable gland o-ring too.
+12. Using silicon sealant, seal where the PVC 3D cap directly meets PVC pipe, seal around the cable gland o-ring too.
 
-12. Lastly, using PVC cement, seal the space between the coupler and PVC pipe. 
+13. Lastly, using PVC cement, seal the space between the coupler and PVC pipe. 
 
 
 
-13. Wrap the ultrasonic distance sensor's threads with pipe tape; gently screw the distance sensor into pipe bushing.
+14. Wrap the ultrasonic distance sensor's threads with pipe tape; gently screw the distance sensor into pipe bushing.
 
-14. Using the pipe coupling, connect the pipe bushing (with distance sensor) and the PVC pipe. Make sure you connect the white cap ends of the 3-pin cables inside the enclosure.
+15. Using the pipe coupling, connect the pipe bushing (with distance sensor) and the PVC pipe. Make sure you connect the white cap ends of the 3-pin cables inside the enclosure.
 
-15. Seal the opposite PVC end with the 1.5" gripper.
+16. Seal the opposite PVC end with the 1.5" gripper.
 
-16. Seal the solar cable entry hole with silicon sealant to prevent water damage.
+17. Seal the solar cable entry hole with silicon sealant to prevent water damage.
