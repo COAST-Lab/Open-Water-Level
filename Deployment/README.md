@@ -8,4 +8,6 @@ Once you have successfully fabricated the **PVC Model** based on these [steps](h
 7. Once fully charged, place the lipo battery back on the chassis, attach the 3-pin wires together, and slide the chassis into the PVC pipe. 
 8. Attach the solar cable gland to the PVC end cap. **Note:** Once the Lipo battery or solar panel cable is plugged into the Boron it will turn on and begin collecting data every hour on the hour. This may be important for your cellular usage. 
 9. Once all components are securely placed and connected inside the pipe, attach the PVC cap. Apply silicone sealant to seal the gap between the PVC end cap and the pipe, as well as the space between the solar cable gland and the PVC top.
-10. Well done, you are ready for deployment! 
+
+**Field Specific Deployment Considerations**
+According to the ultrasonic sensor's datasheet, objects within a 30 cm radius of a beam normal to the sensor's surface could interfere with its measurements. We recommend deploying the sensor at least 45 cm (or a 50% margin) away from the closest object to the sensor's downward beam. Also condifer that this sensor has a minimum report distance of 25 cm and a maximum report distance of 700 cm. 
