@@ -11,4 +11,4 @@ Once you have successfully fabricated the **PVC Model** based on these [steps](h
 
 **Field Specific Deployment Considerations**
 
-According to the ultrasonic sensor's datasheet, objects within a 30 cm radius of a beam normal to the sensor's surface could interfere with its measurements. We recommend deploying the sensor at least 45 cm (or a 50% margin) away from the closest object to the sensor's downward beam. Also condifer that this sensor has a minimum report distance of 25 cm and a maximum report distance of 700 cm. 
+According to the ultrasonic sensor's datasheet, objects within a 30 cm radius of a beam normal to the sensor's surface could interfere with its measurements. We recommend deploying the sensor at least **45 cm (or a 50% margin)** away from the closest object to the sensor's downward beam. Also condifer that this sensor has a minimum report distance of **25 cm** and a maximum report distance of **700 cm**. 
