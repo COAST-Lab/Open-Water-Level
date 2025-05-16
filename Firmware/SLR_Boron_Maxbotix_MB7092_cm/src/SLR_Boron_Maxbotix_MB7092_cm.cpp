@@ -66,7 +66,7 @@ SerialLogHandler logHandler;
 SystemSleepConfiguration config;
 
 // Various timing constants
-const unsigned long MAX_TIME_TO_PUBLISH_MS = 660000; // Only stay awake for this time trying to connect to the cloud and publish. 11 mintutes
+const unsigned long MAX_TIME_TO_PUBLISH_MS = 60000; // Only stay awake for this time trying to connect to the cloud and publish. 11 mintutes
 const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 
 // ***** IMPORTANT!!!
