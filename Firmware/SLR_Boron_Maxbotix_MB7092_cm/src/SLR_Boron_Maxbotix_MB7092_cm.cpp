@@ -73,7 +73,7 @@ const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 secon
  //If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
  //.network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
 // in sleep configuration to avoid reconnection penalty
-const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 120; // What should sampling period be?
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 180; // What should sampling period be?
 // ***** IMPORTANT!!! See note above this const.
 
 
