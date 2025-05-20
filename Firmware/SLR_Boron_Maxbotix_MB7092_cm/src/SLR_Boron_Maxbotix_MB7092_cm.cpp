@@ -48,14 +48,14 @@ enum State {
 State state = DATALOG_STATE;
 
 // Define whether (1) or not (0) to publish
-#define PUBLISHING 1
+#define PUBLISHING 0
 
 unsigned long stateTime = 0;
 char data[120];
 
 //------------------Turn off cellular for prelim testing; turn on for deployment
-//SYSTEM_MODE(MANUAL); // uncomment for prelim testing
-SYSTEM_MODE(SEMI_AUTOMATIC); // uncomment for deployment
+SYSTEM_MODE(MANUAL); // uncomment for prelim testing
+//SYSTEM_MODE(SEMI_AUTOMATIC); // uncomment for deployment
 SYSTEM_THREAD(ENABLED);
 
 // Global objects
@@ -73,7 +73,7 @@ const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 secon
  //If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
  //.network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
 // in sleep configuration to avoid reconnection penalty
-const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 3600; // What should sampling period be?
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 120; // What should sampling period be?
 // ***** IMPORTANT!!! See note above this const.
 
 
