@@ -69,20 +69,16 @@ SystemSleepConfiguration config;
 const unsigned long MAX_TIME_TO_PUBLISH_MS = 600000; // Only stay awake for this time trying to connect to the cloud and publish. 11 mintutes
 const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 
-// ***** IMPORTANT!!!
- //If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
- //.network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
-// in sleep configuration to avoid reconnection penalty
 const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 3600; // What should sampling period be?
-// ***** IMPORTANT!!! See note above this const.
+
 
 
 void setup(void) {
-  if (PUBLISHING==0) {
+  if (PUBLISHING==1) {
     Particle.connect();
   }
   else{
-    Cellular.off(); // turn off cellular for prelim testing (uncomment)
+    WiFi.off(); // turn off WiFi for prelim testing (uncomment)
   }
 
   // delay(5000); // to see response from begin command
@@ -187,7 +183,7 @@ void loop(void) {
     ***/
   case PUBLISH_STATE: {
 
-    // Prep for cellular transmission
+    // Prep for transmission
     bool isMaxTime = false;
     stateTime = millis();
 
