@@ -29,6 +29,7 @@ float dist_in_avg;
 float range_cm;
 
 long real_time;
+int hour_of_day_UTC; // hour of day in UTC
 int millis_now;
 
 float filterArray[200]; // array to store data samples from sensor
@@ -65,8 +66,8 @@ SerialLogHandler logHandler;
 
 SystemSleepConfiguration config;
 
-// Various timing constants
-const unsigned long MAX_TIME_TO_PUBLISH_MS = 600000; // Only stay awake for this time trying to connect to the cloud and publish. 11 mintutes
+// Various timing constants/vars
+unsigned long MAX_TIME_TO_PUBLISH_MS = 600000; // Only stay awake for this time trying to connect to the cloud and publish. 11 mintutes
 const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 
 // ***** IMPORTANT!!!
@@ -133,6 +134,7 @@ void loop(void) {
     // Get all metrics which are to be reused:
     range_cm = (float) distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
     real_time = Time.now(); // "Real" time and current millis for logging
+    hour_of_day_UTC = Time.hour(); // Get hour of day (UTC) for deciding timeout
     millis_now = millis();
 
     // Get battery charge if Boron provides it
@@ -212,6 +214,13 @@ void loop(void) {
       }
       // If not connected after certain amount of time, go to sleep to save battery
       else {
+        // Determine length of timeout
+        if (hour_of_day_UTC == 0){
+          MAX_TIME_TO_PUBLISH_MS = 660000; // 11 minutes
+        }
+        else {
+          MAX_TIME_TO_PUBLISH_MS = 60000; // 1 minute
+        }
         // Took too long to publish, just go to sleep
         if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS) {
           isMaxTime = true;
