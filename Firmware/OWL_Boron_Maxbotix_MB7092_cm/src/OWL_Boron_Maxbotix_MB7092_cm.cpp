@@ -216,7 +216,7 @@ void loop(void) {
       else {
         // Determine length of timeout
         if (hour_of_day_UTC == 0){
-          MAX_TIME_TO_PUBLISH_MS = 660000; // 11 minutes
+          MAX_TIME_TO_PUBLISH_MS = 900000; // 15 minutes
         }
         else {
           MAX_TIME_TO_PUBLISH_MS = 60000; // 1 minute
