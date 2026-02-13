@@ -62,11 +62,15 @@ SYSTEM_THREAD(ENABLED);
 FuelGauge batteryMonitor;
 const char * eventName = "waterLevel";
 SerialLogHandler logHandler;
+int outOfMemory = -1;
+void outOfMemoryHandler(system_event_t event, int param);
+const std::chrono::milliseconds freeMemoryLogTime = 5min;
 
+// Sleep configuration
 SystemSleepConfiguration config;
 
 // Various timing constants
-const unsigned long MAX_TIME_TO_PUBLISH_MS = 600000; // Only stay awake for this time trying to connect to the cloud and publish. 11 mintutes
+const unsigned long MAX_TIME_TO_PUBLISH_MS = 900000; // Only stay awake for this time trying to connect to the cloud and publish. 11 mintutes
 const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 
 // ***** IMPORTANT!!!
@@ -78,6 +82,11 @@ const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 3600; // What should sampling
 
 
 void setup(void) {
+
+  // Enabling an out of memory handler is a good safety tip. If we run out of
+  // memory a System.reset() is done.
+  System.on(out_of_memory, outOfMemoryHandler);
+  
   if (PUBLISHING==0) {
     Particle.connect();
   }
@@ -93,7 +102,7 @@ void setup(void) {
 }
 
 void loop(void) {
-  // Enter state machine
+    // Enter state machine
   switch (state) {
 
     //////////////////////////////////////////////////////////////////////////////
@@ -104,6 +113,23 @@ void loop(void) {
     go to SLEEP_STATE.
     ***/
   case DATALOG_STATE: {
+
+    if (outOfMemory >= 0) {
+        // An out of memory condition occurred - reset device.
+        Log.info("out of memory occurred size=%d", outOfMemory);
+        delay(100);
+
+        System.reset();
+    }
+
+    // Log free memory periodically
+    static unsigned long lastLog = 0;
+    if (millis() - lastLog >= freeMemoryLogTime.count()) {
+        lastLog = millis();
+        Log.info("freeMemory=%lu", System.freeMemory());
+    }
+
+
     // Take multiple measurements and store in array
     for (int sample = 0; sample < 200; sample++) {
       filterArray[sample] = (analogRead(A1));
@@ -261,4 +287,8 @@ int secondsUntilNextEvent() {
   Log.info("Sleeping for %i", seconds_to_sleep);
 
   return seconds_to_sleep;
+}
+
+void outOfMemoryHandler(system_event_t event, int param) {
+    outOfMemory = param;
 }
