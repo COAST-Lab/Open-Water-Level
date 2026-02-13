@@ -29,6 +29,7 @@ float dist_in_avg;
 float range_cm;
 
 long real_time;
+int hour_of_day_UTC; // hour of day in UTC
 int millis_now;
 
 float filterArray[200]; // array to store data samples from sensor
@@ -159,6 +160,7 @@ void loop(void) {
     // Get all metrics which are to be reused:
     range_cm = (float) distance_unconverted * 0.25; // conversion factor for MB7092 XL-MaxSonar-WRMA1; TODO: check new sensor's datasheet
     real_time = Time.now(); // "Real" time and current millis for logging
+    hour_of_day_UTC = Time.hour(); // Get hour of day (UTC) for deciding timeout
     millis_now = millis();
 
     // Get battery charge if Boron provides it
@@ -238,6 +240,13 @@ void loop(void) {
       }
       // If not connected after certain amount of time, go to sleep to save battery
       else {
+        // Determine length of timeout
+        if (hour_of_day_UTC == 0){
+          MAX_TIME_TO_PUBLISH_MS = 900000; // 15 minutes
+        }
+        else {
+          MAX_TIME_TO_PUBLISH_MS = 120000; // 2 minutes
+        }
         // Took too long to publish, just go to sleep
         if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS) {
           isMaxTime = true;
