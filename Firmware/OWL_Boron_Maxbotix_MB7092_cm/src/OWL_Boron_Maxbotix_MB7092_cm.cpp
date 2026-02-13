@@ -245,7 +245,7 @@ void loop(void) {
           MAX_TIME_TO_PUBLISH_MS = 900000; // 15 minutes
         }
         else {
-          MAX_TIME_TO_PUBLISH_MS = 60000; // 1 minute
+          MAX_TIME_TO_PUBLISH_MS = 120000; // 2 minutes
         }
         // Took too long to publish, just go to sleep
         if (millis() - stateTime >= MAX_TIME_TO_PUBLISH_MS) {
