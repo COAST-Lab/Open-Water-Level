@@ -88,7 +88,7 @@ void setup(void) {
   // memory a System.reset() is done.
   System.on(out_of_memory, outOfMemoryHandler);
   
-  if (PUBLISHING==0) {
+  if (PUBLISHING==1) {
     Particle.connect();
   }
   else{
