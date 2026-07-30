@@ -67,12 +67,18 @@ int outOfMemory = -1;
 void outOfMemoryHandler(system_event_t event, int param);
 const std::chrono::milliseconds freeMemoryLogTime = 5min;
 
+// Battery Monitoring thresholds
+const float LOW_VOLTAGE_CUTOFF = 3.30;     // Enter recovery mode
+const float LOW_VOLTAGE_RESUME = 3.50;     // Resume normal operation
+const int LOW_BATTERY_SLEEP_SECONDS = 86400;   // 24 hours
+bool lowBatteryMode = false;
+
 // Sleep configuration
 SystemSleepConfiguration config;
 
 // Various timing constants
 unsigned long MAX_TIME_TO_PUBLISH_MS = 900000; // Only stay awake for this time trying to connect to the cloud and publish.
-const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
+const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 2 minutes for data to go out
 
 // ***** IMPORTANT!!!
  //If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
@@ -113,7 +119,31 @@ void loop(void) {
     Then, if PUBLISHING==1, go to PUBLISH_STATE. Else,
     go to SLEEP_STATE.
     ***/
+
+
   case DATALOG_STATE: {
+
+  // Get battery charge before datalogging to avoid any issues with low battery during datalogging
+    float cellVoltage = batteryMonitor.getVCell();
+    float stateOfCharge = batteryMonitor.getSoC();
+
+    Log.info("Battery = %.2f V", cellVoltage);
+
+    // Enter low battery mode
+    if (cellVoltage <= LOW_VOLTAGE_CUTOFF) {
+    lowBatteryMode = true;
+    }
+
+    // Leave low battery mode only after recovering
+    if (lowBatteryMode && cellVoltage >= LOW_VOLTAGE_RESUME) {
+        lowBatteryMode = false;
+    }
+
+    if (lowBatteryMode) {
+        Log.info("Battery too low. Sleeping for one day.");
+        state = SLEEP_STATE;
+        break;
+    }
 
     if (outOfMemory >= 0) {
         // An out of memory condition occurred - reset device.
@@ -163,9 +193,6 @@ void loop(void) {
     hour_of_day_UTC = Time.hour(); // Get hour of day (UTC) for deciding timeout
     millis_now = millis();
 
-    // Get battery charge if Boron provides it
-    float cellVoltage = batteryMonitor.getVCell();
-    float stateOfCharge = batteryMonitor.getSoC();
 
     snprintf(data, sizeof(data), "%li,%.5f,%.02f,%.02f", //,%.5f,%.5f,%.5f,%.5f,%.5f,%.02f,%.02f",
       real_time, // if it takes a while to connect, this time could be offset from sensor recording
@@ -268,8 +295,15 @@ void loop(void) {
     Log.info("going to sleep");
     delay(500);
 
-    // Sleep time determination and configuration
-    int wakeInSeconds = secondsUntilNextEvent(); // Calculate how long to sleep 
+    // Sleep time determination and configuration based on battery level. If low battery, sleep for 24 hours. Otherwise, sleep until next measurement time.
+    int wakeInSeconds;
+
+    if (lowBatteryMode) {
+        wakeInSeconds = LOW_BATTERY_SLEEP_SECONDS;
+    }
+    else {
+    wakeInSeconds = secondsUntilNextEvent();
+    }
 
     config.mode(SystemSleepMode::ULTRA_LOW_POWER)
       .gpio(D2, FALLING)
